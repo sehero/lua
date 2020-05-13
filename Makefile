@@ -1,4 +1,4 @@
-.PHONY: help install test headers check pull push site xxx
+.PHONY: help install check test headers pull push site create over
 
 SHELL=bash
 WANT=gawk git tmux vim mc tree cmatrix rain npm lua pandoc ncdu
@@ -15,9 +15,6 @@ check: ## look for missing executables
 	
 test: ## test
 	pytest
-
-headers: ## update all the .md headers from etc/header.sh
-	@find . -name '*.md' -exec bash etc/headers.sh {} \;
 
 pull: ## download from Git
 	git pull
