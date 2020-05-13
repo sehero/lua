@@ -12,7 +12,7 @@ src="https://img.shields.io/badge/language-python-orange">&nbsp;<img
 src="https://img.shields.io/badge/purpose-ai,se-blueviolet">&nbsp;<img 
 src="https://img.shields.io/badge/platform-mac,*nux-informational">&nbsp;<img 
 src="https://img.shields.io/badge/license-mit-informational">&nbsp;<img 
-src="https://travis-ci.org/sehero/src">
+src="https://travis-ci.org/sehero/src.svg?branch=master">
 </p><hr>
 
 
