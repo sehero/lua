@@ -11,7 +11,7 @@ align=center> <img
 src="https://img.shields.io/badge/language-python-orange">&nbsp;<img 
 src="https://img.shields.io/badge/purpose-ai,se-blueviolet">&nbsp;<img 
 src="https://img.shields.io/badge/platform-mac,*nux-informational">&nbsp;<img 
-src="https://img.shields.io/badge/license-mit-informational">&nbsp;<img 
+src="https://img.shields.io/badge/license-mit-red">&nbsp;<img 
 src="https://travis-ci.org/sehero/src.svg?branch=master"> 
 </p><hr>
 
@@ -19,13 +19,19 @@ src="https://travis-ci.org/sehero/src.svg?branch=master">
 
 T. Menzies. 
 _SE for super heroes: an AI approach_.
-2010
+May, 2020, 10.5281/zenodo.3823634,
+https://doi.org/10.5281/zenodo.3823634.
 
 ```bitex
-@misc{menzies20,
-  author       = {Tim Menzies}, 
+@software{sehero20,
+  author       = {Tim Menzies},
   title        = {SE for super heroes: an AI approach},
+  month        = may,
   year         = 2020,
+  publisher    = {Zenodo},
+  version      = {second},
+  doi          = {10.5281/zenodo.3823634},
+  url          = {https://doi.org/10.5281/zenodo.3823634}
 }
 
 ```
