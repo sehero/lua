@@ -17,7 +17,7 @@ return {
   oo   =  (function (t) print(table.concat(t,", ")) end),
   ooo  =  (function (t) return table.concat(t,", ") end),
   class=  require("ml").class,
-  csv  =  "../data/raw",
+  csv  =  "../data/raw/",
   ignore= "?",
   sep=    ",",
   tiny=   1/math.maxinteger,
