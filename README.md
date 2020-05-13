@@ -16,6 +16,7 @@ src="https://travis-ci.com/sehero/src-repo.svg?branch=master">
 </p><hr>
 
 
+<img align=right width=400 src="doc/etc/img/shadow.png">
 Lua tricks for AI
 
 
