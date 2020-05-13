@@ -16,12 +16,17 @@ check: ## look for missing executables
 test: ## test
 	cd test; sh all.sh
 
+headers: ## reset .md headers
+	@find . -name '*.md'   \
+	| grep -v ./doc.etc.doc \
+	| bash etc/headers.sh
+
 pull: ## download from Git
 	@git pull
 
 push: ## upload changes to Git
 	@git commit -am "pushing"
-	@git pull
+	@git push
 	@git status
 
 CODE=$(shell ls src/*.lua | gawk '{sub(/^src/,"$(SITE)/src"); sub(/\.lua$$/,".html"); print}')
