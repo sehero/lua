@@ -16,7 +16,7 @@ src="https://travis-ci.com/sehero/src-repo.svg?branch=master">
 </p><hr>
 
 
-<img align=center width=400 
+<img align=middle width=400 
      src="https://github.com/sehero/src/blob/master/doc/etc/img/shadow.png">
 
 
