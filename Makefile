@@ -14,7 +14,7 @@ check: ## look for missing executables
 	@bash etc/missing.sh $(WANT)
 	
 test: ## test
-	@pytest
+	cd test; sh all.sh
 
 pull: ## download from Git
 	@git pull
