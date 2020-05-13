@@ -1,0 +1,1476 @@
+
+
+%%
+%% This is file `sample-sigchi.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `sigchi')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-sigchi.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%% The first command in your LaTeX source must be the \documentclass command.
+\documentclass[sigconf,anonymous,review]{acmart}
+
+\usepackage{listings}
+\usepackage{tcolorbox}
+\newtcolorbox{blockquote}{colback=red!5!white,boxrule=0.4pt,colframe=red!50!black,fonttitle=\bfseries,top=2pt,bottom=2pt}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{color,colortbl}
+\definecolor{lightgray}{gray}{0.8}
+\usepackage{adjustbox}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+ 
+
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+\setcopyright{acmcopyright}
+\copyrightyear{2018}
+\acmYear{2018}
+\acmDOI{10.1145/1122445.1122456}
+
+%% These commands are for a PROCEEDINGS abstract or paper.
+\acmConference[Submitted to ASE '20]{35th IEEE/ACM International Conference on Automated Software Engineering}{September 21--25, 2020}{Melbourne, Australia}
+\acmBooktitle{35th IEEE/ACM International Conference on Automated Software Engineering
+  }
+\acmPrice{15.00}
+\acmISBN{978-1-4503-XXXX-X/18/06}
+
+\newcommand{\tion}[1]{\S\ref{tion:#1}}
+
+\newcommand{\fig}[1]{Figure~\ref{fig:#1}}
+
+\newcommand{\tbl}[1]{Table~\ref{tbl:#1}}
+
+
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+%%
+%% end of the preamble, start of the body of the document source.
+\definecolor{MyDarkBlue}{rgb}{0,0.08,0.45} 
+\lstset{
+    language=Python,
+    basicstyle=\sffamily\fontsize{2.5mm}{0.7em}\selectfont,
+    breaklines=true,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=l,
+    keepspaces=false,
+    showtabs=false,
+    columns=fullflexible,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\bfseries\sffamily,
+    emph={ m, r, k, frontier, cf, f, g, n, tData, nrefs, cMax, inertia, gaps,trainData, testData, Word2Vec_model, trainX, trainY, cluster, svm_models, totalDlusterY,predictedC, r, threads, predicted, data, predict,cluster_model , classification_model}, emphstyle=\bfseries\color{blue!50!black},
+    stringstyle=\color{green!50!black},
+    commentstyle=\color{red!50!black}\it,
+    numbers=left,
+    captionpos=t,
+    escapeinside={\%}{)}
+}
+
+\begin{document}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{Predicting Project Health for Open Source Projects \\(using the DECART Hyperparameter Optimizer)}
+% Learning Better Predictors  for Open Source Project Health\\ (via Hyperparameter Optimization)
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+\author{Ben Trovato}
+\authornote{Both authors contributed equally to this research.}
+\email{trovato@corporation.com}
+\orcid{1234-5678-9012}
+\author{G.K.M. Tobin}
+\authornotemark[1]
+\email{webmaster@marysville-ohio.com}
+\affiliation{%
+  \institution{Institute for Clarity in Documentation}
+  \streetaddress{P.O. Box 1212}
+  \city{Dublin}
+  \state{Ohio}
+  \postcode{43017-6221}
+}
+
+\author{Lars Th{\o}rv{\"a}ld}
+\affiliation{%
+  \institution{The Th{\o}rv{\"a}ld Group}
+  \streetaddress{1 Th{\o}rv{\"a}ld Circle}
+  \city{Hekla}
+  \country{Iceland}}
+\email{larst@affiliation.org}
+
+\author{Valerie B\'eranger}
+\affiliation{%
+  \institution{Inria Paris-Rocquencourt}
+  \city{Rocquencourt}
+  \country{France}
+}
+
+\author{Aparna Patel}
+\affiliation{%
+ \institution{Rajiv Gandhi University}
+ \streetaddress{Rono-Hills}
+ \city{Doimukh}
+ \state{Arunachal Pradesh}
+ \country{India}}
+
+\author{Huifen Chan}
+\affiliation{%
+  \institution{Tsinghua University}
+  \streetaddress{30 Shuangqing Rd}
+  \city{Haidian Qu}
+  \state{Beijing Shi}
+  \country{China}}
+
+\author{Charles Palmer}
+\affiliation{%
+  \institution{Palmer Research Laboratories}
+  \streetaddress{8600 Datapoint Drive}
+  \city{San Antonio}
+  \state{Texas}
+  \postcode{78229}}
+\email{cpalmer@prl.com}
+
+\author{John Smith}
+\affiliation{\institution{The Th{\o}rv{\"a}ld Group}}
+\email{jsmith@affiliation.org}
+
+\author{Julius P. Kumquat}
+\affiliation{\institution{The Kumquat Consortium}}
+\email{jpkumquat@consortium.net}
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+\renewcommand{\shortauthors}{Trovato and Tobin, et al.}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\begin{abstract}
+Software developed on  public platforms are a source of data that can be used to make predictions about those projects. While the activity of a single developer may be random and hard to predict, when large groups of developers work together on software projects, the resulting behavior can be predicted with good accuracy. 
+
+To demonstrate this, we use 78,455 months of data from 1,628 GitHub projects to make various predictions about the current status of those projects (as of April 2020). We find that traditional estimation algorithms make many mistakes. Algorithms like $k$-nearest neighbors (KNN), support vector regression (SVR), random forest (RFT), linear regression (LNR), and regression trees (CART) have high error rates (usually more than 50\% wrong, sometimes over 130\% wrong, median values). But that error rate can be  greatly reduced using the DECART hyperparameter optimization. DECART is a differential evolution (DE) algorithm that tunes the CART data mining system to the particular details of a specific project.
+
+To the best of our knowledge, this is the largest study yet conducted, using the most recent data, for predicting multiple health indicators of open-source projects. Further, due to our use of hyperparameter optimization, it may be the most successful. Our predictions have less than 10\% error (median value) which is much smaller than the errors seen in related work.
+
+Our results are a compelling argument for  open-sourced development. Companies that only build in-house proprietary products may be cutting themselves off from the information needed to reason about those projects.
+
+
+\end{abstract}
+
+%%
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
+%% Please copy and paste the code instead of the example below.
+%%
+\begin{CCSXML}
+<ccs2012>
+ <concept>
+  <concept_id>10010520.10010553.10010562</concept_id>
+  <concept_desc>Computer systems organization~Embedded systems</concept_desc>
+  <concept_significance>500</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10010520.10010575.10010755</concept_id>
+  <concept_desc>Computer systems organization~Redundancy</concept_desc>
+  <concept_significance>300</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10010520.10010553.10010554</concept_id>
+  <concept_desc>Computer systems organization~Robotics</concept_desc>
+  <concept_significance>100</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10003033.10003083.10003095</concept_id>
+  <concept_desc>Networks~Network reliability</concept_desc>
+  <concept_significance>100</concept_significance>
+ </concept>
+</ccs2012>
+\end{CCSXML}
+ 
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+% \keywords{Open-source, GitHub, project health,  hyperparameter optimization}
+
+\settopmatter{printacmref=false} % Removes citation information below abstract
+\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
+%\pagestyle{plain} 
+
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+
+
+
+\maketitle
+
+\section{Introduction}
+\label{sect:intro}
+Increasingly,  software is being developed using   continuous deployment methods~\cite{Paasivaara18,santos2016investigating,Hohl18,Parnin17}.
+In such projects, software is never ``finished'' in the traditional sense. Rather,
+it is  constantly being evolved in response to an ever-changing set of
+requirements. 
+
+Traditional software project estimation tools are not suited to continuous deployment projects~\cite{alexander2002working,llanos2012differences,shin2013can}. 
+For example:
+\bi
+\item
+Boehm et al.'s COCOMO model can derive    software effort estimations~\cite{boehm2000cost}, but it assumes the projects use a waterfall developing style
+(which is not compatible with open-source development). 
+\item
+ Musa et al.~\cite{musa1993operational}
+can  predict the mean time till next failure in safety critical systems. But it is hard to apply that  style of analysis   to  open-source project development since it assumes that the code base is essentially stable (which is not true for open-source projects).
+Also,     open-source projects rarely track and  accurately record their mean time between failures.
+\ei
+To better address the needs of management, the software engineering community needs new kinds of prediction systems.
+Specifically, software engineering
+managers need {\em project health indicators} that  assess the health of a project
+at some future point in time. This is useful for many reasons.
+\bi
+\item Commercial companies can avoid using open-source packages that are expected to grow unhealthy.
+\item Open-source vendors can  automatically monitor the health of the packages in their ecosystem. Those vendors can then decide what packages to eject from their next release of (e.g.) an open-source operating system.
+\item Also, for packages that are very important to an ecosystem,  vendors
+can detect and repair  packages with falling health.
+\item Lastly, for organizations that maintain large suites of open-source packages, project health indicators can intelligently decide how to move staffs between different projects.
+\ei
+In theory, predicting software project health is a complicated process. Projects that are continuously evolving are also continuously changing as they react to perpetually changing circumstances. In such  a chaotic environment, our pre-experimental intuition is that it would be very difficult to predict software project health.
+
+The good news offered in  this paper, is that such predictions are possible.
+We find that open-source projects obey the law of large numbers.
+That is, they offer   stable long-term results for the averages across the many random events within a project.
+ Writing in the 1940s~\cite{asimov50},  Asimov conjectured that while one can not foresee the actions of a particular individual, the laws of large numbers as applied to large groups of people could predict the general flow of future events. To make that argument, he
+ used the analogy of a gas: 
+ \begin{quote}
+ {\em  While it is  difficult to  predict the activity of a
+ single 
+ \underline{molecule} in a 
+ \underline{gas},       \underline{kinetic theory} can predict the mass action of the \underline{ gas} to a high level of accuracy. }
+ \end{quote}
+ 70 years later, in 2020, we can now assert that for open-source software,  Asimov's conjecture is correct. We  show that
+ \begin{quote}
+ {\em While it is  difficult to  predict the  activity of a single \underline{developer} in a \underline{project}, 
+    \underline{data mining} can predict the mass action of 
+ the \underline{project} to a high level of accuracy.}
+ \end{quote}
+ Han et al. note
+ that popular open-source projects tend to be more active~\cite{han2019characterization}. Also, many other researchers agree that healthy open-source projects need to be ``vigorous'' and ``active''~\cite{wahyudin2007monitoring,jansen2014measuring,manikas2013reviewing,link2018assessing,wynn2007assessing,crowston2006assessing}.  Hence, to assess project health, we look at project activity.
+Specifically,  using  78,455 months of data from  GitHub,  we make predictions for the   April 2020 activity within 1,628 GitHub projects;  specifically: 
+ \begin{enumerate}
+ \item The number of contributors who will work on the project; 
+ \item The number of commits that project will receive;
+ \item The number of open pull-requests in that project;
+ \item The number of closed pull-requests in that project;
+  \item The number of open issue in that project;
+ \item The number of closed issue in that project;
+ \item Project popularity trends (number of GitHub ``stars'').
+ \end{enumerate}
+ 
+ 
+ 
+
+ 
+
+  
+\noindent
+This paper is structured around the following  research questions.
+  
+
+ 
+ 
+
+ 
+
+% \textbf{RQ3: Can we collect   health-related indicators?}
+% XXX scalabilitie
+% We select useful repositories which contain open source projects, choose the health-related features, divide them monthly, and mine those data from GitHub by using GitHub APIs. The details of data collecting techniques is explained in Section~\ref{sect:empir}. In total, we collect 78,455 monthly health-related data of 1,628 open source projects from GitHub.
+
+% \begin{blockquote}
+% \noindent
+% \textbf{Answer 3}: We use GitHub APIs to select useful repositories, mining monthly health-related data from GitHub. In total we have 78,455 monthly data of 1,628 open source projects.
+% \end{blockquote}
+
+\textbf{RQ1: Can we predict   trends in project health indicators?}
+We apply five popular machine learning algorithms (i.e., KNN, SVR, LNR, RFT and CART) and one state-of-the-art hyperparameter-optimized predictor (DECART) to   1,628 open-source projects collected from GitHub. 
+Once we collected $N$ months of data, we made predictions for  the current status of each project
+(as of April 2020)
+using data from months one to  $\mathit{N-j}$  for $\mathit{j\in\{1,3,6,12\}}$  months in the past.
+ DECART's median error in those experiments is under 10\%
+ (where  this error is  calculated from  $\mathit{error}=100*|p-a|/a$  using the predicted $p$ and actual $a$  values  seen after   training on past months and testing for the April 2020 values). Hence, we say:
+
+% Main results for1 month: using all learners
+
+% But does that work for 3,6,12 months our (just DECART)
+
+% Oops… median mres of zero. Worry  are we rpeidcting in the smiple zoe when there is no more activity?  So does this work for mid-lifecycle as well
+
+\begin{blockquote}
+\noindent
+\textbf{Answer 1}: Many project health indicators can be predicted, with good accuracy, for 1, 3, 6, 12   months into the future.
+\end{blockquote} 
+
+\textbf{RQ2: What features matter the most in prediction?}
+To find the most important features that have been used for prediction, we look into the internal structure of the best predicting model, and count the number of times that each feature has been used when predicting the monthly trends.
+
+
+\begin{blockquote}
+\noindent
+\textbf{Answer 2}: In our study, ``monthly\_ISSUEcomments'', ``monthly\_commit'', ``monthly\_fork'' and ``monthly\_star'' are the most important features, while ``monthly\_PRmerger'' is the least used feature for all seven health indicators' predictions.
+\end{blockquote}
+
+
+
+\textbf{RQ3: Which methods achieve the best prediction performance?}
+We compare the performance results of each method on all 1,628 open-source projects and predicting for 1, 3, 6, and 12 months into the future. After a statistical comparison between different learners, we find that:  
+
+\begin{blockquote}
+\noindent
+\textbf{Answer 3}: DECART generates better predicting performance than other methods in 91\% of our 1,628 projects.
+\end{blockquote}
+
+
+
+ 
+Overall, the main contributions of this paper are as follows:
+\bi
+\item  
+We demonstrate that it is possible to accurately  predict the health indicators of software projects for 1, 3, 6, 12 months into the future.
+\item For  researchers wishing to reproduce/improve/refute our conclusions, we offer a  collection of 78,455 health-related monthly data from 1,628 GitHub repositories. 
+% \item A searching criteria to rapidly find open source project related repositories on GitHub.
+\item We also show that, for this data, hyperparameter optimization is effective and fast for predicting project health indicators.
+
+\ei 
+ 
+
+  
+ 
+ 
+This paper is organized as follows:
+Section~\ref{sect:related} explains the related work on software analytics of open-source projects, and the difference between our work and prior studies.
+Section~\ref{sect:backg} introduces the current problems of open-source software development, the background of software project health, and the techniques for related studies.
+After that, Section~\ref{sect:empir} describes open-source project data mining and the experiment setup details. 
+Section~\ref{sect:resul} presents the experimental results and answers the research questions. 
+This is followed by Section~\ref{sect:discu} and Section~\ref{sect:threa}, which discuss the findings from the experiment and the potential threats in the study. 
+Finally, the conclusions and future works are given in Section~\ref{sect:concl}.
+
+ 
+
+For a replication package of this work, please see   \url{https://github.com/randompeople404/health_indicator_2020}.
+\vspace{-3mm}
+
+
+\section{Related Work}
+\label{sect:related}
+
+ 
+Our study stands out from prior work in several ways.
+
+Firstly, we {\bf use more current data than prior studies}.
+To the best of our knowledge, this is the largest study yet conducted, using the most recent data,  for predicting multiple health indicators of open-source projects.
+Looking at prior work that studied multiple health indicators,
+two closely  comparable studies to this paper are {\em Healthy or not: A way to predict ecosystem health in GitHub} by 
+Liao et al.~\cite{liao2019healthy}
+and{ \em A Large Scale Study of Long-Time Contributor Prediction for GitHub Projects} by
+Bao et al.~\cite{bao2019large}.
+Those papers studied 52 and 917 projects, respectively, while we explore 1,628 projects. Further, much of our data is current (we predict for April 2020 values) while much prior work uses project data that is years to decades old~\cite{sarro2016multi}.
+
+Secondly, we explore {\bf different kinds of predictions} than prior work. For example, the goal of the
+Bao et al.'s paper is to predict if 
+a programmer will become a long term  contributor to GitHub project.
+While this is certainly   an important question, it is a question about {\em individuals} within a project. The goal of our paper is to offer management advice at a  {\em project level}.
+
+Thirdly, we explore {\bf more kinds of predictions}
+than prior work.
+Much of the  prior work in open-source project just predicts a single feature (e.g.~\cite{borges2016predicting,kikas2016using,chen2014predicting,weber2014makes,bao2019large}).   
+Our work is not about applying sophisticated methods to predict a particular goal. Rather, our work shows that it is effective to predict multiple goals in GitHub data, without using techniques specialized for  each goal.
+This paper reports success on nearly all the indicators that we explore.  Hence, 
+we conjecture that there could be many more aspects of open-source projects that could
+be accurately predicted using methods like DECART (and this would be a fruitful area for future research).
+
+Fourthly, our study have {\bf better predicting results than those reported previously} in the software estimation literature. 
+Recall that   we achieve error rates under 10\%.
+It is hard to directly compare that number against many other results
+(due to differences in experimental conditions). But what is true is  that prior researchers were  content with only
+semi-approximate predictions.
+Bao et al.'s predictions for 12  months into the future were still 25\% away from the best possible value (see Table~25 of~\cite{bao2019large}).
+Sarro et al.'s ICSE'16  paper argues for the superiority of their preferred techniques after seeing error rates in five datasets
+of 25, 30, 40, 45, 55\% (see Figure 1a of~\cite{sarro2016multi}).
+And as for Boehm et al.~\cite{boehm2000cost}, they had very low expectations for his COCOMO estimation system.
+Specifically, they declared success if estimations were less than 30\% wrong.
+ 
+We conjecture that our error rates are so low since,
+fifthly, we use {\bf arguably better technology} than prior work. 
+Most of the prior work neglect to tune the control parameters of their learners.
+This is not ideal since some recent research in SE reports that such tuning can significantly improve the performance of models used in software analytics~\cite{Tantithamthavorn16,fu2016differential,Fu2016TuningFS,agrawal2018betterdata,agrawal2019dodge,agrawal2018better}.
+Here,  we use
+a technology called ``differential evolution'' (DE, explained below) to automatically tune  our learners.
+% Bao et al. use another   automatic tuning method called  grid search (described  in Section~\ref{tion:lit}). 
+% As discussed in   Section~\ref{sect:backg}, we do not recommend that method. In support of that recommendation, 
+In a result that endorses our use of  this kind of hyperparameter optimization,
+we note that with DE, we achieve very low error rates (less than 10\%).
+
+
+ 
+
+\section{Background}
+\label{sect:backg}
+\subsection{Why Study Project Health?}
+In 2020, open-source projects dominate the software developing environment\cite{Paasivaara18,santos2016investigating,Hohl18,Parnin17}.
+Over 80\% of the software in any technology product or service are now open-source~\cite{zemlin2017}. 
+With so many projects now being open-source, a natural next question is ``which of these project are any good?"' and ``which should I avoid?''.
+ In other words, we now need to assess
+ the   {\em health condition} of open-source projects before using them.
+ 
+ 
+ There are many business scenarios within which the predictions of this paper would be very useful.
+For example,
+many commercial companies   use open-source packages in the products they sell to customers. For that purpose,
+commercial companies want to use packages that are predicted to stay healthy for some time to come. If otherwise, the open-source community stops maintaining those
+packages,
+then those companies
+will be forced into maintaining open-source packages which that they did not build and, hence,   may not fully understand.
+
+Another case where commercial organizations can use project health predictions is the issue
+of {\em ecosystem package management}.
+Red Hat  is very interested in project health indicators that can be automatically applied to tens of thousands of projects. 
+ When Red Hat releases a new version of systems, the  24,000+ software packages included in that distribution are   delivered to tens of millions of machines, around the world.  Red Hat seeks automatic project health indicators that let it:
+\bi
+\item Decide what packages should not be included in the next distribution (due to falling health);
+\item Detect, then repair, falling health in   popular packages.
+For example, in 2019, Red Hat's engineers
+noted that a particularly popular  project was falling from favor with other developers since its regression test suite was not keeping up with current changes. With just a few thousand dollars, Red Hat used crowd sourced programmers
+to generate the tests that made the package viable again~\cite{stewart19}.
+\ei
+Yet another use case where project health predictions would be useful is {\em software staff management}.
+  Thousands of IBM developers maintain dozens of    large open-source toolkits. 
+ IBM needs to know the expected workload within those projects, several months in advance~\cite{krishna2018connection}.
+ Predictions such as those discussed in this paper can advise when  there are too many developers working on one project, and not enough working on another.
+Using this information,
+ IBM management  can    ``juggle'' that staff around multiple  projects in order to match   expected workload to the available staff. 
+ For example, 
+ \bi
+ \item
+ If a spike is expected a few months for the number of pull
+ requests,    management might move extra staff over to that project a couple of months earlier (so that staff can learn that code base). 
+ \item When handling  the training of newcomers, it is unwise to drop novices into some high stress scenarios where too few programmers are struggling to handle a large work load with too few personnel.
+ \item It is also useful to know when the predicted workload for a project is predicted to be stable or decreasing. In that use case, it is not ill-advised to move staff to other problems in order to 
+ \bi
+ \item
+ Accommodate the requests of seasoned programmers who want to either (a) learn new technologies as part of their career development; or (b)
+ alleviate boredom;
+ \item Resolve personnel conflict issues.
+ \ei
+ \ei
+ \subsection{Who Studies Project Health?}
+For all the above reasons,
+numerous studies and organizations are exploring the health or development features of open-source projects.
+For example:
+\bi
+\item
+Jansen et al. introduce an OSEHO (Open Source Ecosystem Health Operationalization) framework, using productivity, robustness and niche creation to measure the health of software ecosystem~\cite{jansen2014measuring}.
+\item
+Manikas et al. propose a logical framework for defining and measuring the software ecosystem health consisting of the health of three main components (actors, software and  orchestration)~\cite{manikas2013reviewing}.
+% \item
+% Liao et al. use vigor, organizational structure, and resilience as indicators to predict the health of GitHub project~\cite{liao2019healthy}. 
+\item
+A community named ``CHAOSS'' (Community Health Analytics for Open Source Software) contributes on developing metrics, methodologies, and software from a wide range of open-source projects to help expressing open-source project health and sustainability~\cite{chaoss}.
+\item
+ Weber et al. mine   Python projects using  a random forest classifier to predict project popularity (which they define as  the star velocity in their study)~\cite{weber2014makes}.
+%  \item
+% Aggarwal et al. investigate the relationship between project popularity and changes in its documentation. For the measurement of popularity, they use projects' stars, forks and pulls as indicators, and find evidence that popular projects exhibited consistent documentation effort which attract more documentation collaborators~\cite{aggarwal2014co}.
+\item
+Borges et al. claim that the number of stars of a repository is a direct measure of its popularity, in their study, they use a model with multiple linear regressions to predict the number of stars to estimation the popularity of GitHub repositories~\cite{borges2016predicting}.
+% \item
+% Han et al. conduct an online surveys with GitHub
+% users to determine the threshold (the number of stars of a
+% project) of popular and unpopular projects, and use random forest for their popularity prediction~\cite{han2019characterization}.
+\item
+Kikas et al. build random forest models to predict the issue close time of more than 4,000 GitHub projects, with multiple static, dynamic and contextual features. They report that the dynamic and contextual features are critical in such predicting tasks~\cite{kikas2016using}.
+\item
+Jarczyk et al. use generalized linear models for prediction of issue closure rate. Based on multiple features (stars, commits, issues closed by team, etc.), they find that larger teams with more project members have lower issue closure rates than smaller teams. While increased work centralization improves issue closure rates~\cite{jarczyk2018surgical}. 
+\item
+For yet more examples, see~\cite{wang2018will,bao2019large,qi2017software,chen2014predicting,aggarwal2014co,han2019characterization,liao2019healthy}.
+\ei
+
+% Some research focus on the developing information from project contributors. Wang et al. propose a predicting model using regression analysis to find potential long-term contributors (through their capacity, willingness, and the opportunity to contribute at the time of joining). They validate their methods on ``Ruby on Rails'', one a large and popular project on GitHub~\cite{wang2018will}. 
+% Bao et al. use a set of methods (Naive Bayes, SVR, Decision Tree, KNN and Random Forest) on 917 projects from GHTorrent to predict long term contributors (which they determine them as the time interval between their first and last commit in the project is larger than a threshold.), they create a benchmark for the result and find random forest achieves the best performance~\cite{bao2019large}.
+
+% For study related issue closing, Kikas et al. build random forest models to predict the issue close time of more than 4,000 GitHub projects, with multiple static, dynamic and contextual features. They report that the dynamic and contextual features are critical in such
+% predicting tasks~\cite{kikas2016using}.
+% Jarczyk et al. use generalized linear models for prediction of issue closure rate. Based on multiple features (stars, commits, issues closed by team, etc.), they find that larger teams with more project members have lower issue closure rates than smaller teams. While increased work centralization improves issue closure rates~\cite{jarczyk2018surgical}. 
+
+% Other developing related feature predictions also include the information of commits, which is used by Qi et al. in their software effort estimation research of open source projects, where they treat the number of commits is an indicator of human effort~\cite{qi2017software}.
+% Also for the number of forks, which Chen et al. use linear regression models on 1,000 GitHub projects to predict, they conclude this prediction could help GitHub to recommend popular projects, and guide developers to find projects which are likely to succeed and worthy of their contribution~\cite{chen2014predicting}.
+
+
+
+\subsection{How to Study Project Health?}
+\label{tion:lit}
+
+
+In March 2020, we explored the literature looking for how prior researchers have explored project health. 
+Starting with venues listed at Google Scholar Metrics 
+``software systems''\footnote{\url{https://scholar.google.com/citations?view_op=top_venues&hl=en&vq=eng_softwaresystems}}, we searched for highly cited or very recent papers discussing 
+{\em software analytics, project health, open  source systems} and {\em GitHub predicting}.
+%  For our purposes,  ``highly cited'' was defined to mean  ten citations per year or more. 
+We found:
+\bi
+\item In the past five years (2014 to 2019), there were at least 30 related papers.
+\item 10 of those papers looked at least one of the seven project health indicators we listed in our introduction~\cite{liao2019healthy,borges2016predicting,jarczyk2018surgical,kikas2016using,qi2017software,aggarwal2014co,chen2014predicting,han2019characterization,weber2014makes,bidoki2018cross}.
+\item 3 of those papers explored multiple indicators~\cite{liao2019healthy,jarczyk2018surgical,bidoki2018cross}.
+\item None of those papers explored all the indicators explored in our study. 
+\ei
+As to the technology used in that sample, of the above
+related papers,   the preferred learners was usually just one of the following:
+\bi
+\item  LNR: {\em linear regression} model that builds regression methods to fit the data to a parametric equation; 
+\item CART: {\em decision tree learner} for classification and regression;
+\item RFT:  {\em random forest}   that builds multiple regression trees, then report the average conclusion across that forest;
+\item KNN:  {\em k-nearest neighbors} that makes conclusions by average across nearby examples;
+\item SVR:   {\em support vector regression} uses the regressions that take the quadratic optimizer used in support vector machines and uses it to learn a parametric equation that predicts for a numeric class. 
+\ei
+Hence, for this study, we use the above learners as baseline methods. The implementation of them are obtained from Scikit-Learn~\cite{pedregosa2011scikit}. Unless being adjusted by differential evolution (discussed below), all these are run with the default settings from off-the-shelf Scikit-Learn.
+
+
+Of the above related work, a study by 
+Bao et al. from TSE'19 seems very close to our work~\cite{bao2019large}. 
+They explored multiple learning methods for their predicting tasks.
+Further, while the other papers used learners with their off-the-shelf settings, Bao et al. took care to tune the control
+parameters of their learners.
+Much recent research in SE reports that such tuning can significantly improve the performance of models used in software analytics~\cite{Tantithamthavorn16,fu2016differential,Fu2016TuningFS,agrawal2018betterdata,agrawal2019dodge,agrawal2018better}. The ``grid-search-like'' method they used was a set of nested for loops that looped over the various control parameters of the learners (so a grid search for, say, three parameters would contain three nested for loops). 
+
+We consider following the similar study as Bao et al., but decide to explore some other different aspects for several reasons:
+
+
+    
+    
+% We considered exploring the same data and goals as Bao et al. but decided against it for several reasons:
+\bi
+\item
+Their data was not available to other researchers. 
+\item
+They explored one goal (predicting if a committer will be a long term contributor) while we want to see if it is possible to predict multiple project health indicators.
+\item
+Grid search is not recommended by the data mining literature. Bergstra et al. warn that grid search suffers from the \textit{curse of dimensionality}~\cite{bergstra2011algorithms}. That is, for any particular dataset and learner, the searching space of useful hyperparameters is a tiny fraction of the total space. A grid search that explores all the tuning options, which is in fine enough details
+to accommodate all learners and datasets, can be very slow.
+Hence, (a)~most grid search algorithms take ``large steps'' in their parameter search; and (b)~those large steps may miss the most useful settings
+of a particular learner/dataset~\cite{bergstra2011algorithms}.
+\ei
+The weaker performance of grid search is not just a theoretical possibility. Experimental results show that  grid search can   miss important options and performs worse than very simple alternatives~\cite{fu2016differential}. Also, grid search can run needlessly slow since,
+often, only a few of the tuning hyperparameters really matter~\cite{Bergstra:2012}. 
+
+Accordingly, for this paper, we search control hyperparameters for our learners using  another hyperparameter optimizer called Differential Evolution (DE)~\cite{storn1997differential}.
+We use DE since prior work found it fast and comparatively more effective than grid search for other kinds of software analytic problems (e.g., defect prediction~\cite{fu2016differential,Fu2016TuningFS}). Also, DE has a long history of successful application in the optimization research area, dating back to 1997~\cite{storn1997differential}. For example, Google Scholar reports that the original DE paper now has 22,906 citations (as of May 5, 2020) and that algorithm is still the focus of  much on-going research~\cite{das2010differential,wu2018ensemble,das2016recent}.  Further, as part of this study, we spent months benchmarking DE against several other hyperparameter optimizers published since 1997. We found that DE work just as well as anything else, ran much faster, and its associated code base was much simpler to build and maintain. 
+
+ The pseudocode of DE algorithm is shown in \fig{pseudo_DE}. The premise of that code is that the best way to mutate the existing tunings is to extrapolate between current solutions (stored in the {\em frontier} list). Three solutions $x, y, z$ are selected at random from the {\em frontier}. For each tuning parameter $j$, at some probability $cf$, DE  replaces the old tuning $x_j$ with {\em new}  where
+\mbox{$\mathit{new}_j = x_j + f \times (y_j - z_j)$}
+where $f$ is a parameter controlling differential weight.  
+
+
+ \begin{figure}[!t]
+    \small 
+    \begin{lstlisting}[mathescape,linewidth=7.5cm,frame=none,numbers=right ]
+      def DE(np=20, cf=0.75, f=0.3, lives=10):  # default settings
+        frontier = # make "np" number of random guesses
+        best = frontier.1 # any value at all
+        while(lives$--$ > 0): 
+          tmp = empty
+          for i = 1 to $|$frontier$|$: # size of frontier
+             old = frontier$_i$
+             x,y,z = any three from frontier, picked at random
+             new= copy(old)
+             for j = 1 to $|$new$|$: # for all attributes
+               if rand() < cf    # at probability cf...
+                  new.j = $x.j + f(z.j - y.j)$  # ...change item j
+             # end for
+             new  = new if better(new,old) else old
+             tmp$_i$ = new 
+             if better(new,best) then
+                best = new
+                lives++ # enable one more generation
+             end
+          # end for
+         frontier = tmp
+         lives--
+        # end while
+        return best
+    \end{lstlisting} 
+    \caption{Differential evolution. Pseudocode based on Storn's algorithm~\cite{storn1997differential}.}
+    \label{fig:pseudo_DE} 
+    \vspace{-0.3cm}
+    \end{figure}
+\begin{table}[!b]
+\caption{The hyperparameters to be tuned in CART.}
+\label{tbl:cart}
+\begin{adjustbox}{max width=0.48\textwidth}
+\begin{tabular}{l|c|c|l}
+\rowcolor[HTML]{BDBDBD} 
+{\color[HTML]{000000} Hyperparameter} & \multicolumn{1}{l|}{\cellcolor[HTML]{BDBDBD}{\color[HTML]{000000} Default}} & \multicolumn{1}{l|}{\cellcolor[HTML]{BDBDBD}{\color[HTML]{000000} Tuning Range}} & {\color[HTML]{000000} Description} \\ \hline
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} max\_feature} & {\color[HTML]{000000} None} & {\color[HTML]{000000} {[}0.01, 1{]}} & {\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}Number of features to consider \\ when looking for the best split\end{tabular}} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} max\_depth} & {\color[HTML]{000000} None} & {\color[HTML]{000000} {[}1, 12{]}} & {\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}The maximum depth of the \\ decision tree\end{tabular}} \\
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} min\_sample\_leaf} & {\color[HTML]{000000} 1} & {\color[HTML]{000000} {[}1, 12{]}} & {\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}Minimum samples required to \\ be at a leaf node\end{tabular}} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} min\_sample\_split} & {\color[HTML]{000000} 2} & {\color[HTML]{000000} {[}0, 20{]}} & {\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}Minimum samples required to \\ split internal nodes\end{tabular}}
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+  
+
+\begin{table}[!b]
+\caption{Repository selecting criteria.}
+\label{tbl:select}
+\begin{adjustbox}{max width=0.48\textwidth}
+\begin{tabular}{l|l}
+\rowcolor[HTML]{BDBDBD} 
+{\color[HTML]{000000} Filter} & {\color[HTML]{000000} Explaination} \\ \hline
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} is:public} & {\color[HTML]{000000} select open-source repo} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} archived:false} & {\color[HTML]{000000} exclude archived repo} \\
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} mirror:false} & {\color[HTML]{000000} exclude duplicate repo} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} stars:1000..20000} & {\color[HTML]{000000} select relatively popular repo} \\
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} size:\textgreater{}=10000} & {\color[HTML]{000000} exclude too small repo} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} forks:\textgreater{}=10} & {\color[HTML]{000000} select repo being forked} \\
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} created:\textgreater{}=2015-01-01} & {\color[HTML]{000000} select relatively new repo} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} created:\textless{}=2016-12-31} & {\color[HTML]{000000} select repo with enough monthly data} \\
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} contributor:\textgreater{}=3} & {\color[HTML]{000000} exclude personal repo} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} total\_commit:\textgreater{}=1000} & {\color[HTML]{000000} select repo with enough commits} \\
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} total\_issue\_closed:\textgreater{}=50} & {\color[HTML]{000000} select repos with enough issues} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} total\_PR\_closed:\textgreater{}=50} & {\color[HTML]{000000} select repos with enough pull-request} \\
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} recent\_PR:\textgreater{}=1 (30 days)} & {\color[HTML]{000000} exclude inactive repo without PR} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} recent\_commit:\textgreater{}=1 (30 days)} & {\color[HTML]{000000} exclude inactive repo without commits}
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+ 
+\begin{table}[!b]
+\caption{Dictionary of ``irrelevant'' words. We do not use data from projects whose URL includes the following keywords.}
+\label{tbl:dict}
+\begin{adjustbox}{max width=0.48\textwidth}
+\begin{tabular}{ccccccc}
+\rowcolor[HTML]{BDBDBD} 
+\multicolumn{7}{c}{\cellcolor[HTML]{BDBDBD}{\color[HTML]{000000} Suspicious Keywords}} \\ \hline
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} template} & {\color[HTML]{000000} web} & {\color[HTML]{000000} tutorial} & {\color[HTML]{000000} lecture} & {\color[HTML]{000000} sample} & {\color[HTML]{000000} note} & {\color[HTML]{000000} sheet} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} book} & {\color[HTML]{000000} doc} & {\color[HTML]{000000} image} & {\color[HTML]{000000} video} & {\color[HTML]{000000} demo} & {\color[HTML]{000000} conf} & {\color[HTML]{000000} intro} \\
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} class} & {\color[HTML]{000000} exam} & {\color[HTML]{000000} study} & {\color[HTML]{000000} material} & {\color[HTML]{000000} test} & {\color[HTML]{000000} exercise} & {\color[HTML]{000000} resource} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} article} & {\color[HTML]{000000} academic} & {\color[HTML]{000000} result} & {\color[HTML]{000000} output} & {\color[HTML]{000000} resume} & {\color[HTML]{000000} cv} & {\color[HTML]{000000} guide} \\
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} present} & {\color[HTML]{000000} slide} & {\color[HTML]{000000} 101} & {\color[HTML]{000000} qa} & {\color[HTML]{000000} view} & {\color[HTML]{000000} form} & {\color[HTML]{000000} course} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} org} & {\color[HTML]{000000} collect} & {\color[HTML]{000000} pdf} & {\color[HTML]{000000} learn} & {\color[HTML]{000000} blog} & {\color[HTML]{000000} lesson} & {\color[HTML]{000000} pic} \\
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} paper} & {\color[HTML]{000000} camp} & {\color[HTML]{000000} summit} & {\color[HTML]{000000} work} & {\color[HTML]{000000} wiki} & {\color[HTML]{000000} thesis} & {\color[HTML]{000000} lang}
+\end{tabular}
+\end{adjustbox}
+\end{table}
+  
+
+ 
+The main loop of DE runs over the {\em frontier} of size $np$, replacing old items with new candidates (if new candidate is better). This means that, as the loop progresses, the {\em frontier}  contains increasingly more valuable solutions (which, in turn,
+helps   extrapolation since the next time we pick $x,y,z$, we get better candidates.). 
+
+DE's loops keep repeating till it runs out of {\em lives}. The number of {\em lives} is decremented for each loop (and  incremented every time we find a better solution).
+
+Our initial  experiments 
+showed that of all these off-the-shelf learners, the CART regression tree learner was performing best. Hence, we combine CART with differential evolution to create the DECART hyperparamter  optimzier for CART regression trees. 
+Taking advice from  Storn and Fu et al.~\cite{storn1997differential,Fu2016TuningFS}, we set DE's configuration parameters to $\{\mathit{np, cf, f, \mathit{lives}}\}=\{20,0.75,0.3,10\}$. The CART hyperparameters we control via DE are shown in Table~\ref{tbl:cart}.
+
+
+ 
+
+
+% \subsection{Predicting Methods}
+% Many machine learning algorithms have been used for the prediction related to software project development. 
+% Random Forest~\cite{breiman2001random}, Linear Regression~\cite{freedman2009statistical} and Support Vector Machine~\cite{chang2011libsvm} are such instances of regression methods. Random  Forest (RFT) is an ensemble learning method for regression (and classification) tasks that builds a set of trees when training the model. To make the final prediction, it uses the mode of the classes (classification) or mean prediction (regression) of the individual trees.
+% Linear Regression (LNR) fits a linear model with coefficients \mbox{$w = (w_1,...,w_p)$} to minimize the residual sum of squares between the observed targets in the dataset, and the targets predicted by the linear approximation.
+% Support Vector Machine (SVR) uses kernel functions to project
+% the data onto a new hyperspace where complex non-linear patterns
+% can be simply represented.  
+% Another learning approach is to use a Nearest Neighbor method (KNN)~\cite{shepperd1997estimating}. 
+% For each test instance, KNN then selects   $k$ similar analogies out of a training set. The resultant prediction is the the mean of the 
+% class value of those $k$ neighbors.
+
+
+% Some algorithm-based estimators use regression trees such as CART~\cite{brieman84}.
+% CART is a  tree learner that divides a dataset, then recurses
+% on each split.
+% If data contains more than {\em min\_sample\_split}, then a split is attempted.
+% On the other hand, if a split contains no more than {\em min\_samples\_leaf}, then the recursion stops. 
+% CART finds the features whose ranges contain rows with least variance in the number
+% of defects. If an  feature ranges $r_i$ is found in 
+% $n_i$ rows each with an effort  variance of $v_i$, then CART seeks the  feature with a split that most
+% minimizes $\sum_i \left(\sqrt{v_i}\times n_i/(\sum_i n_i)\right)$.
+
+
+
+
+
+
+% \textit{Bayesian Optimization}~\cite{pelikan1999simple} works by assuming the unknown function was sampled from a Gaussian Process and maintains a posterior distribution for this function as observation are made. However, it might not be well-suited for optimization over continuous domains with large number of dimensions~\cite{frazier2018tutorial}.
+
+
+
+
+
+
+
+
+\section{Methods}
+\label{sect:empir} 
+\subsection{Data Collection}
+\label{sect:data_collect}
+% The experiment data used in our study are collected from GitHub by using GitHub APIs. We begin, we first  selected a set of repositories which are appropriate for the study.
+% Next we extract information from those repositories.
+
+Kalliamvakou et al. warns that  many repositories on GitHub are not suitable for   software engineering research~\cite{kalliamvakou2016depth}. We follow their advice and apply a related criteria (with GitHub GraphQL API) for finding useful URLs of related projects (see Table~\ref{tbl:select}).
+After that, to remove repositories with irrelevant topics such as ``books'', ``class projects'' or ``tutorial docs'', etc., we create a dictionary of ``suspicious words of irrelevancy'', and remove URLs which contain words in that dictionary (see  Table~\ref{tbl:dict}). After applying the criteria of Table~\ref{tbl:select} and Table~\ref{tbl:dict}, that left us with 1,628 projects. From these repositories, we extract features across 78,455 months of data.
+
+
+Currently, there is no unique and consolidated definition of software project health~\cite{jansen2014measuring,liao2019healthy,link2018assessing}.
+However,  most researchers agree that healthy open-source projects need to be ``vigorous'' and ``active''~\cite{wahyudin2007monitoring,jansen2014measuring,manikas2013reviewing,link2018assessing,wynn2007assessing,crowston2006assessing}. As Han et al. mentioned, popular open-source projects tend to be more active~\cite{han2019characterization}. In our study, we select 7 features as health indicators of open-source project on GitHub: number of commits, contributors, open pull-requests, closed pull-requests, open issues, closed issues and stars. The first six features are important GitHub features to indicate the activities of the projects, while the last one is widely used as a symbol of GitHub project's popularity~\cite{borges2016understanding,han2019characterization,aggarwal2014co}.
+
+All the features collected from each project in this study 
+are listed in  \tbl{feature}. These features are carefully selected because some of them were used by other researchers who explore related
+GitHub studies~\cite{coelho2020github, yu2016reviewer, han2019characterization}.  
+
+
+
+
+
+
+
+% Formally, this means that our conclusions are based on what
+% Schouten et al.describe as
+%  {\em indicators}~\cite{schouten2010indicators} rather than direct measures. Indicator-based reasoning is often used as a method to take steps closer to intangible/ abstract/ expensive vision. For example,
+%  in statistics, Schouten relied on indicators to support large survey data collection monitoring \cite{schouten2010indicators}. Also, in SE, Lamsweerde used indicators to evaluate the degree of fulfillment of goals \cite{vanLamsweerde2009_requirement}.
+%  Further, in business 
+%  management, Kaplan and Norton \cite{kaplan1996using} offered a four-layer ``perspectives diagram'' that implements the bridge from high-level and intangible business goals down
+%  to observable entities, i.e. indicators (at the time of this
+%  writing, that paper has  9800+ citations in Google Scholar).
+ 
+ 
+
+
+
+% \subsection{Methods}
+% In our experiment, we use five classical machine learning algorithms and one hyperparameter-optimized method for the prediction tasks. These five classical machine learning algorithms are Nearest Neighbors, Support Vector Machines, Linear Regression, Random Forest and Regression Tree (we call them KNN, SVR, LNR, RFT and CART). We use these methods as baselines since they are widely applied in related research [cite here]. The configuration of those baselines follow the default suggestions from Scikit-learn.
+
+% Since our predicting tasks of open source project differ from traditional software developing related estimation. In our study, we decide not to apply the methods designed for them (e.g. ATLM~\cite{Whigham:2015}, LP4EE~\cite{SarroTOSEM2018} or ROME~\cite{xia2019sequential} for effort estimation).
+
+% Beyond the baseline methods, we applied a hyperparameter-optimized estimator, named ``DECART''. This method use differential evolution algorithm as an optimizer to tune the hyperparameter of regression tree (CART), and use this tuned CART to get predict results. We use CART as the one to be optimized rather than other algorithms is because CART gets relatively better performance compared to other baselines, we will show the performance result in section~\ref{sect:resul}. DECART-like estimator got good performance in previous research of defect prediction and effort estimation~\cite{fu2016tuning,xia2018hyperparameter}, we use it here to see if it works in new task about project health.
+
+\begin{table}[!t]
+\caption{Project health indicators.   ``PR''= pull requests.  When predicting feature ``X'' (e.g. \# of commits), we re-arrange the data such the dependent variable is ``X'' and the independent variables are the rest.
+}
+\label{tbl:feature}
+\begin{adjustbox}{max width=0.48\textwidth}
+\footnotesize
+\begin{tabular}{lllc}
+\rowcolor[HTML]{CCCCCC} 
+{\color[HTML]{000000} Dimension} & {\color[HTML]{000000} Feature} & {\color[HTML]{000000} Description} & \multicolumn{1}{l}{\cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} Predict?}} \\ \hline
+{\color[HTML]{000000} Commits} & {\color[HTML]{000000} \# of commits} & {\color[HTML]{000000} monthly number of commits} & {\color[HTML]{000000} \cmark} \\ \hline
+{\color[HTML]{000000} } & {\color[HTML]{000000} \# of open PRs} & {\color[HTML]{000000} monthly number of open PRs} & {\color[HTML]{000000} \cmark} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} \# of closed PRs} & {\color[HTML]{000000} monthly number of closed PRs} & {\color[HTML]{000000} \cmark} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} \# of merged PRs} & {\color[HTML]{000000} monthly number of merged PRs} & {\color[HTML]{000000} } \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} \# of PR mergers} & {\color[HTML]{000000} monthly number of PR mergers} & {\color[HTML]{000000} } \\
+\multirow{-5}{*}{{\color[HTML]{000000} \begin{tabular}[c]{@{}l@{}}Pull\\ Requests\end{tabular}}} & {\color[HTML]{000000} \# of PR comments} & {\color[HTML]{000000} monthly number of PR comments} & {\color[HTML]{000000} } \\ \hline
+{\color[HTML]{000000} } & {\color[HTML]{000000} \# of open issues} & {\color[HTML]{000000} monthly number of open issues} & {\color[HTML]{000000} \cmark} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} \# of closed issues} & {\color[HTML]{000000} monthly number of closed issues} & {\color[HTML]{000000} \cmark} \\
+\multirow{-3}{*}{{\color[HTML]{000000} Issues}} & {\color[HTML]{000000} \# of issue comments} & {\color[HTML]{000000} monthly number of issue comments} & {\color[HTML]{000000} } \\ \hline
+{\color[HTML]{000000} } & {\color[HTML]{000000} \# of contributors} & {\color[HTML]{000000} monthly number of active contributors} & {\color[HTML]{000000} \cmark} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} \# of stargazers} & {\color[HTML]{000000} monthly increased number of stars} & {\color[HTML]{000000} \cmark} \\
+\multirow{-3}{*}{{\color[HTML]{000000} Project}} & {\color[HTML]{000000} \# of forks} & {\color[HTML]{000000} monthly increased number of forks} & {\color[HTML]{000000} }
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\begin{table}[!t]
+\caption{ Summary of our  1,628 projects. \mbox{IQR = (75-25)th} percentile. }
+\label{tbl:data}
+% \small
+\begin{adjustbox}{max width=0.42\textwidth}
+\begin{tabular}{l|cccc}
+\rowcolor[HTML]{BDBDBD} 
+{\color[HTML]{000000} Feature} & \multicolumn{1}{c}{\cellcolor[HTML]{BDBDBD}{\color[HTML]{000000} Min}} & \multicolumn{1}{c}{\cellcolor[HTML]{BDBDBD}{\color[HTML]{000000} Max}} & \multicolumn{1}{c}{\cellcolor[HTML]{BDBDBD}{\color[HTML]{000000} Median}} & \multicolumn{1}{c}{\cellcolor[HTML]{BDBDBD}{\color[HTML]{000000} IQR}} \\\hline
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} monthly commits} & {\color[HTML]{000000} 0} & {\color[HTML]{000000} 2607} & {\color[HTML]{000000} 19} & {\color[HTML]{000000} 55} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} monthly contributors} & {\color[HTML]{000000} 0} & {\color[HTML]{000000} 176} & {\color[HTML]{000000} 3} & {\color[HTML]{000000} 5} \\
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} monthly stars} & {\color[HTML]{000000} 0} & {\color[HTML]{000000} 6161} & {\color[HTML]{000000} 32} & {\color[HTML]{000000} 51} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} monthly opened PRs} & {\color[HTML]{000000} 0} & {\color[HTML]{000000} 341} & {\color[HTML]{000000} 2} & {\color[HTML]{000000} 9} \\
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} monthly closed PRs} & {\color[HTML]{000000} 0} & {\color[HTML]{000000} 164} & {\color[HTML]{000000} 0} & {\color[HTML]{000000} 1} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} monthly merged PRs} & {\color[HTML]{000000} 0} & {\color[HTML]{000000} 329} & {\color[HTML]{000000} 1} & {\color[HTML]{000000} 7} \\
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} monthly PR mergers} & {\color[HTML]{000000} 0} & {\color[HTML]{000000} 33} & {\color[HTML]{000000} 1} & {\color[HTML]{000000} 1} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} monthly PR comments} & {\color[HTML]{000000} 0} & {\color[HTML]{000000} 2785} & {\color[HTML]{000000} 3} & {\color[HTML]{000000} 28} \\
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} monthly open issues} & {\color[HTML]{000000} 0} & {\color[HTML]{000000} 217} & {\color[HTML]{000000} 0} & {\color[HTML]{000000} 3} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} monthly closed issues} & {\color[HTML]{000000} 0} & {\color[HTML]{000000} 5943} & {\color[HTML]{000000} 10} & {\color[HTML]{000000} 28} \\
+\rowcolor[HTML]{FFFFFF} 
+{\color[HTML]{000000} monthly issue comments} & {\color[HTML]{000000} 0} & {\color[HTML]{000000} 30255} & {\color[HTML]{000000} 26} & {\color[HTML]{000000} 85} \\
+\rowcolor[HTML]{F3F3F3} 
+{\color[HTML]{000000} monthly forks} & {\color[HTML]{000000} 0} & {\color[HTML]{000000} 817} & {\color[HTML]{000000} 6} & {\color[HTML]{000000} 10}
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+
+
+To get the latest and accurate features
+of our selected repositories,  we use GitHub API v3 for feature collection. For each project, the first commit date is
+used as the starting date of the project. Then all the features are collected and calculated monthly
+from that date up to the present date. For example, the first commit of
+the {\it kotlin-native} project was in May 16,  2016.
+After after, we collected  features from May, 2016 to April, 2020. Due to GitHub API rate limit, we could not get some features, like ``monthly\_commits'', which require large amount of direct API calls. Instead, we clone the repo locally and then extracted   features (this technique saved us much grief with API  quotas). 
+Table~\ref{tbl:data} shows a summary of the data collected by using this method. 
+
+
+\subsection{Performance Metrics}
+To evaluate the performance of learners, we use two performance metrics to measure the prediction results of our experiments: Magnitude of the Relative Error (MRE) and Standardized Accuracy (SA). We use these since (a)~there are advocated in the literature~\cite{shepperd2012evaluating,sarro2016multi}; and (b)~they both offer a way to compare results against some baseline
+(and such  comparisons with some baselines is considered good practice in empirical AI~\cite{Cohen95}).
+
+Our first evaluation measure metric, championed by  Sarro et al.~\cite{sarro2016multi} is the magnitude of the relative error, or MRE. MRE is calculated by expressing absolute residual (AR) as a ratio of actual value, where AR is computed from the difference between predicted and actual values:
+
+\[
+\mathit{MRE} = \frac{|\mathit{PREDICT} - \mathit{ACTUAL}|}{\mathit{ACTUAL}}
+\]
+
+For MRE, there is the case when ACTUAL equals ``0'' and then the metric will have ``divide by zero'' error. To deal with this issue, when ACTUAL gets ``0'' in the experiment, we set MRE to ``0'' if PREDICT is also ``0'', or a value larger than ``1'' otherwise.
+
+Sarro et al.~\cite{sarro2016multi} favors MRE
+since, they argue that, it is known that the human expert performance
+for certain SE estimation tasks  has a MRE of 30\% ~\cite{molokken2003review}. That is to say, if some estimators achieve less than 30\% MRE then it can be said to be competitive with human level performance.  
+
+
+
+
+MRE has been criticized because of its bias towards error underestimations~\cite{foss2003simulation,kitchenham2001accuracy,korte2008confidence,port2008comparative,shepperd2000building,stensrud2003further}.  
+Shepperd et al. champion another evaluation measure called ``standardized accuracy'', or SA~\cite{shepperd2012evaluating}.
+SA is computed as the ratio of the observed error against some reasonable fast-but-unsophisticated measurement. That is to say, 
+SA expresses itself as the ratio of some sophisticated estimate
+divided by a much simpler method.
+SA~\cite{langdon2016exact,shepperd2012evaluating} is based on Mean Absolute Error (MAE), which is defined in terms of 
+
+\[
+\mathit{MAE}=\frac{1}{N}\sum_{i=1}^n|\mathit{PREDICT}_i-\mathit{ACTUAL}_i|
+\]
+where $N$ is the number of data used for evaluating the performance. SA uses MAE as follows:
+
+\[
+\mathit{SA} = (1-\frac{\mathit{MAE}}{\mathit{MAE}_{guess}})\times 100
+\]
+where $\mathit{MAE}_{guess}$ is the $\mathit{MAE}$ of a large number (e.g., 1000 runs) of random guesses. 
+  Shepperd et al. observe that, over many runs,  $\mathit{MAE}_{guess}$ will converge on simply using the sample mean~\cite{shepperd2012evaluating}. 
+
+We find Shepperd et al.'s arguments for SA to be compelling. But we also agree with Sarro et al. that it is useful to   compare estimates against some human-level baselines. Hence, for completeness, we apply both evaluation metrics. As shown below, both evaluation metrics will offer the same conclusion (that DECART's performance is both useful and better than other  methods for predicting project health indicators).
+
+Note that in all our results: For MRE, {\em smaller}  values are {\em better}, and the best possible performance result is ``0''. For SA,  {\em larger} are {\em better }, the best possible performance result is ``100\%''.
+% \bi
+% \item
+% For MRE, {\em smaller}  values are {\em better}, and the best possible performance result is ``0''.
+% \item For SA,  {\em larger} are {\em better }, the best possible performance result is ``100\%''.
+% \ei
+
+
+\subsection{Statistics}
+\label{sect:stats} 
+We report the median (50th percentile) and interquartile range (IQR=75th-25th percentile) of our methods' performance.  
+
+
+To decide which methods do better than any other,   we could not use distribution-based statistics~\cite{kampenes2007systematic,arcuri2011practical,mittas2012ranking} since, for each project, we are making one estimate about the April 2020 status of a  project.  Hence, we need statistical
+methods that ask if two measurements (from two different learners) are in different places
+across the same distribution (the space of performance measurements across all our  learners).
+For this purpose, we take the advice of  Rosenthal et al.~\cite{rosenthal1994parametric}. They recommend parametric methods, rather than non-parametric ones, since  the latter   have  less statistical power than parametric ones. 
+ Rosenthal et al. discuss different parametric methods for asserting that one result is with some small effect of another (i.e. it is ``close to'').
+ They list dozens of effect size tests that divide into two groups:    the $r$ group that is based on the Pearson correlation coefficient; or the $d$ family that is based on absolute differences normalized by (e.g.) the size of the standard deviation.   
+ Since Rosenthal et al comment that ``none is intrinsically better than the other'', we choose the most direct method. 
+ We say that one result is the same as another if their difference  
+ differs by less than  Cohen's delta ($\mathit{d=30\%*standard\ deviation}$). 
+ Note that we compute $d$ separately for each different evaluation measure  (SA and MRE).
+ 
+
+% \item In the Tables of performance results, we use the color of ``deeper'' grey to represent {\em better}, while ``lighter'' grey to represent {\em worse}.
+\
+
+
+
+\section{Results}
+\label{sect:resul} 
+\subsection{Can we predict trends in project health indicators? (RQ1)}
+% For this research question, the goal is to predict the future trend of a project health indicator, 1, 3, 6 and 12 months into the future.  
+% In these experiment, we:
+% \bi
+% \item
+% Predict for April 2020 values of the  seven health indicators of Table~\ref{tbl:feature}.
+% \item
+% Using training data from taken before that time.
+% \ei
+% We apply six experimental predictors (KNN, SVR, LNR, RFT, CART and DECART) to get predicting results.  When using DECART, all the optimization is done on the training data (so none of the test data from April 2020 is used in training).
+
+
+
+
+
+
+We predict the value of health indicators for April 2020 by using data up until March 2020. That is, if a project is 60 months long (on April 2020), we predict for April 2020 using all data from its creation up until March 2020 (first 59 months). The median and IQR values of performance results in terms of MRE and SA are shown in Table~\ref{tbl:med_mre}, Table~\ref{tbl:iqr_mre},  Table~\ref{tbl:med_sa}, and Table~\ref{tbl:iqr_sa}, respectively.
+
+In all these four tables, we show median  and IQR of performance results across 1,628 projects,  using all but the last month to make predictions for  April 2020. For MRE, {\em lower} values are {\em better}. Gray cells denote better results; For SA, {\em higher} values are {\em better}. In all these tables, for each row, the best learning scheme has the darkest background.
+
+
+In these results, we observe that our methods provide very different performance with these 7 health indicators' prediction. In Table~\ref{tbl:med_mre}, we see that some learners have errors over 130\% (LNR, predicting for number of commits). For the same task, other learners, however, only have around half of the errors (CART, 67\%).
+Also in that   table, the median MRE score of the untuned learners (KNN, LNR, SVR, RFT, CART) is over 50\%. That is,  these estimates are often wrong by a factor of two, or more.
+Another thing to observe is that untuned CART usually has lower MRE and higher SA values among those five untuned learners (5/7 in MRE, 4/7 in SA). Hence, we elect to use DE to tune CART. 
+Also, these tables show that   hyperparameter optimization is   beneficial.
+The  DECART columns of Table~\ref{tbl:med_mre} and Table~\ref{tbl:med_sa} show that this method has much better median SAs and MREs than the untuned methods. As shown in the last column of Table~\ref{tbl:med_mre}, the median error for DECART is under 10\% (to be precise, 7\%). On the other hand, the results of Table~\ref{tbl:iqr_mre} and Table~\ref{tbl:iqr_sa} also demonstrate the stability of DECART (with lowest IQR when measuring the performance variability of all methods).
+
+% Also, the median error for DECART is very low indeed: median values of MRE is under 10\% (to be precise, 7\%) as shown in the last column of Table~\ref{tbl:med_mre}.
+% % Further, the MRE values for DECART are less than 30\%; i.e. Sarro et al. would say that these  are ``good'' estimates.
+
+\begin{table}[!t]
+\caption{
+MRE median  results:  one month into the future.}
+\label{tbl:med_mre}
+\begin{adjustbox}{max width=0.46\textwidth}     
+\begin{tabular}{rrrrrrr}
+{\color[HTML]{000000} } & {\color[HTML]{000000} KNN} & {\color[HTML]{000000} LNR} & {\color[HTML]{000000} SVR} & {\color[HTML]{000000} RF} & {\color[HTML]{000000} CART} & {\color[HTML]{000000} DECART} \\
+{\color[HTML]{000000} commit} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 75\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 139\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 79\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 72\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 67\%} & \cellcolor[HTML]{A9A9A9}{\color[HTML]{FFFFFF} 17\%} \\
+{\color[HTML]{000000} contributor} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 33\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 44\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 35\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 33\%} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} 25\%} & \cellcolor[HTML]{787878}{\color[HTML]{FFFFFF} 5\%} \\
+{\color[HTML]{000000} star} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 46\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 47\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 44\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 46\%} & \cellcolor[HTML]{919191}{\color[HTML]{FFFFFF} 11\%} \\
+{\color[HTML]{000000} openPR} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 40\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 66\%} & \cellcolor[HTML]{E6E6E6}{\color[HTML]{000000} 31\%} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} 25\%} & \cellcolor[HTML]{767676}{\color[HTML]{FFFFFF} 4\%} \\
+{\color[HTML]{000000} closePR} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 60\%} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 100\%} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 100\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 50\%} & \cellcolor[HTML]{666666}{\color[HTML]{FFFFFF} 0\%} & \cellcolor[HTML]{666666}{\color[HTML]{FFFFFF} 0\%} \\
+{\color[HTML]{000000} openISSUE} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 77\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 72\%} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 87\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 74\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 78\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 49\%} \\
+{\color[HTML]{000000} closedISSUE} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 40\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 35\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{ECECEC}{\color[HTML]{000000} 33\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 33\%} & \cellcolor[HTML]{828282}{\color[HTML]{FFFFFF} 7\%}
+\end{tabular} 
+\end{adjustbox}   
+\end{table}
+\begin{table}[!t]
+\caption{
+MRE IRQ results: one month into the future. }
+\label{tbl:iqr_mre}
+\begin{adjustbox}{max width=0.46\textwidth}     
+\begin{tabular}{rrrrrrr}
+{\color[HTML]{000000} } & {\color[HTML]{000000} KNN} & {\color[HTML]{000000} LNR} & {\color[HTML]{000000} SVR} & {\color[HTML]{000000} RF} & {\color[HTML]{000000} CART} & {\color[HTML]{000000} DECART} \\
+{\color[HTML]{000000} commit} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 201\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 432\%} & \cellcolor[HTML]{F6F6F6}{\color[HTML]{000000} 223\%} & \cellcolor[HTML]{F6F6F6}{\color[HTML]{000000} 241\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 178\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 56\%} \\
+{\color[HTML]{000000} contributor} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 79\%} & \cellcolor[HTML]{EDEDED}{\color[HTML]{000000} 53\%} & \cellcolor[HTML]{E8E8E8}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 62\%} & \cellcolor[HTML]{666666}{\color[HTML]{FFFFFF} 17\%} \\
+{\color[HTML]{000000} star} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 56\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 78\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 58\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{989898}{\color[HTML]{000000} 31\%} \\
+{\color[HTML]{000000} openPR} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 70\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 84\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 69\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 63\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 67\%} & \cellcolor[HTML]{676767}{\color[HTML]{FFFFFF} 18\%} \\
+{\color[HTML]{000000} closePR} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 100\%} & \cellcolor[HTML]{AAAAAA}{\color[HTML]{000000} 35\%} & \cellcolor[HTML]{A7A7A7}{\color[HTML]{000000} 35\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 100\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 100\%} & \cellcolor[HTML]{B0B0B0}{\color[HTML]{000000} 37\%} \\
+{\color[HTML]{000000} openISSUE} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} 44\%} & \cellcolor[HTML]{E7E7E7}{\color[HTML]{000000} 51\%} & \cellcolor[HTML]{909090}{\color[HTML]{FFFFFF} 29\%} & \cellcolor[HTML]{E8E8E8}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 63\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 67\%} \\
+{\color[HTML]{000000} closedISSUE} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 63\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 77\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 70\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 54\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{696969}{\color[HTML]{FFFFFF} 18\%}
+\end{tabular}
+\end{adjustbox}   
+\end{table}
+\begin{table}[!t]
+\caption{
+SA median  results:  one month into the future.}
+\label{tbl:med_sa} 
+\begin{adjustbox}{max width=0.46\textwidth}     
+\begin{tabular}{rrrrrrr}
+{\color[HTML]{000000} } & {\color[HTML]{000000} KNN} & {\color[HTML]{000000} LNR} & {\color[HTML]{000000} SVR} & {\color[HTML]{000000} RF} & {\color[HTML]{000000} CART} & {\color[HTML]{000000} DECART} \\
+{\color[HTML]{000000} commit} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 23\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 20\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} -28\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 16\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 35\%} & \cellcolor[HTML]{8A8A8A}{\color[HTML]{FFFFFF} 81\%} \\
+{\color[HTML]{000000} contributor} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 0\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 8\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} -47\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 35\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 49\%} & \cellcolor[HTML]{8A8A8A}{\color[HTML]{FFFFFF} 81\%} \\
+{\color[HTML]{000000} star} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} -54\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 25\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} -225\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} -13\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} -2\%} & \cellcolor[HTML]{C5C5C5}{\color[HTML]{000000} 63\%} \\
+{\color[HTML]{000000} openPR} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 36\%} & \cellcolor[HTML]{CECECE}{\color[HTML]{000000} 60\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} -69\%} & \cellcolor[HTML]{CACACA}{\color[HTML]{000000} 62\%} & \cellcolor[HTML]{AFAFAF}{\color[HTML]{000000} 70\%} & \cellcolor[HTML]{6F6F6F}{\color[HTML]{FFFFFF} 89\%} \\
+{\color[HTML]{000000} closePR} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 0\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 16\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} -65\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 32\%} & \cellcolor[HTML]{AFAFAF}{\color[HTML]{000000} 70\%} & \cellcolor[HTML]{666666}{\color[HTML]{FFFFFF} 92\%} \\
+{\color[HTML]{000000} openISSUE} & \cellcolor[HTML]{F6F6F6}{\color[HTML]{000000} -398\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} -160\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} -977\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} -249\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} -200\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} -79\%} \\
+{\color[HTML]{000000} closedISSUE} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 18\%} & \cellcolor[HTML]{DADADA}{\color[HTML]{000000} 57\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} -121\%} & \cellcolor[HTML]{EDEDED}{\color[HTML]{000000} 51\%} & \cellcolor[HTML]{EEEEEE}{\color[HTML]{000000} 51\%} & \cellcolor[HTML]{7A7A7A}{\color[HTML]{FFFFFF} 86\%}
+\end{tabular}
+\end{adjustbox}
+\end{table}
+\begin{table}[!t]
+\caption{
+SA  IQR  results: one month into the future. }
+\label{tbl:iqr_sa}
+\begin{adjustbox}{max width=0.46\textwidth}          
+\begin{tabular}{rrrrrrr}
+{\color[HTML]{000000} } & {\color[HTML]{000000} KNN} & {\color[HTML]{000000} LNR} & {\color[HTML]{000000} SVR} & {\color[HTML]{000000} RF} & {\color[HTML]{000000} CART} & {\color[HTML]{000000} DECART} \\
+{\color[HTML]{000000} commit} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 192\%} & \cellcolor[HTML]{D0D0D0}{\color[HTML]{000000} 109\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 299\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 166\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 137\%} & \cellcolor[HTML]{7E7E7E}{\color[HTML]{FFFFFF} 60\%} \\
+{\color[HTML]{000000} contributor} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 192\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 139\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 282\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 150\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 139\%} & \cellcolor[HTML]{858585}{\color[HTML]{FFFFFF} 64\%} \\
+{\color[HTML]{000000} star} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 512\%} & \cellcolor[HTML]{D5D5D5}{\color[HTML]{000000} 112\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 1210\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 288\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 254\%} & \cellcolor[HTML]{B8B8B8}{\color[HTML]{000000} 95\%} \\
+{\color[HTML]{000000} openPR} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 192\%} & \cellcolor[HTML]{B5B5B5}{\color[HTML]{000000} 93\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 439\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 129\%} & \cellcolor[HTML]{E2E2E2}{\color[HTML]{000000} 120\%} & \cellcolor[HTML]{666666}{\color[HTML]{FFFFFF} 46\%} \\
+{\color[HTML]{000000} closePR} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 317\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 135\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 397\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 181\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 141\%} & \cellcolor[HTML]{959595}{\color[HTML]{FFFFFF} 74\%} \\
+{\color[HTML]{000000} openISSUE} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 1488\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 685\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 2846\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 1040\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 962\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 424\%} \\
+{\color[HTML]{000000} closedISSUE} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 197\%} & \cellcolor[HTML]{B3B3B3}{\color[HTML]{000000} 92\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 649\%} & \cellcolor[HTML]{EDEDED}{\color[HTML]{000000} 127\%} & \cellcolor[HTML]{EAEAEA}{\color[HTML]{000000} 125\%} & \cellcolor[HTML]{6C6C6C}{\color[HTML]{FFFFFF} 49\%}
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+
+\begin{table}[!t]
+\caption{SA and MRE results with DECART, predicting for 1, 3, 6, 12 months
+into the future. All results are expressed as ratios
+of the predictions for one month. }
+\label{tbl:change}
+\begin{adjustbox}{max width=0.46\textwidth}     
+\begin{tabular}{rrrrrr}
+% \cline{3-6}
+{\color[HTML]{000000} } & {\color[HTML]{000000} Health Indicator} & \multicolumn{1}{l}{{\color[HTML]{000000} 1 month}} & \multicolumn{1}{l}{{\color[HTML]{000000} 3 months}} & \multicolumn{1}{l}{{\color[HTML]{000000} 6 months}} & {\color[HTML]{000000} 12 months} \\ \hline
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} commit} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 109\%} & {\color[HTML]{000000} 111\%} & {\color[HTML]{000000} 137\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} contributor} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 116\%} & {\color[HTML]{000000} 116\%} & {\color[HTML]{000000} 137\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} star} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 110\%} & {\color[HTML]{000000} 125\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} openPR} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 110\%} & {\color[HTML]{000000} 114\%} & {\color[HTML]{000000} 133\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} closePR} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 100\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} openISSUE} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 111\%} & {\color[HTML]{000000} 120\%} & {\color[HTML]{000000} 133\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} closedISSUE} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 94\%} & {\color[HTML]{000000} 104\%} & {\color[HTML]{000000} 115\%} \\
+\multicolumn{1}{l}{\multirow{-8}{*}{{\color[HTML]{000000} Median, MRE}}} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} median} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} } & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} 109\%} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} 111\%} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} 133\%} \\ \hline
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} commit} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 99\%} & {\color[HTML]{000000} 95\%} & {\color[HTML]{000000} 91\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} contributor} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 100\%}
+& {\color[HTML]{000000} 98\%} & {\color[HTML]{000000} 95\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} star} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 99\%} & {\color[HTML]{000000} 97\%} & {\color[HTML]{000000} 92\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} openPR} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 98\%} & {\color[HTML]{000000} 97\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} closePR} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 99\%} & {\color[HTML]{000000} 97\%} & {\color[HTML]{000000} 95\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} openISSUE} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 82\%} & {\color[HTML]{000000} 75\%} & {\color[HTML]{000000} 70\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} closedISSUE} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 98\%} & {\color[HTML]{000000} 98\%} & {\color[HTML]{000000} 97\%} \\
+\multicolumn{1}{l}{\multirow{-8}{*}{{\color[HTML]{000000} Median, SA}}} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} median} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} } & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} 99\%} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} 97\%} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} 95\%} \\ \hline
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} commit} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 108\%} & {\color[HTML]{000000} 126\%} & {\color[HTML]{000000} 171\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} contributor} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 113\%} & {\color[HTML]{000000} 117\%} & {\color[HTML]{000000} 133\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} star} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 107\%} & {\color[HTML]{000000} 117\%} & {\color[HTML]{000000} 127\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} openPR} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 121\%} & {\color[HTML]{000000} 127\%} & {\color[HTML]{000000} 149\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} closePR} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 100\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} openISSUE} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 105\%} & {\color[HTML]{000000} 101\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} closedISSUE} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 98\%} & {\color[HTML]{000000} 107\%} & {\color[HTML]{000000} 125\%} \\
+\multicolumn{1}{l}{\multirow{-8}{*}{{\color[HTML]{000000} IQR, MRE}}} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} median} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} } & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} 107\%} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} 117\%} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} 127\%} \\ \hline
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} commit} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 104\%} & {\color[HTML]{000000} 115\%} & {\color[HTML]{000000} 125\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} contributor} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 104\%} & {\color[HTML]{000000} 114\%} & {\color[HTML]{000000} 126\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} star} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 97\%} & {\color[HTML]{000000} 103\%} & {\color[HTML]{000000} 102\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} openPR} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 102\%} & {\color[HTML]{000000} 110\%} & {\color[HTML]{000000} 128\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} closePR} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 99\%} & {\color[HTML]{000000} 107\%} & {\color[HTML]{000000} 130\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} openISSUE} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 129\%} & {\color[HTML]{000000} 142\%} & {\color[HTML]{000000} 173\%} \\
+\multicolumn{1}{l}{{\color[HTML]{000000} }} & {\color[HTML]{000000} closedISSUE} & {\color[HTML]{000000} 100\%} & {\color[HTML]{000000} 103\%} & {\color[HTML]{000000} 110\%} & {\color[HTML]{000000} 117\%} \\
+\multicolumn{1}{l}{\multirow{-8}{*}{{\color[HTML]{000000} IQR, SA}}} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} median} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} } & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} 103\%} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} 110\%} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} 126\%}  \\\hline
+\end{tabular}
+\end{adjustbox}
+% \vspace{-3mm}
+\end{table}
+
+
+\begin{table*}[!t]
+\caption{How often was a feature found in the trees generated by   DECART? (observed percentages in 1,628 cases)}
+\label{tbl:frq}
+\begin{adjustbox}{max width=0.96\textwidth}
+\begin{tabular}{r|cccccccccccc}
+{\color[HTML]{000000}Target of Prediction} & \multicolumn{1}{l}{{\color[HTML]{000000} commit}} & \multicolumn{1}{l}{{\color[HTML]{000000} contributor}} & \multicolumn{1}{l}{{\color[HTML]{000000} star}} & \multicolumn{1}{l}{{\color[HTML]{000000} openPR}} & \multicolumn{1}{l}{{\color[HTML]{000000} closePR}} & \multicolumn{1}{l}{{\color[HTML]{000000} openISSUE}} & \multicolumn{1}{l}{{\color[HTML]{000000} closeISSUE}} & \multicolumn{1}{l}{{\color[HTML]{000000} ISSUEcomment}} & \multicolumn{1}{l}{{\color[HTML]{000000} PRcomment}} & \multicolumn{1}{l}{{\color[HTML]{000000} mergedPR}} & \multicolumn{1}{l}{{\color[HTML]{000000} PRmerger}} & \multicolumn{1}{l}{{\color[HTML]{000000} fork}} \\ \hline
+{\color[HTML]{000000} commit} & \cellcolor{red!20}{\color[HTML]{000000} n/a} & \cellcolor[HTML]{666666}{\color[HTML]{FFFFFF} 98\%} & \cellcolor[HTML]{ABABAB}{\color[HTML]{FFFFFF} 96\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 82\%} & \cellcolor[HTML]{FAFAFA}{\color[HTML]{000000} 68\%} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 75\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 94\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 94\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 81\%} & \cellcolor[HTML]{F6F6F6}{\color[HTML]{000000} 78\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 54\%} & \cellcolor[HTML]{CDCDCD}{\color[HTML]{000000} 95\%} \\
+{\color[HTML]{000000} contributor} & \cellcolor[HTML]{666666}{\color[HTML]{FFFFFF} 97\%} & \cellcolor{red!20}{\color[HTML]{000000} n/a} & \cellcolor[HTML]{D7D7D7}{\color[HTML]{000000} 79\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 67\%} & \cellcolor[HTML]{FEFEFE}{\color[HTML]{000000} 49\%} & \cellcolor[HTML]{FBFBFB}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 73\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 75\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 70\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 65\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 47\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 75\%} \\
+{\color[HTML]{000000} star} & \cellcolor[HTML]{C2C2C2}{\color[HTML]{000000} 98\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 93\%} & \cellcolor{red!20}{\color[HTML]{000000} n/a} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 88\%} & \cellcolor[HTML]{FCFCFC}{\color[HTML]{000000} 69\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 87\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 97\%} & \cellcolor[HTML]{949494}{\color[HTML]{FFFFFF} 99\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 85\%} & \cellcolor[HTML]{F8F8F8}{\color[HTML]{000000} 78\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 60\%} & \cellcolor[HTML]{666666}{\color[HTML]{FFFFFF} 100\%} \\
+{\color[HTML]{000000} openPR} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 74\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 67\%} & \cellcolor[HTML]{D4D4D4}{\color[HTML]{000000} 77\%} & \cellcolor{red!20}{\color[HTML]{000000} n/a} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 68\%} & \cellcolor[HTML]{FAFAFA}{\color[HTML]{000000} 58\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 73\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 72\%} & \cellcolor[HTML]{666666}{\color[HTML]{FFFFFF} 89\%} & \cellcolor[HTML]{9D9D9D}{\color[HTML]{FFFFFF} 83\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 49\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 73\%} \\
+{\color[HTML]{000000} closePR} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 63\%} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 50\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 66\%} & \cellcolor[HTML]{DADADA}{\color[HTML]{000000} 68\%} & \cellcolor{red!20}{\color[HTML]{000000} n/a} & \cellcolor[HTML]{FAFAFA}{\color[HTML]{000000} 43\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 66\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 65\%} & \cellcolor[HTML]{666666}{\color[HTML]{FFFFFF} 79\%} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 50\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 32\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 61\%} \\
+{\color[HTML]{000000} openISSUE} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 78\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 64\%} & \cellcolor[HTML]{747474}{\color[HTML]{FFFFFF} 87\%} & \cellcolor[HTML]{F6F6F6}{\color[HTML]{000000} 60\%} & \cellcolor[HTML]{FBFBFB}{\color[HTML]{000000} 46\%} & \cellcolor{red!20}{\color[HTML]{000000} n/a} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 78\%} & \cellcolor[HTML]{666666}{\color[HTML]{FFFFFF} 88\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 64\%} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 51\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 33\%} & \cellcolor[HTML]{ABABAB}{\color[HTML]{FFFFFF} 83\%} \\
+{\color[HTML]{000000} closeISSUE} & \cellcolor[HTML]{CDCDCD}{\color[HTML]{000000} 93\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 79\%} & \cellcolor[HTML]{BCBCBC}{\color[HTML]{FFFFFF} 94\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 81\%} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 69\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 78\%} & \cellcolor{red!20}{\color[HTML]{000000} n/a} & \cellcolor[HTML]{666666}{\color[HTML]{FFFFFF} 99\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 78\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 79\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 91\%} \\ \hline
+{\color[HTML]{000000} median} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 86\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 73\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 83\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 75\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 68\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 67\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 76\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 88\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 79\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 78\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 49\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 83\%}
+\end{tabular}
+\end{adjustbox}
+\end{table*}
+
+
+
+
+
+ 
+Turning now to other prediction results, our next set of results show what happens when we make predictions over a 1, 3, 6, 12 months interval.
+  Note that
+  to simulate predicting the status of ahead   
+  $1st$, $3rd$, $6th$, $12th$ month, for a project with $N$ months of data, 
+  we must train on  data  collected from month 1 to month $N-1$, $N-3$, $N-6$, $N-12$, respectively.
+  That is, to say that the {\em further} ahead our predictions,
+  the {\em less} data we have for training.
+  Hence, one thing to watch for  is whether or not performance decreases as size of the
+  training set decreases.
+  
+  Table~\ref{tbl:change} presents the MRE and SA results of DECART, expressed as a ratio  of the results seen after predicting one month ahead.
+  By observing the median results (show in gray) from left to right across the table, we see that as we try to predict further and further into the future, (a)~SA slightly degrades about 5\% and (b)~MRE  degrades only around 33\%, or less.
+ Measured in absolute terms, this change is very small:  
+  recall that the
+  median DECART MRE  results in Table~\ref{tbl:med_mre} for one-month-ahead predictions  
+  where less than 10\%.
+  This means that  when  Table~\ref{tbl:change} says that the  median MRE for the 12 months predictions is worse by 133\%, that translates to  that $\mathit{1.33*10\%\approx14\%}$ (which is still very low).
+%   \ei
+ 
+%  \bi
+%  \item
+%   Recall that the
+%   median DECART MRE  results in Table~\ref{tbl:med_mre} for one-month-ahead predictions  
+%   where less than 10\%.
+%   \item
+%   This means that  when  Table~\ref{tbl:change} says that the  median MRE for the 12 months predictions is worse by 133\%, that translates to  than $\mathit{1.33*10\approx14\%}$ (which is still very low).
+%   \ei
+  In any case, summarizing all the above, we say that: 
+  
+  
+\begin{blockquote}
+\noindent
+\textbf{Answer 1}: Many project health indicators can be predicted, with good accuracy, for 1, 3, 6, 12   months into the future.
+\end{blockquote}
+
+The only counter result to {\bf Answer 1} is when trying to  predict  the number of open 
+issues.
+Table~\ref{tbl:med_mre} and 
+Table~\ref{tbl:med_sa} show that 
+DECART's worst MRE and SA predictions are for ``openISSUE'' health indicator.
+Additionally, in  Table~\ref{tbl:med_sa}, all the SA predictions for openIssue are negative; i.e.   we are performing very badly indeed when trying to predict how many issues will remain open next month. In retrospect, of course, we should have expected that predicting for how many new challenges will arise next month (in the form of new issues) is an inherently hard task. 
+
+
+
+\subsection{What features matter the most in prediction? (RQ2)}
+In our experimental data, we have 12 numeric features for prediction.
+We use them since they are features with high importance, suggested by prior work (see Section~\ref{sect:data_collect}).
+That said, having done all these experiments, it is appropriate and fitting to ask which features, in practice, turned out to be more useful when we predict health indicators.   This information could help us to focus on useful features and remove irrelevancies when enlarging our research in the future work. To work that out, we look into the trees generated by DECART
+(our best learners) in the above experiments.   We count the number of time of each feature has been used for prediction of every health indicator. 
+
+
+
+
+Those counts are summarized in  Table~\ref{tbl:frq}. In this table, ``n/a''  denotes the dependent variable, which is not counted in the experiment. From this table, first of all, we find that some features are highly related to specific health indicators. For example, ``fork'', ``ISSUEcomment'' and  ``commit'' have been selected  $100\%$,  $99\%$ and  $98\%$  when we built trees to predict ``star'' indicator for $1,628$ repositories.  Secondly, some features are bellwethers that have been used as features for multiple indicator predictions, like ``commit'' occurs $97\%$, $98\%$, and $93\%$ times as features when predicting ``contributor'', ``star'' and ``closeISSUE'' indicators. ``ISSUEcomment'' has the similar pattern for ``star'', ``openISSUE'' and ``closeISSUE''. Thirdly, some features even though they belong to the same group as predicting indicator, like ``openISSUE'' v.s. ``closeISSUE'', they are not quite highly picked up by learners. In our experiment, we find that  ``openISSUE'' was only selected $78\%$ times, way less than ``ISSUEcomment'' ($99\%$), ``star'' ($94\%$) and ``commit'' ($93\%$) for ``closeISSUE'' indicator. Last but not least,  some features were less used than others. According to our experiment, ``PRmerger'' is the least used feature for all predictions (the median use-percentage of PRmerger is only 49\%).
+
+
+\begin{blockquote}
+\noindent
+\textbf{Answer 2}: In our study, ``monthly\_ISSUEcomments'', ``monthly\_commit'', ``monthly\_fork'' and ``monthly\_star'' are the most important features, while ``monthly\_PRmerger'' is the least used feature for all seven health indicators' predictions.
+\end{blockquote}
+
+Note that none of these 12 features should be abandoned, even for ``PRmerger'', the least used feature in prediction (when predicting ``star'', this feature is used in 60\% of cases).
+
+ That said, we would be hard pressed to say
+ that Table~\ref{tbl:frq} indicates that only a small subset of the \tbl{feature} features are outstandingly the  most important. While Table~\ref{tbl:frq} suggests that some feature pruning might be useful, overall we would suggest that using all of these features might be the best policy in most cases.
+
+
+
+\subsection{Which methods achieve the best prediction performance? (RQ3)}
+To answer this question, 
+we compared the performance results of each method on all 1,628 open-source projects and predicting for 1, 3, 6, and 12 months into the future.  
+
+
+Across 1,628 projects, we report the percent of times that one learner generating best or nearly best predictions (and the darker the cell, the more that count).  To compute ``nearly best'' we used the Cohen's $d$ measure introduced in Section~\ref{sect:stats} to compare different learning schemes in terms of MRE and SAin \tbl{win_mre} and \tbl{win_sa}, respectively.  
+
+ The comparisons in these tables are for intra-row results, where the darker cells indicate the learning methods with higher win rate. For example, in the first row of \tbl{win_mre} (except the header row), when predicting the number of commits in next month, DECART has the best MRE performance in 86\% of all 1,628 cases. 
+
+As shown in \tbl{win_mre}, in terms of MRE, DECART achieves the best performance with winning rates from $86\%$ to $99\%$ for all predictions (the median win rate is 91\%). However, the winning rates of other learners, KNN, LNR, SVR, RFT, and CART, mostly range from $20\%$ to $50\%$ with the exception of openISSUE where other methods have close win rate to DECART since none methods can predict it very well. That being said, our proposed method, DECART, outperforms other methods on almost all the predictions out of 1,628 projects by $25\% \sim 65\%$.
+
+
+For SA results, as we see in \tbl{win_sa}, although the median win rate of DECART (72\%) decreased a bit compare to MRE (91\%), it still outperforms all the rest of methods (closest runner-up, CART only gets 44\%). Specifically, DECAERT wins from $47\%$ to $88\%$ out of 4 different prediction ways on 1,628 projects. However, KNN wins from $10\%$ to $56\%$, LNR wins from $10\%$ to $77\%$, SVR wins from $4\%$ to $43\%$, RFT wins from $12\%$ to $64\%$ and CART wins from $19\%$ to $71\%$, respectively. Most of the time, all of the other methods wins rates are less than $50\%$. After we take a further look, SVR performs relatively worse, the median win rate is only $14\%$ compared to the median of DECART win rate, $72\%$. 
+
+% bite
+
+% In total, DECART has 85\% of median win rate in MRE and SA.
+
+
+Based on the results from our experiments, we conclude that:
+ 
+
+\begin{blockquote}
+\noindent
+\textbf{Answer 3}: 
+DECART generates better predicting perfor-mance than other methods in 91\% of our 1,628 projects (MRE, median).
+\end{blockquote}
+
+
+\begin{table}[!t]
+\caption{MRE results: the win rate of different learners, measured in terms of MRE.}
+\label{tbl:win_mre}
+% \adjustbox{max width=.52\textwidth}{%
+\resizebox{0.47\textwidth}{!}{
+\begin{tabular}{lrcccccc}
+{\color[HTML]{000000} Predicting Month} & {\color[HTML]{000000} Health Indicator} & \multicolumn{1}{l}{{\color[HTML]{000000} KNN}} & \multicolumn{1}{l}{{\color[HTML]{000000} LNR}} & \multicolumn{1}{l}{{\color[HTML]{000000} SVR}} & \multicolumn{1}{l}{{\color[HTML]{000000} RF}} & \multicolumn{1}{l}{{\color[HTML]{000000} CART}} & \multicolumn{1}{l}{{\color[HTML]{000000} DECART}} \\ \hline
+{\color[HTML]{000000} } & {\color[HTML]{000000} commit} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 46\%} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 33\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 45\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 48\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{919191}{\color[HTML]{FFFFFF} 86\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} contributor} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 46\%} & \cellcolor[HTML]{F6F6F6}{\color[HTML]{000000} 34\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 39\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 49\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{818181}{\color[HTML]{FFFFFF} 91\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} star} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 53\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 47\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 53\%} & \cellcolor[HTML]{818181}{\color[HTML]{FFFFFF} 91\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} openPR} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 44\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 40\%} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 25\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 54\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{818181}{\color[HTML]{FFFFFF} 91\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} closePR} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 31\%} & \cellcolor[HTML]{F8F8F8}{\color[HTML]{000000} 28\%} & \cellcolor[HTML]{E2E2E2}{\color[HTML]{000000} 61\%} & \cellcolor[HTML]{CFCFCF}{\color[HTML]{000000} 67\%} & \cellcolor[HTML]{7A7A7A}{\color[HTML]{FFFFFF} 93\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} openISSUE} & \cellcolor[HTML]{8E8E8E}{\color[HTML]{FFFFFF} 87\%} & \cellcolor[HTML]{9E9E9E}{\color[HTML]{FFFFFF} 82\%} & \cellcolor[HTML]{ABABAB}{\color[HTML]{FFFFFF} 78\%} & \cellcolor[HTML]{8A8A8A}{\color[HTML]{FFFFFF} 88\%} & \cellcolor[HTML]{919191}{\color[HTML]{FFFFFF} 86\%} & \cellcolor[HTML]{6D6D6D}{\color[HTML]{FFFFFF} 97\%} \\
+\multirow{-7}{*}{{\color[HTML]{000000} 1st month}} & {\color[HTML]{000000} closedISSUE} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 42\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 48\%} & \cellcolor[HTML]{F8F8F8}{\color[HTML]{000000} 29\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 49\%} & \cellcolor[HTML]{848484}{\color[HTML]{FFFFFF} 90\%} \\ \hline
+{\color[HTML]{000000} } & {\color[HTML]{000000} commit} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 47\%} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 33\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 45\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 45\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 51\%} & \cellcolor[HTML]{8E8E8E}{\color[HTML]{FFFFFF} 87\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} contributor} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 45\%} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 33\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 39\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 48\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{818181}{\color[HTML]{FFFFFF} 91\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} star} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 51\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 47\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 56\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{7D7D7D}{\color[HTML]{FFFFFF} 92\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} openPR} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 44\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 41\%} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 26\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 56\%} & \cellcolor[HTML]{848484}{\color[HTML]{FFFFFF} 90\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} closePR} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 56\%} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 27\%} & \cellcolor[HTML]{F8F8F8}{\color[HTML]{000000} 29\%} & \cellcolor[HTML]{E6E6E6}{\color[HTML]{000000} 60\%} & \cellcolor[HTML]{CFCFCF}{\color[HTML]{000000} 67\%} & \cellcolor[HTML]{7D7D7D}{\color[HTML]{FFFFFF} 92\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} openISSUE} & \cellcolor[HTML]{8A8A8A}{\color[HTML]{FFFFFF} 88\%} & \cellcolor[HTML]{9E9E9E}{\color[HTML]{FFFFFF} 82\%} & \cellcolor[HTML]{A4A4A4}{\color[HTML]{FFFFFF} 80\%} & \cellcolor[HTML]{878787}{\color[HTML]{FFFFFF} 89\%} & \cellcolor[HTML]{8A8A8A}{\color[HTML]{FFFFFF} 88\%} & \cellcolor[HTML]{6A6A6A}{\color[HTML]{FFFFFF} 98\%} \\
+\multirow{-7}{*}{{\color[HTML]{000000} 3rd month}} & {\color[HTML]{000000} closedISSUE} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 41\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 47\%} & \cellcolor[HTML]{F8F8F8}{\color[HTML]{000000} 29\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 51\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 49\%} & \cellcolor[HTML]{818181}{\color[HTML]{FFFFFF} 91\%} \\ \hline
+{\color[HTML]{000000} } & {\color[HTML]{000000} commit} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 49\%} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 33\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 48\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 47\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{919191}{\color[HTML]{FFFFFF} 86\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} contributor} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 46\%} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 32\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 41\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 48\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 53\%} & \cellcolor[HTML]{818181}{\color[HTML]{FFFFFF} 91\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} star} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 50\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 50\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 57\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 54\%} & \cellcolor[HTML]{7D7D7D}{\color[HTML]{FFFFFF} 92\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} openPR} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 44\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 40\%} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 26\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 53\%} & \cellcolor[HTML]{ECECEC}{\color[HTML]{000000} 58\%} & \cellcolor[HTML]{818181}{\color[HTML]{FFFFFF} 91\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} closePR} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 57\%} & \cellcolor[HTML]{F8F8F8}{\color[HTML]{000000} 28\%} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 31\%} & \cellcolor[HTML]{DCDCDC}{\color[HTML]{000000} 63\%} & \cellcolor[HTML]{D2D2D2}{\color[HTML]{000000} 66\%} & \cellcolor[HTML]{7A7A7A}{\color[HTML]{FFFFFF} 93\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} openISSUE} & \cellcolor[HTML]{878787}{\color[HTML]{FFFFFF} 89\%} & \cellcolor[HTML]{9E9E9E}{\color[HTML]{FFFFFF} 82\%} & \cellcolor[HTML]{949494}{\color[HTML]{FFFFFF} 85\%} & \cellcolor[HTML]{848484}{\color[HTML]{FFFFFF} 90\%} & \cellcolor[HTML]{878787}{\color[HTML]{FFFFFF} 89\%} & \cellcolor[HTML]{6D6D6D}{\color[HTML]{FFFFFF} 97\%} \\
+\multirow{-7}{*}{{\color[HTML]{000000} 6th month}} & {\color[HTML]{000000} closedISSUE} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 44\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 45\%} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 31\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 50\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{818181}{\color[HTML]{FFFFFF} 91\%} \\ \hline
+{\color[HTML]{000000} } & {\color[HTML]{000000} commit} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 49\%} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 31\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 51\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 50\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{8E8E8E}{\color[HTML]{FFFFFF} 87\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} contributor} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 47\%} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 32\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 42\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 49\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 53\%} & \cellcolor[HTML]{818181}{\color[HTML]{FFFFFF} 91\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} star} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 57\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 48\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{E9E9E9}{\color[HTML]{000000} 59\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 56\%} & \cellcolor[HTML]{7A7A7A}{\color[HTML]{FFFFFF} 93\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} openPR} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 46\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 40\%} & \cellcolor[HTML]{F8F8F8}{\color[HTML]{000000} 29\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 54\%} & \cellcolor[HTML]{E6E6E6}{\color[HTML]{000000} 60\%} & \cellcolor[HTML]{818181}{\color[HTML]{FFFFFF} 91\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} closePR} & \cellcolor[HTML]{E9E9E9}{\color[HTML]{000000} 59\%} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 27\%} & \cellcolor[HTML]{F6F6F6}{\color[HTML]{000000} 35\%} & \cellcolor[HTML]{DFDFDF}{\color[HTML]{000000} 62\%} & \cellcolor[HTML]{C5C5C5}{\color[HTML]{000000} 70\%} & \cellcolor[HTML]{747474}{\color[HTML]{FFFFFF} 95\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} openISSUE} & \cellcolor[HTML]{818181}{\color[HTML]{FFFFFF} 91\%} & \cellcolor[HTML]{9E9E9E}{\color[HTML]{FFFFFF} 82\%} & \cellcolor[HTML]{8E8E8E}{\color[HTML]{FFFFFF} 87\%} & \cellcolor[HTML]{7D7D7D}{\color[HTML]{FFFFFF} 92\%} & \cellcolor[HTML]{848484}{\color[HTML]{FFFFFF} 90\%} & \cellcolor[HTML]{666666}{\color[HTML]{FFFFFF} 99\%} \\
+\multirow{-7}{*}{{\color[HTML]{000000} 12th month}} & {\color[HTML]{000000} closedISSUE} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 47\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 45\%} & \cellcolor[HTML]{F6F6F6}{\color[HTML]{000000} 34\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 54\%} & \cellcolor[HTML]{7D7D7D}{\color[HTML]{FFFFFF} 92\%} \\ \hline
+{\color[HTML]{000000} } & {\color[HTML]{000000} median} & {\color[HTML]{000000} 48\%} & {\color[HTML]{000000} 40\%} & {\color[HTML]{000000} 40\%} & {\color[HTML]{000000} 55\%} & {\color[HTML]{000000} 54\%} & {\color[HTML]{000000} 91\%}
+\end{tabular}
+}
+\end{table}
+
+ 
+
+
+
+\section{Discussion}
+\label{sect:discu}
+\subsection{The efficiency of DECART}
+ DECART   is not only effective (as shown in \tbl{win_mre} and \tbl{win_sa}), but also  very fast. In our study, it took 11,530 seconds to run DECART on 1,628 projects (on a dual core 4.67 GHz  laptop);
+i.e. 7 seconds per datasets. This time includes optimizing CART for each 
+specific dataset, and then making predictions. Note that, for these experiments, we made no use of any special hardware (i.e. we used neither GPUs nor cloud services that interleave multiple cores in some clever manner).
+
+
+The speed of DECART is an important finding. 
+In our experience, the complexity of hyperparameter optimization is a major concern that limits its widespread use.   For example, Fu et al. report that hyperparameter optimization for
+code defect reduction requires nearly three days of CPU per dataset~\cite{Fu2016TuningFS}.
+If all of our 1,600+ datasets needed the same amount of CPU, then that would be a major deterrent to the use of the methods of this paper.
+
+But why is DECART so fast and effective?
+Firstly,  DECART runs fast since it works on   very small datasets. 
+This paper studies three to five years of project data. For each month, we  extract the 12 features shown in  Table~\ref{tbl:feature}. That is to say,  DECART's optimizations only have to explore datasets with  $\mathit{12*60}$
+ data points per project.
+  Fu et al. on the other hand, worked on more than 100,000 data points.
+ 
+ 
+Secondly, as to why is DECART so effective, we note that many data mining algorithms  rely on  statistical properties that are emergent in   large samples of data~\cite{witten11}. Hence they  
+have problems reasoning about  datasets with only $\mathit{12*60}$ data points.  
+Accordingly, to enable effective data mining,
+it is important to adjust the learners to the   idiosyncrasies of the dataset 
+(via hyperparameter optimization).
+ 
+\begin{table}[!t]
+\caption{SA results:
+the win rate of different learners, measured in terms of SA.}
+\label{tbl:win_sa} 
+% \adjustbox{max width=.52\textwidth}{%
+\resizebox{0.47\textwidth}{!}{
+\begin{tabular}{lrcccccc}
+{\color[HTML]{000000} Predicting Month} & {\color[HTML]{000000} Health Indicator} & \multicolumn{1}{l}{{\color[HTML]{000000} KNN}} & \multicolumn{1}{l}{{\color[HTML]{000000} LNR}} & \multicolumn{1}{l}{{\color[HTML]{000000} SVR}} & \multicolumn{1}{l}{{\color[HTML]{000000} RF}} & \multicolumn{1}{l}{{\color[HTML]{000000} CART}} & \multicolumn{1}{l}{{\color[HTML]{000000} DECART}} \\ \hline
+{\color[HTML]{000000} } & {\color[HTML]{000000} commit} & \cellcolor[HTML]{FAFAFA}{\color[HTML]{000000} 21\%} & \cellcolor[HTML]{FBFBFB}{\color[HTML]{000000} 19\%} & \cellcolor[HTML]{FCFCFC}{\color[HTML]{000000} 14\%} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 25\%} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 31\%} & \cellcolor[HTML]{DCDCDC}{\color[HTML]{000000} 63\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} contributor} & \cellcolor[HTML]{FCFCFC}{\color[HTML]{000000} 15\%} & \cellcolor[HTML]{FDFDFD}{\color[HTML]{000000} 13\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 7\%} & \cellcolor[HTML]{F8F8F8}{\color[HTML]{000000} 28\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 43\%} & \cellcolor[HTML]{ECECEC}{\color[HTML]{000000} 58\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} star} & \cellcolor[HTML]{F8F8F8}{\color[HTML]{000000} 30\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 47\%} & \cellcolor[HTML]{FBFBFB}{\color[HTML]{000000} 18\%} & \cellcolor[HTML]{F6F6F6}{\color[HTML]{000000} 36\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 39\%} & \cellcolor[HTML]{BBBBBB}{\color[HTML]{000000} 73\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} openPR} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 46\%} & \cellcolor[HTML]{E9E9E9}{\color[HTML]{000000} 59\%} & \cellcolor[HTML]{FAFAFA}{\color[HTML]{000000} 23\%} & \cellcolor[HTML]{ECECEC}{\color[HTML]{000000} 58\%} & \cellcolor[HTML]{DFDFDF}{\color[HTML]{000000} 62\%} & \cellcolor[HTML]{919191}{\color[HTML]{FFFFFF} 86\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} closePR} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 32\%} & \cellcolor[HTML]{FBFBFB}{\color[HTML]{000000} 19\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 6\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 41\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{D9D9D9}{\color[HTML]{000000} 64\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} openISSUE} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{BBBBBB}{\color[HTML]{000000} 73\%} & \cellcolor[HTML]{F6F6F6}{\color[HTML]{000000} 34\%} & \cellcolor[HTML]{D9D9D9}{\color[HTML]{000000} 64\%} & \cellcolor[HTML]{CCCCCC}{\color[HTML]{000000} 68\%} & \cellcolor[HTML]{8E8E8E}{\color[HTML]{FFFFFF} 87\%} \\
+\multirow{-7}{*}{{\color[HTML]{000000} 1st month}} & {\color[HTML]{000000} closedISSUE} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 31\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 46\%} & \cellcolor[HTML]{FCFCFC}{\color[HTML]{000000} 14\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 43\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 43\%} & \cellcolor[HTML]{ABABAB}{\color[HTML]{000000} 78\%} \\ \hline
+{\color[HTML]{000000} } & {\color[HTML]{000000} commit} & \cellcolor[HTML]{FCFCFC}{\color[HTML]{000000} 17\%} & \cellcolor[HTML]{FCFCFC}{\color[HTML]{000000} 17\%} & \cellcolor[HTML]{FDFDFD}{\color[HTML]{000000} 12\%} & \cellcolor[HTML]{FCFCFC}{\color[HTML]{000000} 17\%} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 27\%} & \cellcolor[HTML]{E9E9E9}{\color[HTML]{000000} 59\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} contributor} & \cellcolor[HTML]{FDFDFD}{\color[HTML]{000000} 12\%} & \cellcolor[HTML]{FEFEFE}{\color[HTML]{000000} 10\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 4\%} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 25\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 43\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 53\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} star} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 31\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 49\%} & \cellcolor[HTML]{FBFBFB}{\color[HTML]{000000} 19\%} & \cellcolor[HTML]{F6F6F6}{\color[HTML]{000000} 37\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 39\%} & \cellcolor[HTML]{B5B5B5}{\color[HTML]{000000} 75\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} openPR} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 44\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 56\%} & \cellcolor[HTML]{FBFBFB}{\color[HTML]{000000} 20\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 54\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 57\%} & \cellcolor[HTML]{9B9B9B}{\color[HTML]{FFFFFF} 83\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} closePR} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 32\%} & \cellcolor[HTML]{FAFAFA}{\color[HTML]{000000} 21\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 7\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 40\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 57\%} & \cellcolor[HTML]{D2D2D2}{\color[HTML]{000000} 66\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} openISSUE} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 56\%} & \cellcolor[HTML]{BBBBBB}{\color[HTML]{000000} 73\%} & \cellcolor[HTML]{F6F6F6}{\color[HTML]{000000} 36\%} & \cellcolor[HTML]{DCDCDC}{\color[HTML]{000000} 63\%} & \cellcolor[HTML]{C8C8C8}{\color[HTML]{000000} 69\%} & \cellcolor[HTML]{8E8E8E}{\color[HTML]{FFFFFF} 87\%} \\
+\multirow{-7}{*}{{\color[HTML]{000000} 3rd month}} & {\color[HTML]{000000} closedISSUE} & \cellcolor[HTML]{F8F8F8}{\color[HTML]{000000} 30\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 45\%} & \cellcolor[HTML]{FCFCFC}{\color[HTML]{000000} 14\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 41\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 44\%} & \cellcolor[HTML]{AEAEAE}{\color[HTML]{000000} 77\%} \\ \hline
+{\color[HTML]{000000} } & {\color[HTML]{000000} commit} & \cellcolor[HTML]{FEFEFE}{\color[HTML]{000000} 10\%} & \cellcolor[HTML]{FDFDFD}{\color[HTML]{000000} 13\%} & \cellcolor[HTML]{FEFEFE}{\color[HTML]{000000} 9\%} & \cellcolor[HTML]{FDFDFD}{\color[HTML]{000000} 12\%} & \cellcolor[HTML]{FBFBFB}{\color[HTML]{000000} 19\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 47\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} contributor} & \cellcolor[HTML]{FCFCFC}{\color[HTML]{000000} 15\%} & \cellcolor[HTML]{FCFCFC}{\color[HTML]{000000} 14\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 7\%} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 27\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 42\%} & \cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} 57\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} star} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 32\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 51\%} & \cellcolor[HTML]{FBFBFB}{\color[HTML]{000000} 20\%} & \cellcolor[HTML]{F6F6F6}{\color[HTML]{000000} 36\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 42\%} & \cellcolor[HTML]{B5B5B5}{\color[HTML]{000000} 75\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} openPR} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 39\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{FBFBFB}{\color[HTML]{000000} 18\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 51\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{A4A4A4}{\color[HTML]{FFFFFF} 80\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} closePR} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 32\%} & \cellcolor[HTML]{FBFBFB}{\color[HTML]{000000} 20\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 7\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 40\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 53\%} & \cellcolor[HTML]{CFCFCF}{\color[HTML]{000000} 67\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} openISSUE} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{B5B5B5}{\color[HTML]{000000} 75\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 40\%} & \cellcolor[HTML]{D9D9D9}{\color[HTML]{000000} 64\%} & \cellcolor[HTML]{C5C5C5}{\color[HTML]{000000} 70\%} & \cellcolor[HTML]{8E8E8E}{\color[HTML]{FFFFFF} 87\%} \\
+\multirow{-7}{*}{{\color[HTML]{000000} 6th month}} & {\color[HTML]{000000} closedISSUE} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 25\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 39\%} & \cellcolor[HTML]{FDFDFD}{\color[HTML]{000000} 12\%} & \cellcolor[HTML]{F6F6F6}{\color[HTML]{000000} 36\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 39\%} & \cellcolor[HTML]{C2C2C2}{\color[HTML]{000000} 71\%} \\ \hline
+{\color[HTML]{000000} } & {\color[HTML]{000000} commit} & \cellcolor[HTML]{FDFDFD}{\color[HTML]{000000} 13\%} & \cellcolor[HTML]{FBFBFB}{\color[HTML]{000000} 20\%} & \cellcolor[HTML]{FCFCFC}{\color[HTML]{000000} 14\%} & \cellcolor[HTML]{FCFCFC}{\color[HTML]{000000} 17\%} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 26\%} & \cellcolor[HTML]{E9E9E9}{\color[HTML]{000000} 59\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} contributor} & \cellcolor[HTML]{FBFBFB}{\color[HTML]{000000} 18\%} & \cellcolor[HTML]{FAFAFA}{\color[HTML]{000000} 21\%} & \cellcolor[HTML]{FEFEFE}{\color[HTML]{000000} 10\%} & \cellcolor[HTML]{F8F8F8}{\color[HTML]{000000} 28\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 44\%} & \cellcolor[HTML]{DCDCDC}{\color[HTML]{000000} 63\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} star} & \cellcolor[HTML]{F7F7F7}{\color[HTML]{000000} 31\%} & \cellcolor[HTML]{F1F1F1}{\color[HTML]{000000} 52\%} & \cellcolor[HTML]{FAFAFA}{\color[HTML]{000000} 23\%} & \cellcolor[HTML]{F5F5F5}{\color[HTML]{000000} 39\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 43\%} & \cellcolor[HTML]{B5B5B5}{\color[HTML]{000000} 75\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} openPR} & \cellcolor[HTML]{F6F6F6}{\color[HTML]{000000} 34\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 46\%} & \cellcolor[HTML]{FCFCFC}{\color[HTML]{000000} 14\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 42\%} & \cellcolor[HTML]{F2F2F2}{\color[HTML]{000000} 49\%} & \cellcolor[HTML]{B5B5B5}{\color[HTML]{000000} 75\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} closePR} & \cellcolor[HTML]{F6F6F6}{\color[HTML]{000000} 34\%} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 26\%} & \cellcolor[HTML]{FEFEFE}{\color[HTML]{000000} 10\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 41\%} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 55\%} & \cellcolor[HTML]{C5C5C5}{\color[HTML]{000000} 70\%} \\
+{\color[HTML]{000000} } & {\color[HTML]{000000} openISSUE} & \cellcolor[HTML]{F0F0F0}{\color[HTML]{000000} 54\%} & \cellcolor[HTML]{AEAEAE}{\color[HTML]{000000} 77\%} & \cellcolor[HTML]{F4F4F4}{\color[HTML]{000000} 43\%} & \cellcolor[HTML]{D9D9D9}{\color[HTML]{000000} 64\%} & \cellcolor[HTML]{C2C2C2}{\color[HTML]{000000} 71\%} & \cellcolor[HTML]{8A8A8A}{\color[HTML]{FFFFFF} 88\%} \\
+\multirow{-7}{*}{{\color[HTML]{000000} 12th month}} & {\color[HTML]{000000} closedISSUE} & \cellcolor[HTML]{FCFCFC}{\color[HTML]{000000} 17\%} & \cellcolor[HTML]{F8F8F8}{\color[HTML]{000000} 30\%} & \cellcolor[HTML]{FEFEFE}{\color[HTML]{000000} 8\%} & \cellcolor[HTML]{F9F9F9}{\color[HTML]{000000} 25\%} & \cellcolor[HTML]{F8F8F8}{\color[HTML]{000000} 30\%} & \cellcolor[HTML]{D5D5D5}{\color[HTML]{000000} 65\%} \\ \hline
+{\color[HTML]{000000} } & {\color[HTML]{000000} median} & {\color[HTML]{000000} 31\%} & {\color[HTML]{000000} 42\%} & {\color[HTML]{000000} 14\%} & {\color[HTML]{000000} 40\%} & {\color[HTML]{000000} 44\%} & {\color[HTML]{000000} 72\%}
+\end{tabular}
+ }
+\end{table}
+
+
+\subsection{DECART on other time predictions}
+We observe that for the performance results in \tbl{med_mre}, while predicting the number of closed pull requests, CART and DECART achieve a 0\% error for this indicator. Such zero error is a red flag that needs to be investigated since they might be due to a programming  error (such as use the test value as both the predicted and actual value for the MRE calculation). What we found was that the older the project, the less the programmer activity.
+  Hence,  it is hardly surprising that good learners could correctly predict (e.g.) zero closed pull requests.
+
+
+But that raised another red flag: suppose {\em all} our projects had reached some steady state prior to April 2020. In that case, predicting (say) next month's health would be a simple matter of repeating last month's value. In our investigation, we have three reasons for believing that this is not the case.
+Firstly, prediction in this domain is difficult. If such steady state had been achieved, then all our learners would be reporting very low errors. As seen in Table~\ref{tbl:med_mre}, this is not the case.
+
+Secondly, we looked into the columns in our raw data, looking for long sequences of stable or zero values. This case does not happen in most cases: our data contains much variation across the entire lifecycle of our projects.
+
+Thirdly, just to be sure, we conducted another round of experiments. Instead of predicting for April 2020, we do the prediction for April 2019 using
+data collected prior to April 2018.
+ Table~\ref{tbl:mid} shows the results. In this table, if a project had (say) $N=60$ months of data, we went to months $N/2$ and used DECART to predicted 12 months into the future (to $N/2+12$). The columns for Table~\ref{tbl:mid}  should be compared to the right-hand-side columns of Table~\ref{tbl:med_mre}, Table~\ref{tbl:iqr_mre},  Table~\ref{tbl:med_sa}, and Table~\ref{tbl:iqr_sa}. In that comparison, we see that predicting for month $N/2+12$ generates comparable results as predicting for  month $N$ using all data from months  $1$ to $N-1$. 
+ 
+ In summary,
+our results are not unduly biased by predicting just for April 2020. As the evidence, we can still obtain accurate results if we predict for April 2019 using data from before April 2018.
+
+ %data source = 
+\begin{table}[!t]
+\caption{The performance of DECART, staring mid-way through a project, then predicting 12 months into the future.}
+\label{tbl:mid}
+\begin{adjustbox}{max width=0.48\textwidth}
+\begin{tabular}{rrrrr}
+{\color[HTML]{000000} } & {\color[HTML]{000000} Median MRE} & {\color[HTML]{000000} IQR MRE} & {\color[HTML]{000000} Median SA} & {\color[HTML]{000000} IQR SA} \\
+{\color[HTML]{000000} commit} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 14\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 54\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 76\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 85\%} \\
+{\color[HTML]{000000} contributor} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 6\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 22\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 68\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 83\%} \\
+{\color[HTML]{000000} star} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 12\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 28\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 54\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 123\%} \\
+{\color[HTML]{000000} openPR} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 4\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 19\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 89\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 46\%} \\
+{\color[HTML]{000000} closePR} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 6\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 50\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 85\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 78\%} \\
+{\color[HTML]{000000} openISSUE} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 24\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 69\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 0\%} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{000000} 235\%} \\
+{\color[HTML]{000000} closedISSUE} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 8\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 22\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 82\%} & \cellcolor[HTML]{F3F3F3}{\color[HTML]{000000} 56\%}
+\end{tabular}
+\end{adjustbox}
+\end{table}
+ 
+
+
+\section{Threats to validity}
+\label{sect:threa}
+The design of this study may have several validity threats~\cite{feldt2010validity}. The following issues should be considered to avoid jeopardizing conclusions made from this work.
+ 
+
+\textbf{Parameter Bias:} The settings to the control hyperparameters of the predicting methods can have a positive effect on the efficacy of the prediction. By using hyperparameter-optimized method in our experiment, we explore the space of possible hyperparameters for the predictor, hence we assert that this study suffers less parameter bias than some other studies.
+
+\textbf{Metric Bias:} We use Magnitude of the Relative Error (MRE) as one of the performance metrics in the experiment. However, MRE is criticized because of its bias towards error underestimations~\cite{foss2003simulation,kitchenham2001accuracy,korte2008confidence,port2008comparative,shepperd2000building,stensrud2003further}. Specifically, when the benchmark error is small or equal to zero, the relative error could become extremely large or infinite. This may lead to an undefined mean or at least a distortion of the result~\cite{chen2017new}. In our study, we do not abandon MRE since there exist known baselines for human performance in effort estimation expressed in terms of MRE~\cite{Jorgensen03}. To overcome this limitation, we set a customized MRE treatment to deal with ``divide by zero'' issue and also apply Standardized Accuracy (SA) as the other measure of the performance.
+
+\textbf{Sampling Bias:} 
+In our study, we collect 78,455 months with 12 features of 1,628 GitHub projects data for the experiment. Also we use 7 GitHub development features as health indicators of open-source project. While we reach good predicting performance on those data, it would be inappropriate to conclude that our technique always gets positive result on open-source projects, or the health indicators we use could completely decide the project's health status. To mitigate this problem, we release a replicable package of our entire experiment to support the research community to reproduce, improve or refute our results on broader data and indicators.
+
+ 
+
+% \section{Other Related work}
+% \label{sect:related}
+
+% Our experiment data of open source project come from GitHub. As the largest and the most popular open source software development platform, GitHub hosts thousands of open source projects in different domains. When developing projects on GitHub, developers use fork to create their own copies of repositories, and submit pull requests when they want project maintainers to merge their commits into main branch~\cite{kalliamvakou2016depth}. People having questions can create issue on projects to notice developers. Also, if community members are interested in projects, they can add star to them.
+
+% For software engineering studies, many techniques and suggestions are used to collect data from GitHub. Gousios et al. porpose a system named ``GHTorrent'' which creates a scalable, queriable, offline mirror of data offered through the GitHub REST API~\cite{gousios2012ghtorrent}, this work offers great resources to the research community because of its various and enormous amount of data. As a following work, they also provide a dataset for Pull-Based development research which contains 350,000 pull requests from almost 900 GitHub projects~\cite{gousios2014dataset}. 
+
+% The quantity of open source research data would no longer to be in severe shortage. However, not every repository on GitHub is useful for research purposes.
+% Munaiah et al. indicate that many GitHub repositories are ``noise''
+% (e.g. home work assignments) which may not be appropriate for research purposes~\cite{munaiah2017curating}. They porpose a tool named ``reaper'' which uses score-based classifiers and random forest to help researchers finding GitHub repositories that contain engineered software projects.
+
+% Some GitHub projects tend to be no longer active anymore. Coelho et al. collect a set of project activity features (e.g. commits, forks, issues, etc), and train random forest based models to help detecting those GitHub projects which lack of maintenance, and alert potential users about the risks of using these projects~\cite{coelho2018identifying}.
+
+% Also, Kalliamvakou et al. conduct a study about understanding the characteristics of the repositories in GitHub and how users take advantage of GitHub’s main features. They find that mining GitHub for research purposes could take various potential perils and provide a set of recommendations for software engineering researchers on mining data from GitHub~\cite{kalliamvakou2014promises,kalliamvakou2016depth}.
+
+
+\section{Conclusion and Future Work}
+\label{sect:concl}
+
+ 
+
+Our results make a compelling case for open source development. Companies that only build in-house proprietary products may be cutting themselves off from the information needed to reason about those projects. Software developed on some public platforms is a source of data that can be used to
+make accurate predictions  about those projects. While the activity of a single developer may be random and hard to predict, when large groups of developers work together on software projects,
+the resulting behavior can be predicted with good accuracy. For example, after building predictors for seven project health indicators, we can assert that usually (for 6/7 indicators), we can make predictions with less than 10\% error (median values). 
+
+Our results come with some caveats. Some human activity is  too random, for the law of large numbers. We know this since we cannot predict everything  
+ with high accuracy. For example, 
+ while we {\em can}  predict how many issues will be {\em closed}, we were   unsuccessful in building good predictions for     how many  will remain {\em open}. 
+ Also, to make predictions, we must take care to tune the data mining algorithms to the idiosyncrasies of the datasets.
+ Some data mining algorithms rely on statistical properties that are emergent in large samples of data.
+ Hence, such algorithms may have problems reasoning about very small datasets, such as those studied here.
+ Hence, before making predictions, it is vitally   important to adjust the learners to the idiosyncrasies of the dataset via hyperparameter optimization. Unlike prior hyperparameter optimization work~\cite{Fu2016TuningFS}, our optimization process is very fast (seven seconds per dataset). Accordingly, we assert that for predicting software project health, hyperparameter optimization is the preferred technology.
+ 
+As to future work, there is still much to do. Firstly, we know many organizations such as IBM that run large in-house ecosystems where, behind firewalls, thousands of programmers build software using  a private GitHub system. It would be insightful to see if our techniques work for such ``private'' GitHub networks.
+Secondly, our results are good but not perfect. 
+Table~\ref{tbl:med_mre} shows that while our median results are good, some prediction tasks are harder than others
+(e.g. open issues, commits, and star).
+Also, Table~\ref{tbl:med_sa} shows that further improvements are possible. The DE algorithm used in this paper is essentially Storn's 1997 version and there are many more recent variants of that algorithm that could be useful~\cite{wu2018ensemble,das2016recent}. Another thing to try here might be deep learning. Normally we might not recommend slow algorithms like deep neural networks for reasoning over 1,600+ projects. But since our datasets are relatively small, that there might be ways to short cut the usual learning cycle. For example, suppose we found that our 1,600+ projects cluster into (say) just a handful of different project types. In that case, the target for deep learning models could be very small and fast to process.
+
+
+Lastly, the GitHub project health literature offers many more targets for this kind of reasoning (e.g. the programmer assessment metrics
+used by Bao et al.~\cite{bao2019large}).  Our results seem to indicate that   the law of large numbers could apply to GitHub. If so, then there should be many more things we can readily predict about open source  projects (not just the targets listed in \tbl{feature}).
+
+\vspace{3mm}
+
+\section*{Acknowledgements}
+This research was partially funded by blinded for review.
+
+
+%%
+%% The next two lines define the bibliography style to be used, and
+%% the bibliography file.
+\newpage \balance
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{bibreference}
+
+
+
+
+
+\end{document}
+\endinput
+%%
+%% End of file `sample-sigchi.tex'.
