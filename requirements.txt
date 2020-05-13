@@ -1,2 +1,4 @@
 ####### required packages #######
-pytest
+lua
+gawk
+pandoc
