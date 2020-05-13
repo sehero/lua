@@ -1,12 +1,12 @@
-<p align=center><b>A perfect repo
+<p align=center><b>SE for super heroes: an AI approach
 </b><br><a 
-href="https://github.com/ai-se/perfect-repo/blob/master/README.md">about</a>  :: <a 
-href="https://github.com/ai-se/perfect-repo">code</a>  :: <a 
-href="https://github.com/ai-se/perfect-repo/blob/master/LICENSE">license</a>  :: <a 
-href="https://github.com/ai-se/perfect-repo/blob/master/INSTALL.md">install</a> :: <a
-href="https://github.com/ai-se/perfect-repo/blob/master/CODE_OF_CONDUCT.md">contribute</a> :: <a 
-href="https://github.com/ai-se/perfect-repo/issues">issues</a> ::  <a 
-href="https://github.com/ai-se/perfect-repo/blob/master/CONTACT.md">contact</a> <p 
+href="https://github.com/sehero/src/blob/master/README.md">about</a>  :: <a 
+href="https://github.com/sehero/src">code</a>  :: <a 
+href="https://github.com/sehero/src/blob/master/LICENSE">license</a>  :: <a 
+href="https://github.com/sehero/src/blob/master/INSTALL.md">install</a> :: <a
+href="https://github.com/sehero/src/blob/master/CODE_OF_CONDUCT.md">contribute</a> :: <a 
+href="https://github.com/sehero/src/issues">issues</a> ::  <a 
+href="https://github.com/sehero/src/blob/master/CONTACT.md">contact</a> <p 
 align=center> <img 
 src="https://img.shields.io/badge/language-python-orange">&nbsp;<img 
 src="https://img.shields.io/badge/purpose-ai,se-blueviolet">&nbsp;<img 
@@ -15,3 +15,8 @@ src="https://img.shields.io/badge/license-mit-informational">&nbsp;<img
 src="https://travis-ci.com/ai-se/perfect-repo.svg?branch=master"> 
 </p><hr>
 
+# Contact
+
+Tim Menzies  
+timm@ieee.org   
+http://menzies.us
