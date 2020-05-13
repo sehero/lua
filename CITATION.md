@@ -19,7 +19,7 @@ src="https://travis-ci.org/sehero/src.svg?branch=master">
 
 T. Menzies. 
 _SE for super heroes: an AI approach_.
-May, 2020, 10.5281/zenodo.3823634,
+May, 2020, 
 https://doi.org/10.5281/zenodo.3823634.
 
 ```bitex
