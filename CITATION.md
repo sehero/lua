@@ -6,6 +6,7 @@ href="https://github.com/sehero/src/blob/master/LICENSE">license</a>  :: <a
 href="https://github.com/sehero/src/blob/master/INSTALL.md">install</a> :: <a
 href="https://github.com/sehero/src/blob/master/CODE_OF_CONDUCT.md">contribute</a> :: <a 
 href="https://github.com/sehero/src/issues">issues</a> ::  <a 
+href="https://github.com/sehero/src/blob/master/CITATION.md">cite</a> ::  <a 
 href="https://github.com/sehero/src/blob/master/CONTACT.md">contact</a> <p 
 align=center> <img 
 src="https://img.shields.io/badge/language-python-orange">&nbsp;<img 
