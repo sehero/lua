@@ -9,16 +9,14 @@ href="https://github.com/sehero/lua/issues">issues</a> :: <a
 href="https://github.com/sehero/lua/blob/master/CITATION.md">cite</a> :: <a
 href="https://github.com/sehero/lua/blob/master/CONTACT.md">contact</a> <p
 align=center> <img
-src="https://img.shields.io/badge/language-lua-orange">&nbsp;<img
-src="https://img.shields.io/badge/purpose-ai,se-blueviolet">&nbsp;<img
-src="https://img.shields.io/badge/platform-mac,*nux-informational">&nbsp;<img
-src="https://img.shields.io/badge/license-mit-red">&nbsp;<img
+src="https://img.shields.io/badge/language-lua-orange"> <img
+src="https://img.shields.io/badge/purpose-ai,se-blueviolet"> <img
+src="https://img.shields.io/badge/platform-mac,*nux-informational"> <img
+src="https://img.shields.io/badge/license-mit-red"> <img
 src="https://travis-ci.org/sehero/src.svg?branch=master"> <a 
 href="https://zenodo.org/badge/latestdoi/263210595"><img 
 src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a>
 </p><hr>
 
-
-</p><hr>
 
 <p align=center> <img width=400 src="https://github.com/sehero/src/blob/master/doc/etc/img/shadow.png"> </p>
