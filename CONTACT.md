@@ -19,7 +19,7 @@ href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p>
 </p>
 
 
-# Contact
+## Contact
 
 Tim Menzies  
 timm@ieee.org   

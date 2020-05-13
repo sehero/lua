@@ -19,9 +19,9 @@ href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p>
 </p>
 
 
-# Installation
+## Installation
 
-## Requirements
+### Requirements
 
 Mac OS:
 
@@ -29,9 +29,9 @@ Mac OS:
 brew install gawk lua pandoc
 ```
 
-## Installing
+### Installing
 
-## Testing
+### Testing
 ```
 make test
 ```

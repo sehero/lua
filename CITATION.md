@@ -19,23 +19,26 @@ href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p>
 </p>
 
 
-# Cite As...
+## Cite as ...
 
 T. Menzies. 
-_SE for super heroes: an AI approach_.
+_Sehero/lua: lua code, AI for SE_    
 May, 2020, 
-https://doi.org/10.5281/zenodo.3823634.
+https://doi.org/10.5281/zenodo.3825872
+
 
 ```bitex
-@software{sehero20,
+@software{sehero_lua,
   author       = {Tim Menzies},
-  title        = {SE for super heroes: an AI approach},
-  month        = may,
+  title        = {Sehero/lua: lua code, AI for SE},
+  month        = May,
   year         = 2020,
   publisher    = {Zenodo},
-  version      = {second},
-  doi          = {10.5281/zenodo.3823634},
-  url          = {https://doi.org/10.5281/zenodo.3823634}
+  version      = {three},
+  doi          = {10.5281/zenodo.3825872},
+  url          = {https://doi.org/10.5281/zenodo.3825872}
 }
-
 ```
+
+### Co-authors
+
