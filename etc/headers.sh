@@ -17,10 +17,10 @@ href="$r/CODE_OF_CONDUCT.md#top">contribute</a> :: <a
 href="$u/issues">issues</a> :: <a
 href="$r/CITATION.md#top">cite</a> :: <a
 href="$r/CONTACT.md#top">contact</a> </p><p> 
-<img src="$b/platform-mac,*nux-informational">    
 <img src="$b/license-mit-red">   
 <img src="$b/language-lua-orange">    
-<img src="$b/purpose-ai,se-blueviolet"><br>  
+<img src="$b/purpose-ai,se-blueviolet">  
+<img src="$b/platform-mac,*nux-informational"><br>
 <a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a><br>
 <img src="https://travis-ci.org/sehero/src.svg?branch=master"><br>  
 </p>
