@@ -8,16 +8,16 @@ help: ## help
 	@bash etc/help.sh $(MAKEFILE_LIST)
 
 install: ## install
-	pip install -r requirements.txt
+	@pip install -r requirements.txt
 
 check: ## look for missing executables
 	@bash etc/missing.sh $(WANT)
 	
 test: ## test
-	pytest
+	@pytest
 
 pull: ## download from Git
-	git pull
+	@git pull
 
 push: ## upload changes to Git
 	@git commit -am "pushing"
@@ -36,7 +36,7 @@ create: $(SITE)
 	@touch $(SITE)/.nojekyll
 
 over: $(SITE)/index.html
-	- cd $(SITE); make 
+	@- cd $(SITE); make 
 
 PAN=                     \
   -s                      \
@@ -48,11 +48,11 @@ PAN=                     \
   --indented-code-classes=lua,numberLines  
 
 $(SITE)/index.html:  etc/index.md
-	pandoc $< -V path="" --metadata title="$(notdir $<)" $(PAN) -o $@
+	@pandoc $< -V path="" --metadata title="$(notdir $<)" $(PAN) -o $@
 
 $(SITE)/src/%.html:  src/*.lua
-	gawk -f etc/2md.awk $< \
+	@gawk -f etc/2md.awk $< \
 	| pandoc -V path="../" --metadata title="$(notdir $<)" $(PAN) -o $@
 
 $(SITE)/doc/%.html:  doc/*.md
-	pandoc $< -V path="../" --metadata title="$(notdir $<)" $(PAN) -o $@
+	@pandoc $< -V path="../" --metadata title="$(notdir $<)" $(PAN) -o $@
