@@ -2,13 +2,13 @@
 src="https://cdn.pixabay.com/photo/2019/08/01/21/40/spiderman-4378357_1280.png"><h1>
 SE for super heroes: an AI approach
 </h1><p> <a
-href="https://github.com/sehero/lua/blob/master/README.md">about</a> :: <a
-href="https://github.com/sehero/lua">code</a> :: <a
-href="https://github.com/sehero/lua/blob/master/LICENSE">license</a> :: <a
-href="https://github.com/sehero/lua/blob/master/INSTALL.md#top">install</a> :: <a
-href="https://github.com/sehero/lua/blob/master/CODE_OF_CONDUCT.md#top">contribute</a> :: <a
-href="https://github.com/sehero/lua/issues">issues</a> :: <a
-href="https://github.com/sehero/lua/blob/master/CITATION.md#top">cite</a> :: <a
+href="https://github.com/sehero/lua/blob/master/README.md">home</a> | <a
+href="https://github.com/sehero/lua">code</a> | <a
+href="https://github.com/sehero/lua/blob/master/LICENSE">license</a> | <a
+href="https://github.com/sehero/lua/blob/master/INSTALL.md#top">install</a> | <a
+href="https://github.com/sehero/lua/blob/master/CODE_OF_CONDUCT.md#top">contribute</a> | <a
+href="https://github.com/sehero/lua/issues">issues</a> | <a
+href="https://github.com/sehero/lua/blob/master/CITATION.md#top">cite</a> | <a
 href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p><p> 
 <img src="https://img.shields.io/badge/license-mit-red">   
 <img src="https://img.shields.io/badge/language-lua-orange">    
@@ -26,7 +26,6 @@ _Sehero/lua: lua code, AI for SE_
 May, 2020, 
 https://doi.org/10.5281/zenodo.3825872
 
-
 ```bitex
 @software{sehero_lua,
   author       = {Tim Menzies},
@@ -41,4 +40,3 @@ https://doi.org/10.5281/zenodo.3825872
 ```
 
 ### Co-authors
-
