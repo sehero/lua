@@ -9,7 +9,7 @@ i='https://images.vexels.com/media/users/3/152694/isolated/preview/5e0cb3e5b5908
 i='doc/etc/img/spiderman.png'
 
 cat <<EOF> /tmp/heads$$
-<a class=sehero name=top> <img align=right width=300 src="$i">
+<a class=sehero name=top> <img align=right width=200 src="$i">
 <h1><a href="$f/README.md#top">SE for super heroes: an AI approach</a></h1> <p> <a
 href="$r/LICENSE">license</a> :: <a
 href="$r/INSTALL.md#top">install</a> :: <a
