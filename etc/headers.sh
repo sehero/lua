@@ -9,6 +9,8 @@ i='https://i1.wp.com/s3.amazonaws.com/production-wordpress-assets/blog/wp-conten
 i='https://imgs.xkcd.com/comics/superm_n_2x.png'
 i='doc/etc/img/spiderman.png'
 i="https://www.artistshot.com/assets-3/images/admin/designs/205850/205850-250x250.png"
+i='https://cdn.shopify.com/s/files/1/0010/1942/products/2313703_1024x1024@2x.png?v=1547576275'
+
 cat <<EOF> /tmp/heads$$
 <a class=sehero name=top> 
 <h1><a href="$f/README.md#top">SE for super heroes: an AI approach</a></h1> 
@@ -19,7 +21,7 @@ href="$r/CODE_OF_CONDUCT.md#top">contribute</a> :: <a
 href="$u/issues">issues</a> :: <a
 href="$r/CITATION.md#top">cite</a> :: <a
 href="$r/CONTACT.md#top">contact</a> </p><img 
-align=right xwidth=300 src="$i"><p> 
+align=right width=300 src="$i"><p> 
 <img src="$b/license-mit-red">   
 <img src="$b/language-lua-orange">    
 <img src="$b/purpose-ai,se-blueviolet">  
