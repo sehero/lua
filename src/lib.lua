@@ -10,9 +10,19 @@ function lib.anys(l,n,    t)
   return t
 end
 
+local function what2do(t,f)
+  if not f                 then return lib.same end
+  if type(f) == 'function' then return f end 
+  if type(f) == 'string'   then 
+    return function (z) return z[f] end  
+  end
+  local m = getmetable(t)
+  return m and m[f] or assert(false,"bad function")
+end
+
 function lib.map(t,f, out)
   out={}
-  f =  f and f or function(z) return z end
+  f = what2do(t,f)
   if t then for i,v in pairs(t) do out[i] = f(v) end  end
   return out
 end

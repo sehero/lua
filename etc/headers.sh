@@ -12,7 +12,7 @@ i='doc/etc/img/spiderman.png'
 cat <<EOF> /tmp/heads$$
 <a class=sehero name=top> 
 <h1><a href="$f/README.md#top">SE for super heroes: an AI approach</a></h1> 
-<img align=right width=250 src="$i">
+<img align=right width=300 src="$i">
 <p> <a
 href="$r/LICENSE">license</a> :: <a
 href="$r/INSTALL.md#top">install</a> :: <a
