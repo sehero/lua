@@ -43,33 +43,38 @@ https://doi.org/10.5281/zenodo.3825872
 
 We aren't SE super heroes-- just their biggest fans.
 
-<p>
+<table>
+<tr>
+<td>
 <img align=left width=200 src="doc/etc/img/amrit.jpg">
+<td>
+<img align=left width=200 src="doc/etc/img/weifu.jpg">
+<td>
+<img align=left width=200 src="doc/etc/img/greggay.png">
+</tr>
+<tr>
+<td>
 <a href="https://www.amritanshu.us">Dr. Amritanshu Agrawal</a>
  <br> data scientist, Wayfair, Boston<br> USA
-<br clear=all>
-
-<p>
-<img align=left width=200 src="doc/etc/img/weifu.jpg">
+<td>
 <a href="">Dr. Wei Fu<br> Landing AI<br> USA
-<br clear=all>
-
-<p>
-<img align=left width=200 src="doc/etc/img/greggay.png">
+<td>
 <a href="https://greg4cr.github.io">Dr. Greg Gay</a><br> Chalmers and the University of Gothenburg<br> Sweden
-<br clear=all>
-
-<p>
+</tr>
+<tr>
+<td>
 <img align=left width=200 src="doc/etc/img/timmenzies.jpg">
-<a href="http://menzies.us">Prof. Tim Menzies</a><br> North Carolina State University<br> USA 
-<br clear=all>
-
-<p>
+<td>
 <img align=left width=200 src="doc/etc/img/viveknair.jpg">
-<a href="http://vivekaxl.github.io">Dr. Vivek Nair</a><br>  Facebook<br> USA
-<br clear=all>
-
-<p>
+<td>
 <img align=left width=200 src="doc/etc/img/zheyu.png">
+</tr>
+<tr>
+<td>
+<a href="http://menzies.us">Prof. Tim Menzies</a><br> North Carolina State University<br> USA 
+<td>
+<a href="http://vivekaxl.github.io">Dr. Vivek Nair</a><br>  Facebook<br> USA
+<td>
 <a href="http://azhe825.github.io">Dr. Zhe Yu</a><br> Rochester Instituate of Technology<br> USA
-<br clear=all>
+</tr>
+</table>
