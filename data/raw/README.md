@@ -7,7 +7,7 @@ href="https://github.com/sehero/lua/blob/master/CODE_OF_CONDUCT.md#top">contribu
 href="https://github.com/sehero/lua/issues">issues</a> :: <a
 href="https://github.com/sehero/lua/blob/master/CITATION.md#top">cite</a> :: <a
 href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p><img 
-align=right width=300 src="doc/etc/img/spiderman.png"><p> 
+align=right xwidth=300 src="https://www.artistshot.com/assets-3/images/admin/designs/205850/205850-250x250.png"><p> 
 <img src="https://img.shields.io/badge/license-mit-red">   
 <img src="https://img.shields.io/badge/language-lua-orange">    
 <img src="https://img.shields.io/badge/purpose-ai,se-blueviolet">  
