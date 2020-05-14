@@ -68,7 +68,7 @@ Chalmers and the University of Gothenburg, Sweden
 
 <a href="http://vivekaxl.github.io">Dr. Vivek Nair</a><br>  Facebook,  USA
 
-<img  height=300 src="doc/etc/img/fayloapeters.jpg">
+<img  height=300 src="doc/etc/img/fayolapeters.jpg">
 
 Dr. Fayola Peters<br>Chief Scientist, Bayer.
 
