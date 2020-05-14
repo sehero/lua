@@ -78,9 +78,14 @@ We may not be  SE super heroes-- but we are  their biggest fans.
 <tr>
 <td align=center  valign=bottom>
 <img valign=bottom align=middle height=300 src="doc/etc/img/rahulkrishna.jpg">
+<td align=center colspan=2>
+<img valign=bottom align=middle height=300 src="doc/etc/img/joekrall.jpg">
+
 </tr>
 <tr>
 <td align=center>
 <a href="http://rkrsn.us">Dr. Rahul Krishna</a><br>Columbia University, USA
+<td align=center colspan=2>
+Dr. Joe Krall<br>Azz
 </tr>
 </table>
