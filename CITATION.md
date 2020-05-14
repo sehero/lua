@@ -55,7 +55,8 @@ We may not be  SE super heroes-- but we are  their biggest fans.
 <td align=center >
 <a href="">Dr. Wei Fu</a><br> Landing AI,  USA
 <td align=middle >
-<a href="https://greg4cr.github.io">Dr. Greg Gay</a><br> Chalmers and the University of Gothenburg, Sweden
+<a href="https://greg4cr.github.io">Dr. Greg Gay</a><br> 
+Chalmers and the University of Gothenburg, Sweden
 </tr>
 <tr>
 <td align=center  valign=bottom>
@@ -78,12 +79,11 @@ We may not be  SE super heroes-- but we are  their biggest fans.
 <img valign=bottom align=middle height=300 src="doc/etc/img/rahulkrishna.jpg">
 <td align=center colspan=2>
 <img valign=bottom align=middle height=300 src="doc/etc/img/joekrall.jpg">
-
 </tr>
 <tr>
 <td align=center>
 <a href="http://rkrsn.us">Dr. Rahul Krishna</a><br>Columbia University, USA
 <td align=center colspan=2>
-Dr. Joe Krall<br>Azz
+Dr. Joe Krall<br>Sr. Software Engineering, GE Oil&Gas
 </tr>
 </table>
