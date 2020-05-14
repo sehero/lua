@@ -46,33 +46,33 @@ We aren't SE super heroes-- just their biggest fans.
 <p>
 <img align=left width=200 src="doc/etc/img/amrit.jpg">
 <a href="https://www.amritanshu.us">Dr. Amritanshu Agrawal</a>
- <br> data scientist, Wayfair, Boston, USA
+ <br> data scientist, Wayfair, Boston<br> USA
 <br clear=all>
 
 
 <p>
 <img align=left width=200 src="doc/etc/img/weifu.jpg">
-<a href="">Dr. Wei Fu<br> Landing AI, USA
+<a href="">Dr. Wei Fu<br> Landing AI<br> USA
 <br clear=all>
 
 <p>
 <img align=left width=200 src="doc/etc/img/greggay.png">
-<a href="https://greg4cr.github.io">Dr. Greg Gay</a><br> Chalmers and the University of Gothenburg, Sweden
+<a href="https://greg4cr.github.io">Dr. Greg Gay</a><br> Chalmers and the University of Gothenburg<br> Sweden
 <br clear=all>
 
 <p>
 <img align=left width=200 src="doc/etc/img/timmenzies.jpg">
-<a href="http://menzies.us">Prof. Tim Menzies</a><br> North Carolina State University, USA 
+<a href="http://menzies.us">Prof. Tim Menzies</a><br> North Carolina State University<br> USA 
 <br clear=all>
 
 <p>
 <img align=left width=200 src="doc/etc/img/viveknair.jpg">
-<a href="http://vivekaxl.github.io">Dr. Vivek Nair</a><br>  Facebook, USA
+<a href="http://vivekaxl.github.io">Dr. Vivek Nair</a><br>  Facebook<br> USA
 <br clear=all>
 
 <p>
 <img align=left width=200 src="doc/etc/img/zheyu.png">
-<a href="http://azhe825.github.io">Dr. Zhe Yu</a><br> Rochester Instituate of Technology. USA
+<a href="http://azhe825.github.io">Dr. Zhe Yu</a><br> Rochester Instituate of Technology<br> USA
 <br clear=all>
 
 
