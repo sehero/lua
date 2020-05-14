@@ -41,9 +41,11 @@ https://doi.org/10.5281/zenodo.3825872
 
 ### Co-authors
 
+We may not be super heroes,  but we are their biggest fans.
+
 <p>
 <img align=left width=200 src="doc/etc/img/amrit.jpg">
-Dr. Amritanshu Agrawal<br> data scientist, Wayfair, Boston, USA
+[Dr. Amritanshu Agrawal](https://www.amritanshu.us) <br> data scientist, Wayfair, Boston, USA
 <br clear=all>
 
 
