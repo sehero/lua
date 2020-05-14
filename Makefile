@@ -7,24 +7,23 @@ SITE=../sehero.github.io
 help: ## help
 	@bash etc/help.sh $(MAKEFILE_LIST)
 
-install: setup base tools website tex #fun ## install
+install: in inbase intools inwebsite intex interm #infun ## install
 
-setup:;   brew update
-base:;    @sh etc/brew.sh gawk lua  
-tools:;	  @sh etc/brew.sh git vim tmux htop mc tree ncdu 
-fun:; 	  @sh etc/brew.sh cmatrix bsdames-osx 
-website:; @sh etc/brew.sh  pandoc pandoc-citeproc 
-tex: 
+in:;        brew update
+inbase:;    @sh etc/brew.sh gawk lua  
+intools:;   @sh etc/brew.sh git vim tmux htop mc tree ncdu 
+infun:;     @sh etc/brew.sh cmatrix bsdames-osx 
+inwebsite:; @sh etc/brew.sh pandoc pandoc-citeproc 
+intex: 
 	@brew cask install basictex  # for text generation
 	@brew cask upgrade 
+interm:
+	@brew cask install iterm2
 
-check: ## look for missing executables
-	@bash etc/missing.sh $(WANT)
-	
 test: ## test
 	cd test; sh all.sh
 
-headers: ## reset .md headers
+headers: ## reset .md headers, except in doc/etc/doc
 	@find . -name '*.md'   \
 	| grep -v ./doc.etc.doc \
 	| bash etc/headers.sh
