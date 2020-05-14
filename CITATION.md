@@ -78,7 +78,7 @@ We may not be  SE super heroes-- but we are  their biggest fans.
 <a href="http://azhe825.github.io">Dr. Zhe Yu</a><br> Rochester Instituate of Technology, USA
 </tr>
 <tr>
-<td align=center  valign=bottom>
+<td text-align=center  valign=bottom>
 <img valign=bottom align=left width=200 src="doc/etc/img/rahulkrishna.jpg">
 </tr>
 <tr>
