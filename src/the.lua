@@ -40,7 +40,7 @@ return {
             sym  = ":"
           },
   some =  { max  = 256,
-            magic = 2.564,
+            magic = 2.564},
   sample= { b      = 200,
             most   = 512,
             epsilon= 1.01,

@@ -4,7 +4,7 @@ local Some = the.class(require "col")
 
 function Some:_init(txt,pos)
   self:super(txt,pos)
-  self._all = {}
+  self.kept = {}
   self.max = the.some.max
   self.magic=the.some.magic
   self.sorted = false
@@ -14,11 +14,11 @@ function Some:add(x)
   if x ~= the.ch.skip then
     self.n = self.n + 1
     x = tonumber(x)
-    if #x < self.max then
+    if #self.kept < self.max then
       self.sorted = false
-      self._all[ #self._all + 1 ] = x
+      self.kept[ #self.kept + 1 ] = x
     elseif math.rand() < self.max/self.n then
-      self.all()[ lst.bsearch(self._all,x) ] = x end 
+      self.all()[ lst.bchop(self.kept,x) ] = x end 
    end
    return x
 end
@@ -40,15 +40,15 @@ function Some:iqr(j,k)
 
 function Some:per(p,j,k,  i)
   j = j or 1
-  k = k or #self._all
+  k = k or #self.kept
   i = math.floor( j + p*(k-j) )
   return self:all()[ i ]
 end
 
 function Some:all()
-  if not self.sorted then table.sort(self._all) end
+  if not self.sorted then table.sort(self.kept) end
   self.sorted = true
-  return self._all
+  return self.kept
 end
 
 return Some 

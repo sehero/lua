@@ -76,3 +76,14 @@ ok{ cache = function ( u,n)
   for i=1,10 do lib.same(u[i]) end
   assert( n == 10 )
 end}
+
+ok { bchop=function(   u)
+  u={}
+  for i=1,1 do
+    for _,v in pairs({10,20,30,40,50,60,70,80,90,100}) do
+       u[#u+1] = v end end
+  table.sort(u)
+  for _,v in pairs({10,25,24,26,60,69,80,90,1105}) do
+    print("b",v, lib.bchop(u,v))
+  end
+end}

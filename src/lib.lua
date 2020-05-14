@@ -20,6 +20,16 @@ local function what2do(t,f)
   return m and m[f] or assert(false,"bad function")
 end
 
+function lib.bchop(t,val) 
+  local lo,hi=1,#t
+  while lo <= hi do
+    local mid =(lo+hi) // 2
+    if t[mid] > val then hi= mid-1 else lo= mid+1 end
+  end
+  return math.min(lo,#t)  
+end
+
+
 function lib.map(t,f, out)
   out={}
   f = what2do(t,f)
