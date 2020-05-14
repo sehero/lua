@@ -43,33 +43,33 @@ https://doi.org/10.5281/zenodo.3825872
 
 <p>
 <img align=left width=200 src="doc/etc/img/amrit.jpg">
-Dr. Amritanshu Agrawal, data scientist, Wayfair, Boston, USA
+Dr. Amritanshu Agrawal<br> data scientist, Wayfair, Boston, USA
 <br clear=all>
 
 
 <p>
 <img align=left width=200 src="doc/etc/img/weifu.jpg">
-Dr. Wei Fu, Landing AI, USA
+Dr. Wei Fu<br> Landing AI, USA
 <br clear=all>
 
 <p>
 <img align=left width=200 src="doc/etc/img/greggay.png">
-Dr. Greg Gay, Chalmers and the University of Gothenburg, Sweden
+Dr. Greg Gay<br> Chalmers and the University of Gothenburg, Sweden
 <br clear=all>
 
 <p>
 <img align=left width=200 src="doc/etc/img/timmenzies.jpg">
-Prof. Tim Menzies, North Carolina State University, USA 
+Prof. Tim Menzies<br> North Carolina State University, USA 
 <br clear=all>
 
 <p>
 <img align=left width=200 src="doc/etc/img/viveknair.jpg">
-Dr. Vivek Nair,  Facebook, USA
+Dr. Vivek Nair<br>  Facebook, USA
 <br clear=all>
 
 <p>
 <img align=left width=200 src="doc/etc/img/zheyu.png">
-Dr. Zhe Yu, Rochester Instituate of Technology. USA
+Dr. Zhe Yu<br> Rochester Instituate of Technology. USA
 <br clear=all>
 
 
