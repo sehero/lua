@@ -45,11 +45,11 @@ We may not be  SE super heroes-- but we are  their biggest fans.
 
 <table>
 <tr>
-<td align=center  valign=bottom>
+<td width=260 align=center  valign=bottom>
 <img valign=bottom align=middle width=200 src="doc/etc/img/amrit.jpg">
-<td align=center  valign=bottom>
+<td width=260 align=center  valign=bottom>
 <img valign=bottom align=middle width=200 src="doc/etc/img/weifu.jpg">
-<td align=center  valign=bottom>
+<td width=260 align=center  valign=bottom>
 <img valign=bottom align=middle width=250 src="doc/etc/img/greggay.png">
 </tr>
 <tr>
@@ -78,11 +78,11 @@ We may not be  SE super heroes-- but we are  their biggest fans.
 <a href="http://azhe825.github.io">Dr. Zhe Yu</a><br> Rochester Instituate of Technology, USA
 </tr>
 <tr>
-<td text-align=center  valign=bottom>
+<td align=center  valign=bottom>
 <img valign=bottom align=middle width=200 src="doc/etc/img/rahulkrishna.jpg">
 </tr>
 <tr>
-<td align=center >
+<td align=center>
 Dr. Rahul Krihsna,<br>Columbia University, USA
 </tr>
 </table>
