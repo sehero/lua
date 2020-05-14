@@ -11,7 +11,9 @@ i='doc/etc/img/spiderman.png'
 
 cat <<EOF> /tmp/heads$$
 <a class=sehero name=top> 
-<h1><a href="$f/README.md#top">SE for super heroes: an AI approach</a></h1> <p> <a
+<h1><a href="$f/README.md#top">SE for super heroes: an AI approach</a></h1> 
+<img align=right width=300 src="$i">
+<p> <a
 href="$r/LICENSE">license</a> :: <a
 href="$r/INSTALL.md#top">install</a> :: <a
 href="$r/CODE_OF_CONDUCT.md#top">contribute</a> :: <a
@@ -25,7 +27,6 @@ href="$r/CONTACT.md#top">contact</a> </p><p>
 <a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a><br>
 <img src="https://travis-ci.org/sehero/src.svg?branch=master"><br>  
 </p>
-<img align=right width=300 src="$i">
 EOF
 
 one() {

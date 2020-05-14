@@ -1,5 +1,7 @@
 <a class=sehero name=top> 
-<h1><a href="/README.md#top">SE for super heroes: an AI approach</a></h1> <p> <a
+<h1><a href="/README.md#top">SE for super heroes: an AI approach</a></h1> 
+<img align=right width=300 src="doc/etc/img/spiderman.png">
+<p> <a
 href="https://github.com/sehero/lua/blob/master/LICENSE">license</a> :: <a
 href="https://github.com/sehero/lua/blob/master/INSTALL.md#top">install</a> :: <a
 href="https://github.com/sehero/lua/blob/master/CODE_OF_CONDUCT.md#top">contribute</a> :: <a
@@ -13,7 +15,6 @@ href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p>
 <a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a><br>
 <img src="https://travis-ci.org/sehero/src.svg?branch=master"><br>  
 </p>
-<img align=right width=300 src="doc/etc/img/spiderman.png">
 
 
 ## Contributor Covenant Code of Conduct
