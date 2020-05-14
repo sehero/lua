@@ -70,7 +70,7 @@ Chalmers and the University of Gothenburg, Sweden
 
 <img  height=300 src="doc/etc/img/fayolapeters.jpg">
 
-Dr. Fayola Peters<br>Chief Scientist, Bayer.
+<a href="https://www.fayolapeters.com">Dr. Fayola Peters</a><br>Data Analytics Developer, Johnson & Johnson
 
 <img  height=300 src="doc/etc/img/zheyu.png">
 
