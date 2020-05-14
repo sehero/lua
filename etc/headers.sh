@@ -5,9 +5,10 @@ u='https://github.com/sehero/lua'
 r="$u/blob/master"
 
 cat <<EOF> /tmp/heads$$
-<a class=sehero name=top> <h1> SE for super heroes: an AI approach
-</h1> <img align=right width=300
-src="https://cdn.pixabay.com/photo/2019/08/01/21/40/spiderman-4378357_1280.png"> <p> <a
+<a class=sehero name=top> 
+<p><img align=right width=300
+src="https://cdn.pixabay.com/photo/2019/08/01/21/40/spiderman-4378357_1280.png"></p>
+<h1> SE for super heroes: an AI approach </h1> <p> <a
 href="$r/README.md">home</a> :: <a
 href="$u">code</a> :: <a
 href="$r/LICENSE">license</a> :: <a
