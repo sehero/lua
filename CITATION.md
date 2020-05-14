@@ -13,7 +13,7 @@ align=right width=300 src="doc/etc/img/spiderman.png"><p>
 <img src="https://img.shields.io/badge/purpose-ai,se-blueviolet"><br>
 <a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a><br>
 <img src="https://img.shields.io/badge/platform-mac,*nux-informational"><br>
-<img src="https://travis-ci.org/sehero/src.svg?branch=master"><br>  
+<img src="https://travis-ci.org/sehero/lua.svg?branch=master"><br>  
 </p>
 
 
@@ -40,7 +40,6 @@ https://doi.org/10.5281/zenodo.3825872
 ### Co-authors
 
 We ain't super heroes, but we are their biggest fans.
-
 
 <img  height=300 src="doc/etc/img/joekrall.jpg">
 

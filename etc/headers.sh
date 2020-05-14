@@ -27,7 +27,7 @@ align=right width=300 src="$i"><p>
 <img src="$b/purpose-ai,se-blueviolet"><br>
 <a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a><br>
 <img src="$b/platform-mac,*nux-informational"><br>
-<img src="https://travis-ci.org/sehero/src.svg?branch=master"><br>  
+<img src="https://travis-ci.org/sehero/lua.svg?branch=master"><br>  
 </p>
 EOF
 
