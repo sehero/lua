@@ -9,7 +9,7 @@ cat <<EOF> /tmp/heads$$
 <p><img align=right width=300
 src="https://cdn.pixabay.com/photo/2019/08/01/21/40/spiderman-4378357_1280.png"></p>
 <h1> SE for super heroes: an AI approach </h1> <p> <a
-href="$r/README.md">home</a> :: <a
+href="$r/README.md#top">home</a> :: <a
 href="$u">code</a> :: <a
 href="$r/LICENSE">license</a> :: <a
 href="$r/INSTALL.md#top">install</a> :: <a
