@@ -17,6 +17,17 @@ ok{ map=function(  t)
   assert(t[1] == 0.5 and t[#t]==2)
 end}
 
+ok{ map2 = function(  t)
+  t= {{a=20,b=19},{a=11,b=20}, {a=25,b=100}}
+  t= lib.map(t, "a")
+  assert(t[1] == 20 and t[#t]==25)
+end}
+
+ok{ map3 = function(  t)
+  t= {{a=20,b=19},{a=11,b=20}, {a=25,b=100}}
+  t= lib.map(t)
+end}
+
 ok{ copy=function(  t,u)
   t= {1,{2,3},4,{{6,7},8}}
   u = lib.copy(t)
