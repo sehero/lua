@@ -45,11 +45,11 @@ We aren't SE super heroes-- just their biggest fans.
 
 <table>
 <tr>
-<td>
+<td valign=bottom>
 <img valign=bottom align=left width=200 src="doc/etc/img/amrit.jpg">
-<td>
+<td valign=bottom>
 <img valign=bottom align=left width=200 src="doc/etc/img/weifu.jpg">
-<td>
+<td valign=bottom>
 <img valign=bottom align=left width=200 src="doc/etc/img/greggay.png">
 </tr>
 <tr>
@@ -62,11 +62,11 @@ We aren't SE super heroes-- just their biggest fans.
 <a href="https://greg4cr.github.io">Dr. Greg Gay</a><br> Chalmers and the University of Gothenburg<br> Sweden
 </tr>
 <tr>
-<td>
+<td valign=bottom>
 <img valign=bottom align=left width=200 src="doc/etc/img/timmenzies.jpg">
-<td>
+<td valign=bottom>
 <img valign=bottom align=left width=200 src="doc/etc/img/viveknair.jpg">
-<td>
+<td valign=bottom>
 <img valign=bottom align=left width=200 src="doc/etc/img/zheyu.png">
 </tr>
 <tr>
