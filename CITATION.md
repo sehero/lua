@@ -41,7 +41,7 @@ https://doi.org/10.5281/zenodo.3825872
 
 ### Co-authors
 
-We may not be super heroes,  but we are their biggest fans.
+We aren't SE super heroes-- just their biggest fans.
 
 <p>
 <img align=left width=200 src="doc/etc/img/amrit.jpg">
