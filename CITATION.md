@@ -50,7 +50,7 @@ We aren't SE super heroes-- just their biggest fans.
 <td valign=bottom>
 <img valign=bottom align=left width=200 src="doc/etc/img/weifu.jpg">
 <td valign=bottom>
-<img valign=bottom align=left width=200 src="doc/etc/img/greggay.png">
+<img valign=bottom align=left width=250 src="doc/etc/img/greggay.png">
 </tr>
 <tr>
 <td>
