@@ -45,36 +45,36 @@ We aren't SE super heroes-- just their biggest fans.
 
 <table>
 <tr>
-<td align=middle  valign=bottom>
+<td align=center  valign=bottom>
 <img valign=bottom align=left width=200 src="doc/etc/img/amrit.jpg">
-<td align=middle  valign=bottom>
+<td align=center  valign=bottom>
 <img valign=bottom align=left width=200 src="doc/etc/img/weifu.jpg">
-<td align=middle  valign=bottom>
+<td align=center  valign=bottom>
 <img valign=bottom align=left width=250 src="doc/etc/img/greggay.png">
 </tr>
 <tr>
-<td align=middle >
+<td align=center >
 <a href="https://www.amritanshu.us">Dr. Amritanshu Agrawal</a>
  <br> data scientist, Wayfair, Boston<br> USA
-<td align=middle >
+<td align=center >
 <a href="">Dr. Wei Fu<br> Landing AI<br> USA
 <td align=middle >
 <a href="https://greg4cr.github.io">Dr. Greg Gay</a><br> Chalmers and the University of Gothenburg<br> Sweden
 </tr>
 <tr>
-<td align=middle  valign=bottom>
+<td align=center  valign=bottom>
 <img valign=bottom align=left width=200 src="doc/etc/img/timmenzies.jpg">
-<td align=middle  valign=bottom>
+<td align=center  valign=bottom>
 <img valign=bottom align=left width=200 src="doc/etc/img/viveknair.jpg">
-<td align=middle  valign=bottom>
+<td align=center  valign=bottom>
 <img valign=bottom align=left width=200 src="doc/etc/img/zheyu.png">
 </tr>
 <tr>
-<td align=middle >
+<td align=center >
 <a href="http://menzies.us">Prof. Tim Menzies</a><br> North Carolina State University<br> USA 
-<td align=middle >
+<td align=center >
 <a href="http://vivekaxl.github.io">Dr. Vivek Nair</a><br>  Facebook<br> USA
-<td align=middle >
+<td align=center >
 <a href="http://azhe825.github.io">Dr. Zhe Yu</a><br> Rochester Instituate of Technology<br> USA
 </tr>
 </table>
