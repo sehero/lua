@@ -67,7 +67,7 @@ We may not be  SE super heroes-- but we are  their biggest fans.
 <td align=center  valign=bottom>
 <img valign=bottom align=middle width=200 src="doc/etc/img/viveknair.jpg">
 <td align=center  valign=bottom>
-<img valign=bottom align=middle width=200 src="doc/etc/img/zheyu.png">
+<img valign=bottom align=middle width=250 src="doc/etc/img/zheyu.png">
 </tr>
 <tr>
 <td align=center >
