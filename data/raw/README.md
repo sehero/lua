@@ -1,4 +1,4 @@
-<a class=sehero name=top> <img align=right width=300 src="https://i1.wp.com/s3.amazonaws.com/production-wordpress-assets/blog/wp-content/uploads/2013/03/manual_override-1.png?resize=282%2C479&ssl=1">
+<a class=sehero name=top> <img align=right width=300 src="https://c0.wallpaperflare.com/preview/66/740/843/programmer-computer-woman-support.jpg">
 <h1><a href="/README.md#top">SE for super heroes: an AI approach</a></h1> <p> <a
 href="https://github.com/sehero/lua/blob/master/LICENSE">license</a> :: <a
 href="https://github.com/sehero/lua/blob/master/INSTALL.md#top">install</a> :: <a

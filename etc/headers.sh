@@ -5,6 +5,7 @@ u='https://github.com/sehero/lua'
 r="$u/blob/master"
 i='https://cdn.pixabay.com/photo/2019/08/01/21/40/spiderman-4378357_1280.png'
 i='https://i1.wp.com/s3.amazonaws.com/production-wordpress-assets/blog/wp-content/uploads/2013/03/manual_override-1.png?resize=282%2C479&ssl=1'
+i='https://c0.wallpaperflare.com/preview/66/740/843/programmer-computer-woman-support.jpg'
 
 cat <<EOF> /tmp/heads$$
 <a class=sehero name=top> <img align=right width=300 src="$i">
