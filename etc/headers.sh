@@ -9,11 +9,11 @@ cat <<EOF> /tmp/heads$$
 <p><img align=right width=300
 src="https://cdn.pixabay.com/photo/2019/08/01/21/40/spiderman-4378357_1280.png"></p>
 <h1><a href="$f/README.md#top">SE for super heroes: an AI approach</a></h1> <p> <a
-href="$r/LICENSE">license</a> | <a
-href="$r/INSTALL.md#top">install</a> | <a
-href="$r/CODE_OF_CONDUCT.md#top">contribute</a> | <a
-href="$u/issues">issues</a> | <a
-href="$r/CITATION.md#top">cite</a> | <a
+href="$r/LICENSE">license</a> :: <a
+href="$r/INSTALL.md#top">install</a> :: <a
+href="$r/CODE_OF_CONDUCT.md#top">contribute</a> :: <a
+href="$u/issues">issues</a> :: <a
+href="$r/CITATION.md#top">cite</a> :: <a
 href="$r/CONTACT.md#top">contact</a> </p><p> 
 <img src="$b/license-mit-red">   
 <img src="$b/language-lua-orange">    
