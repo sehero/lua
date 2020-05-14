@@ -1,6 +1,7 @@
-<a class=sehero name=top> <h1> SE for super heroes: an AI approach
-</h1> <img align=right width=300
-src="https://cdn.pixabay.com/photo/2019/08/01/21/40/spiderman-4378357_1280.png"> <p> <a
+<a class=sehero name=top> 
+<p><img align=right width=300
+src="https://cdn.pixabay.com/photo/2019/08/01/21/40/spiderman-4378357_1280.png"></p>
+<h1> SE for super heroes: an AI approach </h1> <p> <a
 href="https://github.com/sehero/lua/blob/master/README.md">home</a> :: <a
 href="https://github.com/sehero/lua">code</a> :: <a
 href="https://github.com/sehero/lua/blob/master/LICENSE">license</a> :: <a
