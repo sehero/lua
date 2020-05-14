@@ -57,7 +57,7 @@ We may not be  SE super heroes-- but we are  their biggest fans.
 <a href="https://www.amritanshu.us">Dr. Amritanshu Agrawal</a>
  <br> data scientist, Wayfair, Boston, USA
 <td align=center >
-<a href="">Dr. Wei Fu<br> Landing AI,  USA
+<a href="">Dr. Wei Fu</a><br> Landing AI,  USA
 <td align=middle >
 <a href="https://greg4cr.github.io">Dr. Greg Gay</a><br> Chalmers and the University of Gothenburg, Sweden
 </tr>
@@ -83,6 +83,6 @@ We may not be  SE super heroes-- but we are  their biggest fans.
 </tr>
 <tr>
 <td align=center>
-Dr. Rahul Krihsna,<br>Columbia University, USA
+<a href="http://rkrsn.us">Dr. Rahul Krishna</a><br>Columbia University, USA
 </tr>
 </table>
