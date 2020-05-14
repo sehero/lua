@@ -39,53 +39,46 @@ https://doi.org/10.5281/zenodo.3825872
 
 ### Co-authors
 
-We may not be  SE super heroes-- but we are  their biggest fans.
+We ain't super heroes, but we are their biggest fans.
 
-<table>
-<tr>
-<td width=260 align=center  valign=bottom>
-<img valign=bottom align=middle height=300 src="doc/etc/img/amrit.jpg">
-<td width=260 align=center  valign=bottom>
-<img valign=bottom align=middle height=300 src="doc/etc/img/weifu.jpg">
-<td width=260 align=center  valign=bottom>
-<img valign=bottom align=middle height=300 src="doc/etc/img/greggay.png">
-</tr>
-<tr>
-<td align=center >
-<a href="https://www.amritanshu.us">Dr. Amritanshu Agrawal</a>
- <br> data scientist, Wayfair, Boston, USA
-<td align=center >
+
+<p align=center>
+<img  height=300 src="doc/etc/img/joekrall.jpg">
+
+Dr. Joe Krall<br>Sr. Software Engineering, GE Oil&Gas
+
+<img  src="doc/etc/img/amrit.jpg">
+
+<a href="https://www.amritanshu.us">Dr. Amritanshu Agrawal</a><br>
+data scientist, Wayfair, Boston, USA
+
+<img  height=300 src="doc/etc/img/weifu.jpg">
+
 <a href="">Dr. Wei Fu</a><br> Landing AI,  USA
-<td align=middle >
+
+<img  height=300 src="doc/etc/img/greggay.png">
+
 <a href="https://greg4cr.github.io">Dr. Greg Gay</a><br> 
 Chalmers and the University of Gothenburg, Sweden
-</tr>
-<tr>
-<td align=center  valign=bottom>
-<img valign=bottom align=middle height=300 src="doc/etc/img/timmenzies.jpg">
-<td align=center  valign=bottom>
-<img valign=bottom align=middle height=300 src="doc/etc/img/viveknair.jpg">
-<td align=center  valign=bottom>
-<img valign=bottom align=middle height=300 src="doc/etc/img/zheyu.png">
-</tr>
-<tr>
-<td align=center >
+
+<img  height=300 src="doc/etc/img/timmenzies.jpg">
+
 <a href="http://menzies.us">Prof. Tim Menzies</a><br> North Carolina State University, USA 
-<td align=center >
+
+<img  height=300 src="doc/etc/img/viveknair.jpg">
+
 <a href="http://vivekaxl.github.io">Dr. Vivek Nair</a><br>  Facebook,  USA
-<td align=center >
+
+<img  height=300 src="doc/etc/img/fayloapeters.jpg">
+
+Dr. Fayola Peters<br>Chief Scientist, Bayer.
+
+<img  height=300 src="doc/etc/img/zheyu.png">
+
 <a href="http://azhe825.github.io">Dr. Zhe Yu</a><br> Rochester Instituate of Technology, USA
-</tr>
-<tr>
-<td align=center  valign=bottom>
-<img valign=bottom align=middle height=300 src="doc/etc/img/rahulkrishna.jpg">
-<td align=center colspan=2>
-<img valign=bottom align=middle height=300 src="doc/etc/img/joekrall.jpg">
-</tr>
-<tr>
-<td align=center>
+
+<img  height=300 src="doc/etc/img/rahulkrishna.jpg">
+
 <a href="http://rkrsn.us">Dr. Rahul Krishna</a><br>Columbia University, USA
-<td align=center colspan=2>
-Dr. Joe Krall<br>Sr. Software Engineering, GE Oil&Gas
-</tr>
-</table>
+
+</p>
