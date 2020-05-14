@@ -2,7 +2,8 @@
 
 cd ../src
 
-for i in *ok.lua; do
+for i in  *ok.lua; do
+  echo $i
   s="$s print('\n'..string.rep(\"-\",70)); print('-- $i','\n'); dofile('$i'); "
 done 
 
