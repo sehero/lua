@@ -41,7 +41,7 @@ https://doi.org/10.5281/zenodo.3825872
 
 ### Co-authors
 
-We aren't SE super heroes-- just their biggest fans.
+We may not be  SE super heroes-- but we are  their biggest fans.
 
 <table>
 <tr>
@@ -55,11 +55,11 @@ We aren't SE super heroes-- just their biggest fans.
 <tr>
 <td align=center >
 <a href="https://www.amritanshu.us">Dr. Amritanshu Agrawal</a>
- <br> data scientist, Wayfair, Boston<br> USA
+ <br> data scientist, Wayfair, Boston, USA
 <td align=center >
-<a href="">Dr. Wei Fu<br> Landing AI<br> USA
+<a href="">Dr. Wei Fu<br> Landing AI,  USA
 <td align=middle >
-<a href="https://greg4cr.github.io">Dr. Greg Gay</a><br> Chalmers and the University of Gothenburg<br> Sweden
+<a href="https://greg4cr.github.io">Dr. Greg Gay</a><br> Chalmers and the University of Gothenburg, Sweden
 </tr>
 <tr>
 <td align=center  valign=bottom>
@@ -71,10 +71,18 @@ We aren't SE super heroes-- just their biggest fans.
 </tr>
 <tr>
 <td align=center >
-<a href="http://menzies.us">Prof. Tim Menzies</a><br> North Carolina State University<br> USA 
+<a href="http://menzies.us">Prof. Tim Menzies</a><br> North Carolina State University, USA 
 <td align=center >
-<a href="http://vivekaxl.github.io">Dr. Vivek Nair</a><br>  Facebook<br> USA
+<a href="http://vivekaxl.github.io">Dr. Vivek Nair</a><br>  Facebook,  USA
 <td align=center >
-<a href="http://azhe825.github.io">Dr. Zhe Yu</a><br> Rochester Instituate of Technology<br> USA
+<a href="http://azhe825.github.io">Dr. Zhe Yu</a><br> Rochester Instituate of Technology, USA
+</tr>
+<tr>
+<td align=center  valign=bottom>
+<img valign=bottom align=left width=200 src="doc/etc/img/rahulkrishna.jpg">
+</tr>
+<tr>
+<td align=center >
+Dr. Rahul Krihsna,<br>Columbia University, USA
 </tr>
 </table>
