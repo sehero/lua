@@ -42,12 +42,11 @@ https://doi.org/10.5281/zenodo.3825872
 We ain't super heroes, but we are their biggest fans.
 
 
-<p align=center>
 <img  height=300 src="doc/etc/img/joekrall.jpg">
 
 Dr. Joe Krall<br>Sr. Software Engineering, GE Oil&Gas
 
-<img  src="doc/etc/img/amrit.jpg">
+<img  height=300 src="doc/etc/img/amrit.jpg">
 
 <a href="https://www.amritanshu.us">Dr. Amritanshu Agrawal</a><br>
 data scientist, Wayfair, Boston, USA
@@ -80,5 +79,3 @@ Dr. Fayola Peters<br>Chief Scientist, Bayer.
 <img  height=300 src="doc/etc/img/rahulkrishna.jpg">
 
 <a href="http://rkrsn.us">Dr. Rahul Krishna</a><br>Columbia University, USA
-
-</p>
