@@ -45,33 +45,34 @@ We may not be super heroes,  but we are their biggest fans.
 
 <p>
 <img align=left width=200 src="doc/etc/img/amrit.jpg">
-[Dr. Amritanshu Agrawal](https://www.amritanshu.us) <br> data scientist, Wayfair, Boston, USA
+<a href="https://www.amritanshu.us">Dr. Amritanshu Agrawal</a>
+ <br> data scientist, Wayfair, Boston, USA
 <br clear=all>
 
 
 <p>
 <img align=left width=200 src="doc/etc/img/weifu.jpg">
-Dr. Wei Fu<br> Landing AI, USA
+<a href="">Dr. Wei Fu<br> Landing AI, USA
 <br clear=all>
 
 <p>
 <img align=left width=200 src="doc/etc/img/greggay.png">
-Dr. Greg Gay<br> Chalmers and the University of Gothenburg, Sweden
+<a href="https://greg4cr.github.io">Dr. Greg Gay</a><br> Chalmers and the University of Gothenburg, Sweden
 <br clear=all>
 
 <p>
 <img align=left width=200 src="doc/etc/img/timmenzies.jpg">
-Prof. Tim Menzies<br> North Carolina State University, USA 
+<a href="http://menzies.us">Prof. Tim Menzies</a><br> North Carolina State University, USA 
 <br clear=all>
 
 <p>
 <img align=left width=200 src="doc/etc/img/viveknair.jpg">
-Dr. Vivek Nair<br>  Facebook, USA
+<a href="http://vivekaxl.github.io">Dr. Vivek Nair</a><br>  Facebook, USA
 <br clear=all>
 
 <p>
 <img align=left width=200 src="doc/etc/img/zheyu.png">
-Dr. Zhe Yu<br> Rochester Instituate of Technology. USA
+<a href="http://azhe825.github.io">Dr. Zhe Yu</a><br> Rochester Instituate of Technology. USA
 <br clear=all>
 
 
