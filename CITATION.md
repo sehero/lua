@@ -48,7 +48,7 @@ We may not be  SE super heroes-- but we are  their biggest fans.
 <td width=260 align=center  valign=bottom>
 <img valign=bottom align=middle width=200 src="doc/etc/img/amrit.jpg">
 <td width=260 align=center  valign=bottom>
-<img valign=bottom align=middle width=200 src="doc/etc/img/weifu.jpg">
+<img valign=bottom align=middle width=175 src="doc/etc/img/weifu.jpg">
 <td width=260 align=center  valign=bottom>
 <img valign=bottom align=middle width=250 src="doc/etc/img/greggay.png">
 </tr>
