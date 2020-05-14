@@ -1,7 +1,6 @@
-<a class=sehero name=top><img align=right width=300
-src="https://cdn.pixabay.com/photo/2019/08/01/21/40/spiderman-4378357_1280.png"><h1>
-SE for super heroes: an AI approach
-</h1><p> <a
+<a class=sehero name=top> <h1> SE for super heroes: an AI approach
+</h1> <img align=right width=300
+src="https://cdn.pixabay.com/photo/2019/08/01/21/40/spiderman-4378357_1280.png"> <p> <a
 href="https://github.com/sehero/lua/blob/master/README.md">home</a> :: <a
 href="https://github.com/sehero/lua">code</a> :: <a
 href="https://github.com/sehero/lua/blob/master/LICENSE">license</a> :: <a
@@ -49,7 +48,6 @@ We aren't SE super heroes-- just their biggest fans.
  <br> data scientist, Wayfair, Boston<br> USA
 <br clear=all>
 
-
 <p>
 <img align=left width=200 src="doc/etc/img/weifu.jpg">
 <a href="">Dr. Wei Fu<br> Landing AI<br> USA
@@ -74,7 +72,3 @@ We aren't SE super heroes-- just their biggest fans.
 <img align=left width=200 src="doc/etc/img/zheyu.png">
 <a href="http://azhe825.github.io">Dr. Zhe Yu</a><br> Rochester Instituate of Technology<br> USA
 <br clear=all>
-
-
-
-
