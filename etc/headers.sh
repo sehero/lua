@@ -3,11 +3,11 @@
 b="https://img.shields.io/badge"
 u='https://github.com/sehero/lua'
 r="$u/blob/master"
+i='https://cdn.pixabay.com/photo/2019/08/01/21/40/spiderman-4378357_1280.png'
+i='https://i1.wp.com/s3.amazonaws.com/production-wordpress-assets/blog/wp-content/uploads/2013/03/manual_override-1.png?resize=282%2C479&ssl=1'
 
 cat <<EOF> /tmp/heads$$
-<a class=sehero name=top> 
-<img align=right width=300
-src="https://cdn.pixabay.com/photo/2019/08/01/21/40/spiderman-4378357_1280.png">
+<a class=sehero name=top> <img align=right width=300 src="$i">
 <h1><a href="$f/README.md#top">SE for super heroes: an AI approach</a></h1> <p> <a
 href="$r/LICENSE">license</a> :: <a
 href="$r/INSTALL.md#top">install</a> :: <a
