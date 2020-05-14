@@ -1,14 +1,22 @@
 .PHONY: help install check test headers pull push site create over
 
 SHELL=bash
-WANT=gawk git tmux vim mc tree cmatrix rain npm lua pandoc ncdu
+WANT=gawk git tmux vim lua pandoc ncdu
 SITE=../sehero.github.io
 
 help: ## help
 	@bash etc/help.sh $(MAKEFILE_LIST)
 
-install: ## install
-	@pip install -r requirements.txt
+install: setup base tools website tex #fun ## install
+
+setup:;   brew update
+base:;    @sh etc/brew.sh gawk lua  
+tools:;	  @sh etc/brew.sh git vim tmux htop mc tree ncdu 
+fun:; 	  @sh etc/brew.sh cmatrix bsdames-osx 
+website:; @sh etc/brew.sh  pandoc pandoc-citeproc 
+tex: 
+	@brew cask install basictex  # for text generation
+	@brew cask upgrade 
 
 check: ## look for missing executables
 	@bash etc/missing.sh $(WANT)

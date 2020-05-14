@@ -32,5 +32,6 @@ end
 
 function near(x,y,z)
   z= z or 0.01
-  assert(math.abs(x - y) <= z)
+  assert(math.abs(x - y) <= z, 
+         'too big: ['..math.abs(x - y)..']')
 end

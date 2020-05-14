@@ -1,6 +1,6 @@
-local the = require "the"
-local binChop = require("lib").binChop
-local Some = the.class(require "col")
+local the   = require "the"
+local bchop = require("lib").bchop
+local Some  = the.class(require "col")
 
 function Some:_init(txt,pos)
   self:super(txt,pos)
@@ -17,8 +17,8 @@ function Some:add(x)
     if #self.kept < self.max then
       self.sorted = false
       self.kept[ #self.kept + 1 ] = x
-    elseif math.rand() < self.max/self.n then
-      self.all()[ lst.bchop(self.kept,x) ] = x end 
+    elseif math.random() < self.max/self.n then
+      self:all()[ bchop(self.kept, x) ] = x end 
    end
    return x
 end
@@ -27,23 +27,24 @@ function Some:show()
   return (self.w<0 and"<"or">")..tostring(self:mid()) end
 
 function Some:__tostring()
-  return string.format("Some(%s,%s)", self:mid(), self:iqr) end
+  return string.format("Some(%s,%s)", self:mid(), self:iqr()) end
 
 function Some:mid(j,k)  
   return self:per(.5,j,k) end
 
-function Some:var(j,j)  
+function Some:var(j,k)  
   return (self:per(.9,j,k) - self:per(.1,j,k))/self.magic end
 
 function Some:iqr(j,k)
-  return self:per(.75,j,k) - self:per(.5,j,k) end
+  return self:per(.75,j,k) - self:per(.25,j,k) end
 
-function Some:per(p,j,k,  i)
+function Some:per(p,j,k)
   j = j or 1
   k = k or #self.kept
-  i = math.floor( j + p*(k-j) )
-  return self:all()[ i ]
+  return  self:at( j + p*(k-j) )
 end
+
+function Some:at(i) return self:all()[i // 1] end
 
 function Some:all()
   if not self.sorted then table.sort(self.kept) end

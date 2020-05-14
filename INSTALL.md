@@ -19,17 +19,16 @@ align=right width=300 src="doc/etc/img/spiderman.png"><p>
 
 ## Installation
 
-### Requirements
 
 Mac OS:
 
 ```
-brew install gawk lua pandoc
+make install
 ```
 
-### Installing
 
 ### Testing
+
 ```
 make test
 ```

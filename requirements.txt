@@ -1,4 +1,10 @@
-####### required packages #######
+### for execution and testing
 lua
 gawk
+
+### for website generation
 pandoc
+pandoc-citeproc
+
+### for pdf doco generation
+basictex
