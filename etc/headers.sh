@@ -7,6 +7,7 @@ i='https://c0.wallpaperflare.com/preview/66/740/843/programmer-computer-woman-su
 i='https://images.vexels.com/media/users/3/152694/isolated/preview/5e0cb3e5b59081464d73f94075301dbb-woman-sitting-at-desk-silhouette-by-vexels.png'
 i='doc/etc/img/spiderman.png'
 i='https://i1.wp.com/s3.amazonaws.com/production-wordpress-assets/blog/wp-content/uploads/2013/03/manual_override-1.png?resize=282%2C479&ssl=1'
+i='https://imgs.xkcd.com/comics/superm_n_2x.png'
 
 cat <<EOF> /tmp/heads$$
 <a class=sehero name=top> <img align=right width=225 src="$i">
