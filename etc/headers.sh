@@ -9,9 +9,7 @@ i='https://c0.wallpaperflare.com/preview/66/740/843/programmer-computer-woman-su
 i='https://images.vexels.com/media/users/3/152694/isolated/preview/5e0cb3e5b59081464d73f94075301dbb-woman-sitting-at-desk-silhouette-by-vexels.png'
 
 cat <<EOF> /tmp/heads$$
-<a class=sehero name=top>
-<img src="https://www.iconsdb.com/icons/preview/white/square-xxl.png" height=1 width=900>
- <img align=right width=300 src="$i">
+<a class=sehero name=top> <img align=right width=300 src="$i">
 <h1><a href="$f/README.md#top">SE for super heroes: an AI approach</a></h1> <p> <a
 href="$r/LICENSE">license</a> :: <a
 href="$r/INSTALL.md#top">install</a> :: <a
