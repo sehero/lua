@@ -46,11 +46,11 @@ We may not be  SE super heroes-- but we are  their biggest fans.
 <table>
 <tr>
 <td align=center  valign=bottom>
-<img valign=bottom align=left width=200 src="doc/etc/img/amrit.jpg">
+<img valign=bottom align=middle width=200 src="doc/etc/img/amrit.jpg">
 <td align=center  valign=bottom>
-<img valign=bottom align=left width=200 src="doc/etc/img/weifu.jpg">
+<img valign=bottom align=middle width=200 src="doc/etc/img/weifu.jpg">
 <td align=center  valign=bottom>
-<img valign=bottom align=left width=250 src="doc/etc/img/greggay.png">
+<img valign=bottom align=middle width=250 src="doc/etc/img/greggay.png">
 </tr>
 <tr>
 <td align=center >
@@ -63,11 +63,11 @@ We may not be  SE super heroes-- but we are  their biggest fans.
 </tr>
 <tr>
 <td align=center  valign=bottom>
-<img valign=bottom align=left width=200 src="doc/etc/img/timmenzies.jpg">
+<img valign=bottom align=middle width=200 src="doc/etc/img/timmenzies.jpg">
 <td align=center  valign=bottom>
-<img valign=bottom align=left width=200 src="doc/etc/img/viveknair.jpg">
+<img valign=bottom align=middle width=200 src="doc/etc/img/viveknair.jpg">
 <td align=center  valign=bottom>
-<img valign=bottom align=left width=200 src="doc/etc/img/zheyu.png">
+<img valign=bottom align=middle width=200 src="doc/etc/img/zheyu.png">
 </tr>
 <tr>
 <td align=center >
@@ -79,7 +79,7 @@ We may not be  SE super heroes-- but we are  their biggest fans.
 </tr>
 <tr>
 <td text-align=center  valign=bottom>
-<img valign=bottom align=left width=200 src="doc/etc/img/rahulkrishna.jpg">
+<img valign=bottom align=middle width=200 src="doc/etc/img/rahulkrishna.jpg">
 </tr>
 <tr>
 <td align=center >
