@@ -1,4 +1,4 @@
-<a class=sehero name=top> <img align=right width=300 src="https://images.vexels.com/media/users/3/152694/isolated/preview/5e0cb3e5b59081464d73f94075301dbb-woman-sitting-at-desk-silhouette-by-vexels.png">
+<a class=sehero name=top> <img align=right width=300 src="doc/etc/img/spiderman.png">
 <h1><a href="/README.md#top">SE for super heroes: an AI approach</a></h1> <p> <a
 href="https://github.com/sehero/lua/blob/master/LICENSE">license</a> :: <a
 href="https://github.com/sehero/lua/blob/master/INSTALL.md#top">install</a> :: <a
