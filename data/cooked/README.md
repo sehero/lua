@@ -1,5 +1,5 @@
 <a class=sehero name=top> 
-<img align=right width=300 src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2c218305-10f7-4dc5-b98c-8944ea7c6b98/d97u6ii-1458232e-599d-46ed-9eff-579c88752d54.jpg/v1/fill/w_521,h_800,q_75,strp/spidey_and_gwen_color_by_dekarogue_d97u6ii-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD04MDAiLCJwYXRoIjoiXC9mXC8yYzIxODMwNS0xMGY3LTRkYzUtYjk4Yy04OTQ0ZWE3YzZiOThcL2Q5N3U2aWktMTQ1ODIzMmUtNTk5ZC00NmVkLTllZmYtNTc5Yzg4NzUyZDU0LmpwZyIsIndpZHRoIjoiPD01MjEifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.T6i4XX_UokR1xTTjz5JL2pARbfbEFa3WS_pjq5px7Kw">
+<img align=right width=300 src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2c218305-10f7-4dc5-b98c-8944ea7c6b98/d92z77z-85f30213-a950-43e6-93aa-ca906c6b4aac.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMmMyMTgzMDUtMTBmNy00ZGM1LWI5OGMtODk0NGVhN2M2Yjk4XC9kOTJ6Nzd6LTg1ZjMwMjEzLWE5NTAtNDNlNi05M2FhLWNhOTA2YzZiNGFhYy5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.BY_xZ9vtOug8jM-lzpvybhtGb2rItxHbWs1sDGlNEAY">
 <h1><a href="/README.md#top">SE for super heroes: an AI approach</a></h1> 
 <p> <a
 href="https://github.com/sehero/lua/blob/master/LICENSE">license</a> :: <a
