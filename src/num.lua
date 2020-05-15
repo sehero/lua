@@ -74,6 +74,7 @@ function Num:norm(x)
 end
 
 function Num:strange(x)
+  print("\nnum",x,self:like(x),self.mu,self.sd)
   return self:like(x) < self.odd
 end
 
@@ -82,8 +83,8 @@ function Num:like(x,   var,denom,num)
   elseif x > self.mu + 4*self.sd then return 0 
   else
     var   = self.sd^2
-    denom = (2*math.pi*var)^.5
-    num   =  2.7182818^(-1*(x-self.mu)^2/(2*var))
+    denom = (2*the.pi*var)^.5
+    num   =  the.e^(-1*(x-self.mu)^2/(2*var))
     return num/(denom + 10^-64)  end
 end
 

@@ -84,6 +84,15 @@ ok { bchop=function(   u)
        u[#u+1] = v end end
   table.sort(u)
   for _,v in pairs({10,25,24,26,60,69,80,90,1105}) do
-    print("b",v, lib.bchop(u,v))
+    lib.bchop(u,v)
   end
 end}
+
+ok { pnorm = function()
+     near(0      , lib.normcdf(-10, 0, 1))
+     near(0.1635 , lib.normcdf( -1, 0, 1))
+     near(0.5    , lib.normcdf(  0, 0, 1))
+     near(0.846  , lib.normcdf(  1, 0, 1))
+     near(0.9772 , lib.normcdf(  2, 0, 1))
+     near(1      , lib.normcdf( 10, 0, 1))
+end }

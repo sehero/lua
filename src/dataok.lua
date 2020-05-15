@@ -43,10 +43,19 @@ end
 ok{dist1b = function() dist1("weather4.csv") end }
 ok{dist1b = function() dist1("diabetes.csv") end }
 
-ok { strange = function(f)
+local function strange(f,  d,s)
   f = f or 'weather4.csv'
   d = Data():read(the.csv .. f)
+  s = 0 
+  the.data.odd = 0.01
   for _,row in pairs(d.rows) do
+     n = d:strange(row) and 1 or 0
+     s = s + n/#d.rows 
      print( d:strange(row) )
-   end
-end }
+     break
+  end
+  print("strange[" .. s .."]")
+end
+
+ok { strange1 = function() strange() end }
+ok { strange2 = function() strange("diabetes.csv") end }

@@ -120,7 +120,7 @@ end
 function Data:strange(row,cols)
   cols = cols or self.some.x
   for _,col in pairs(cols) do
-    if col:strange( row.cells[col.pos] ) then return true end
+    if col:strange(row.cells[col.pos]) then return true end
   end
   return false
 end

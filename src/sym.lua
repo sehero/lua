@@ -45,7 +45,7 @@ function Sym:sub (x,     seen,n)
   return x
 end
 
-function Sym:like(x)
+function Sym:strange(x)
   return (self.counts[x] or 0) / self.n < self.odd
 end
 
