@@ -14,6 +14,7 @@ i='https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2c218305-10f7-4dc5-
 
 cat <<EOF> /tmp/heads$$
 <a class=sehero name=top> 
+<img align=right width=300 src="$i">
 <h1><a href="$f/README.md#top">SE for super heroes: an AI approach</a></h1> 
 <p> <a
 href="$r/LICENSE">license</a> :: <a
@@ -21,8 +22,7 @@ href="$r/INSTALL.md#top">install</a> :: <a
 href="$r/CODE_OF_CONDUCT.md#top">contribute</a> :: <a
 href="$u/issues">issues</a> :: <a
 href="$r/CITATION.md#top">cite</a> :: <a
-href="$r/CONTACT.md#top">contact</a> </p><img 
-align=right width=300 src="$i"><p> 
+href="$r/CONTACT.md#top">contact</a> </p><p> 
 <img src="$b/license-mit-red">   
 <img src="$b/language-lua-orange">    
 <img src="$b/purpose-ai,se-blueviolet"><br>
