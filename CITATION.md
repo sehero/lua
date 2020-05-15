@@ -40,7 +40,7 @@ https://doi.org/10.5281/zenodo.3825872
 
 ### Co-authors
 
-We ain't super heroes, but we are their biggest fans.
+Not  super heroes-- just their  biggest fans.
 
 <img  height=300 src="doc/etc/img/joekrall.jpg">
 
