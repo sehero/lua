@@ -24,3 +24,14 @@ ok { step = function (   n,t,v)
     n:sub( t[i] )
   end
 end}
+
+
+ok { z = function(e )
+    e = 0.005
+    near(0      , Num.z(-10, 0, 1))
+    near(0.1635 , Num.z( -1, 0, 1),e)
+    near(0.5    , Num.z(  0, 0, 1),e)
+    near(0.846  , Num.z(  1, 0, 1),e)
+    near(0.9772 , Num.z(  2, 0, 1),e)
+    near(1      , Num.z( 10, 0, 1),e)
+end }

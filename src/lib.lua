@@ -91,13 +91,6 @@ function lib.cache(f)
     __index=function(t,k) t[k]=f(k);return t[k] end})
 end
 
-function lib.auc(f, start, stop, inc, ...)
-  local auc = 0
-  inc = inc or (stop - start)/100
-  for i= start,stop,inc do auc=auc + f(i, ...)*inc end
-  return auc
-end
-
 function lib.norm(x, mu, sd)
   mu = mu or 0
   sd = sd or 1
@@ -106,13 +99,6 @@ function lib.norm(x, mu, sd)
   return (1 / 
     (sd * math.sqrt(2 * math.pi))) * 
      math.exp(-(((x - mu) * (x - mu)) / (2 * sd^2))) 
-end
-
-function lib.normcdf(x, mu, sd, inc)
-  mu  = mu  or 0
-  sd  = sd  or 1
-  inc = inc or sd/20
-  return lib.auc(lib.norm, mu-3*sd, x, inc, mu, sd)
 end
 
 return lib

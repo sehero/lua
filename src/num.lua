@@ -1,4 +1,5 @@
 local the = require "the"
+local lib = require "lib"
 local Num = the.class(require "col")
 
 function Num:_init(txt,pos)
@@ -75,17 +76,27 @@ end
 
 function Num:strange(x)
   print("\nnum",x,self:like(x),self.mu,self.sd)
-  return self:like(x) < self.odd
+  z=  Num.z(x,self.mu, self.sd) 
+  return z< self.odd or z >= 1-self.odd
 end
 
-function Num:like(x,   var,denom,num)
-  if     x < self.mu - 4*self.sd then return 0 
-  elseif x > self.mu + 4*self.sd then return 0 
-  else
-    var   = self.sd^2
-    denom = (2*the.pi*var)^.5
-    num   =  the.e^(-1*(x-self.mu)^2/(2*var))
-    return num/(denom + 10^-64)  end
+do
+  local zcurve = {0}
+  local zinc   = 512
+  local dx     = 8/zinc
+  for i = 2,zinc do
+    zcurve[i] = zcurve[i-1] + dx*lib.norm(-4+i*dx,0,1)  
+  end
+
+  function Num.z(x,mu,sd)
+    local  i = (((x - mu)/sd  - -4) / 8 * zinc) // 1
+    if     i > zinc then return 1 
+    elseif i < 1    then return 0 
+    else            return zcurve[i] end end
+end
+
+function Num:like(x,   z,denom,num)
+  return lib.norm(x, self.mu, self.sd)
 end
 
 return Num

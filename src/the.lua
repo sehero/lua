@@ -20,8 +20,6 @@ return {
   csv  =  "../data/raw/",
   ignore= "?",
   sep=    ",",
-  pi =    math.pi,
-  e  =    2.7182818284590452353602874713526625,
   tiny=   1/math.maxinteger,
   fmap=   { n   = 128,
             far = .9,
