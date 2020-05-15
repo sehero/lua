@@ -43,3 +43,10 @@ end
 ok{dist1b = function() dist1("weather4.csv") end }
 ok{dist1b = function() dist1("diabetes.csv") end }
 
+ok { strange = function(f)
+  f = f or 'weather4.csv'
+  d = Data():read(the.csv .. f)
+  for _,row in pairs(d.rows) do
+     print( d:strange(row) )
+   end
+end }

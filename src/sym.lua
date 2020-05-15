@@ -45,6 +45,10 @@ function Sym:sub (x,     seen,n)
   return x
 end
 
+function Sym:like(x)
+  return (self.counts[x] or 0) / self.n < self.odd
+end
+
 function Sym:ent(    e,p)
   if self._ent == nil then 
     e = 0

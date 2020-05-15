@@ -40,6 +40,7 @@ function Data:read(f)
     if   self.cols 
     then self:add(row) 
     else self:header(row) end end
+  return self
 end
 
 function Data:clone(rows,  clone)
@@ -114,6 +115,14 @@ end
 function Data:distant(row,cols,rows,f,   t)
   t= self:near(row, cols, self.rows)
   return t[ math.floor((#t)*f) ].row
+end
+
+function Data:strange(row,cols)
+  cols = cols or self.some.x
+  for _,col in pairs(cols) do
+    if col:strange( row.cells[col.pos] ) then return true end
+  end
+  return false
 end
 
 return Data
