@@ -74,25 +74,23 @@ function Num:norm(x)
   return x
 end
 
-function Num:strange(x)
-  print("\nnum",x,self:like(x),self.mu,self.sd)
-  z=  Num.z(x,self.mu, self.sd) 
+function Num:strange(x,  z)
+  z = Num.z(x, self.mu, self.sd) 
   return z< self.odd or z >= 1-self.odd
 end
 
 do
-  local zcurve = {0}
-  local zinc   = 512
-  local dx     = 8/zinc
-  for i = 2,zinc do
-    zcurve[i] = zcurve[i-1] + dx*lib.norm(-4+i*dx,0,1)  
-  end
+  local z  = {0}  -- zcurve[1] = 0
+  local zn = 512  -- cache "zn" number of entries
+  local dx = 8/zn -- generated from -4 to 4
+  for i  = 2,zn do -- accumulate the area
+    z[i] = z[i-1] + dx*lib.norm( -4+i*dx, 0,1)  end
 
-  function Num.z(x,mu,sd)
-    local  i = (((x - mu)/sd  - -4) / 8 * zinc) // 1
-    if     i > zinc then return 1 
-    elseif i < 1    then return 0 
-    else            return zcurve[i] end end
+  function Num.z(x,mu,sd,     i)
+    i = (((x - mu)/sd  - -4) / 8 * zn) // 1
+    if     i > zn then return 1 
+    elseif i < 1  then return 0 
+    else          return z[i] end end
 end
 
 function Num:like(x,   z,denom,num)

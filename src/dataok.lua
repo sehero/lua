@@ -1,5 +1,6 @@
 local the = require "the"
 local lib = require "lib"
+local Sym = require "sym"
 local oo  = the.oo
 require "ok"
 
@@ -43,18 +44,22 @@ end
 ok{dist1b = function() dist1("weather4.csv") end }
 ok{dist1b = function() dist1("diabetes.csv") end }
 
-local function strange(f,  d,s)
+local function strange(f,  d,s,n)
   f = f or 'weather4.csv'
   d = Data():read(the.csv .. f)
   s = 0 
   the.data.odd = 0.01
+  local odds = {}
   for _,row in pairs(d.rows) do
+     local k = d:klassVal(row)
+     print(k)
+     odds[k] = odds[k] or Sym()
      n = d:strange(row) and 1 or 0
-     s = s + n/#d.rows 
-     print( d:strange(row) )
-     break
+     odds[k]:add(n)
   end
-  print("strange[" .. s .."]")
+  for k,v in pairs(odds) do
+     print(k); the.o(v)
+  end
 end
 
 ok { strange1 = function() strange() end }
