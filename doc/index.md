@@ -48,6 +48,7 @@ favorite language. These challenges can be used for personnel study,
 or as the weekly homeworkds of a graduate class in AI for SE
 
 - Lesson 1: care and feeding of tools. Building code to 
+- Lesson 2: A little lua (broosk's Law)
 - Lesson 2: Just enough maths
 - Lesson 3: columns
 - Lesson 4: rows
@@ -56,7 +57,8 @@ or as the weekly homeworkds of a graduate class in AI for SE
 - Lesson 7: contrast 
 - Lesson 8: privacy
 - Lesson 8: fairness
-- Lesson 10: processes
+- Lesson X: design (feature maps)
+- Lesson 10: processes (broosk law)
 - Lesson 11: requirements
 - Lesson 12: effort
 
