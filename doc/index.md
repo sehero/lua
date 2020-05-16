@@ -52,10 +52,10 @@ or as the weekly homeworkds of a graduate class in AI for SE
 - Lesson 2: Just enough maths
 - Lesson 3: columns
 - Lesson 4: rows
-- Lesson 5: cluster
+- Lesson 5: cluster (joe's stuff KNN)
+- Lesson 5: privacy (fayola's stuff)
 - Lesson 6: classify
 - Lesson 7: contrast 
-- Lesson 8: privacy
 - Lesson 8: fairness
 - Lesson X: design (feature maps)
 - Lesson 10: processes (broosk law)
