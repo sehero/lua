@@ -27,7 +27,7 @@ return {
           },
   data =  { p      = 2,
              sample = 128,
-             odd    = .05,
+             odd    = .01,
              data   = .5,
              far    = .9},
   rand=   { seed = 1}, 
