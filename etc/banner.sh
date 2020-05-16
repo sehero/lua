@@ -12,8 +12,7 @@ i='https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2c218305-10f7-4dc5-
 i='doc/etc/img/spiderman.png'
 
 cat <<EOF 
-<a class=sehero name=top> 
-<img align=right width=280 src="$i">
+<a class=sehero name=top><img align=right width=280 src="$i">
 <h1><a href="$f/README.md#top">SE for super heroes: an AI approach</a></h1> 
 <p> <a
 href="$r/LICENSE">license</a> :: <a

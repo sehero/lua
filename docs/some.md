@@ -1,5 +1,3 @@
-<a class=sehero name=top> 
-<img align=right width=280 src="doc/etc/img/spiderman.png">
 <h1><a href="/README.md#top">SE for super heroes: an AI approach</a></h1> 
 <p> <a
 href="https://github.com/sehero/lua/blob/master/LICENSE">license</a> :: <a
