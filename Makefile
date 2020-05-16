@@ -42,6 +42,7 @@ push: ## upload changes to Git
 
 MDS=$(shell ls src/*.lua | grep -v '.ok.lua' | gawk '{sub(/lua/,"md"); sub(/src/,"docs"); print}')
 doco: $(MDS) ## make doco
+	@rm -f docs/ml.lua
 	@git add docs/*.md
 	@git commit -am "pushing"
 	@git push

@@ -1,5 +1,5 @@
 <a class=sehero name=top> 
-<img align=right width=280 src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2c218305-10f7-4dc5-b98c-8944ea7c6b98/d92z77z-85f30213-a950-43e6-93aa-ca906c6b4aac.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMmMyMTgzMDUtMTBmNy00ZGM1LWI5OGMtODk0NGVhN2M2Yjk4XC9kOTJ6Nzd6LTg1ZjMwMjEzLWE5NTAtNDNlNi05M2FhLWNhOTA2YzZiNGFhYy5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.BY_xZ9vtOug8jM-lzpvybhtGb2rItxHbWs1sDGlNEAY">
+<img align=right width=280 src="doc/etc/img/spiderman.png">
 <h1><a href="/README.md#top">SE for super heroes: an AI approach</a></h1> 
 <p> <a
 href="https://github.com/sehero/lua/blob/master/LICENSE">license</a> :: <a
@@ -97,18 +97,34 @@ function Num:strange(x,  z)
   return z< self.odd or z >= 1-self.odd
 end
 
+```
+---------------------------
+## Z-curve
+The `z-curve` is a normal curve with mean of 0 and  standard 
+deviation of 1. To convery any normal curve into a `z-curve`
+then subtract `mu` and divide by `sd`.
+```lua
+
+```
+For the same of effeciency, Pre-compute and cache the area under
+ the normal curve from -4\*`sd` to +4\*`sd` (why this
+range? Well, outside of that range, the y-value of
+the normal curve is effectively zero).
+```lua
+
 do
-  local z  = {0}  -- zcurve[1] = 0
+  local zs = {0}  -- zs[1] = 0
   local zn = 512  -- cache "zn" number of entries
   local dx = 8/zn -- generated from -4 to 4
   for i  = 2,zn do -- accumulate the area
-    z[i] = z[i-1] + dx*lib.norm( -4+i*dx, 0,1)  end
+    zs[i] = zs[i-1] + dx*lib.norm( -4+i*dx, 0,1)  end
 
   function Num.z(x,mu,sd,     i)
+    -- convect to a z-curve, find `x`'s place in that curve
     i = (((x - mu)/sd  - -4) / 8 * zn) // 1
     if     i > zn then return 1 
     elseif i < 1  then return 0 
-    else          return z[i] end end
+    else          return zs[i] end end
 end
 
 function Num:like(x,   z,denom,num)
@@ -116,6 +132,8 @@ function Num:like(x,   z,denom,num)
 end
 
 return Num
+```
+
 
 ## Copyright
 
