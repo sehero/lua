@@ -50,7 +50,7 @@ doco: $(MDS) ## make doco
 	@git status
   
 
-docs/%.md : src/%.lua  LICENSE etc/banner.sh
+docs/%.md : src/%.lua  LICENSE etc/banner.sh etc/headers.sh
 	@echo "# $< ..."
 	@(etc/banner.sh;  cat $< | gawk -f etc/2md.awk; cat LICENSE)  > $@
 
