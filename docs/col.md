@@ -16,9 +16,12 @@ href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p>
 <a href="https://travis-ci.org/github/sehero/lua"><img 
 src="https://travis-ci.org/sehero/lua.svg?branch=master"></a><br>  
 </p>
+
+## col.lua
+
+```lua
 local the = require "the"
 local Col = the.class()
-
 function Col:_init(txt,pos)
   self.txt = txt or ""
   self.pos = pos or 0
@@ -26,12 +29,10 @@ function Col:_init(txt,pos)
   self.odd = the.data.odd
   self.n   = 0
 end
-
 function Col:adds(l) 
   for k,v in pairs(l) do self:add(v) end 
   return self
 end
-
 return Col
 
 ## MIT License

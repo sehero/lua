@@ -1,3 +1,9 @@
+--[[
+
+## col.lua
+
+--]]
+
 local the = require "the"
 local Col = the.class()
 

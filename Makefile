@@ -42,7 +42,7 @@ doco: $(MDS) ## make doco
 
 docs/%.md : src/%.lua  
 	@echo "# $< ..."
-	@(etc/banner.sh; gawk -f etc/2md.awk $<; cat LICENSE)  > $@
+	@(etc/banner.sh; cat $< LICENSE | gawk -f etc/2md.awk)  > $@
 	@git add docs/*.md
 
 #CODE=$(shell ls src/*.lua | gawk '{sub(/^src/,"$(SITE)/src"); sub(/\.lua$$/,".html"); print}')
