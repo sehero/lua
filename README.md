@@ -58,4 +58,3 @@ src="https://travis-ci.org/sehero/lua.svg?branch=master"></a><br>
     ├── all.sh
     └── oks.sh
 ```
-

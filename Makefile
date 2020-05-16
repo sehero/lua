@@ -8,6 +8,7 @@ help: ## help
 	@bash etc/help.sh $(MAKEFILE_LIST)
 
 install: in inbase intools inwebsite intex interm #infun ## install
+	@mdkir docs
 
 in:;        brew update
 inbase:;    @sh etc/brew.sh gawk lua  
@@ -36,7 +37,13 @@ push: ## upload changes to Git
 	@git push
 	@git status
 
-  
+MDS=$(shell ls src/*.lua | grep -v '.ok.lua' | gawk '{sub(/lua/,"md"); sub(/src/,"md"); print}')
+doco: $(MDS) ## make doco
+
+docs/%.md : src/%.lua  
+	@bash etc/banner.sh > $@  
+	@bash etc/2md.awk $< >> $@
+	@cat LICENESE >> $@
 
 #CODE=$(shell ls src/*.lua | gawk '{sub(/^src/,"$(SITE)/src"); sub(/\.lua$$/,".html"); print}')
 #MD=$(shell   ls doc/*.md  | gawk '{sub(/^doc/,"$(SITE)/doc"); sub(/\.md$$/, ".html"); print}')
