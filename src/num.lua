@@ -91,17 +91,18 @@ end
 -- the normal curve is effectively zero).
 
 do
+  local zs = {0}  -- zs[1] = 0
   local zn = 512  -- cache "zn" number of entries
   local dx = 8/zn -- generated from -4 to 4
   for i  = 2,zn do -- accumulate the area
-    z[i] = z[i-1] + dx*lib.norm( -4+i*dx, 0,1)  end
+    zs[i] = zs[i-1] + dx*lib.norm( -4+i*dx, 0,1)  end
 
   function Num.z(x,mu,sd,     i)
     -- convect to a z-curve, find `x`'s place in that curve
     i = (((x - mu)/sd  - -4) / 8 * zn) // 1
     if     i > zn then return 1 
     elseif i < 1  then return 0 
-    else          return z[i] end end
+    else          return zs[i] end end
 end
 
 function Num:like(x,   z,denom,num)

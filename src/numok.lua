@@ -26,7 +26,7 @@ ok { step = function (   n,t,v)
 end}
 
 
-ok { z = function(e )
+ok { z = function(e )   
     e = 0.005
     near(0      , Num.z(-10, 0, 1))
     near(0.1635 , Num.z( -1, 0, 1),e)

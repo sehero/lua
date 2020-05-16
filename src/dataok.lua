@@ -52,14 +52,14 @@ local function strange(f,  d,s,n)
   local odds = {}
   for _,row in pairs(d.rows) do
      local k = d:klassVal(row)
-     print(k)
+     --print(k)
      odds[k] = odds[k] or Sym()
      n = d:strange(row) and 1 or 0
      odds[k]:add(n)
   end
-  for k,v in pairs(odds) do
-     print(k); the.o(v)
-  end
+  --for k,v in pairs(odds) do
+  --    print(k); the.o(v)
+  --end
 end
 
 ok { strange1 = function() strange() end }

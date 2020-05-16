@@ -12,7 +12,7 @@ install: in inbase intools inwebsite intex interm #infun ## install
 
 in:;        brew update
 inbase:;    @sh etc/brew.sh gawk lua  
-intools:;   @sh etc/brew.sh git vim tmux htop mc tree ncdu 
+intools:;   @sh etc/brew.sh git vim tmux htop mc tree ncdu entr
 infun:;     @sh etc/brew.sh cmatrix bsdames-osx 
 inwebsite:; @sh etc/brew.sh pandoc pandoc-citeproc 
 intex: 
@@ -22,7 +22,10 @@ interm:
 	@brew cask install iterm2
 
 test: ## test
-	cd test; sh all.sh
+	@cd test; sh all.sh
+
+watch: ## re-run tests whenever source code changes
+	@ls src/*.lua | entr -c -s 'make test'
 
 headers: ## reset .md headers, except in doc/etc/doc
 	@find . -name '*.md'   \
@@ -48,7 +51,6 @@ doco: $(MDS) ## make doco
 docs/%.md : src/%.lua  LICENSE etc/banner.sh
 	@echo "# $< ..."
 	@(etc/banner.sh;  cat $< | gawk -f etc/2md.awk; cat LICENSE)  > $@
-	@git add docs/*.md
 
 #CODE=$(shell ls src/*.lua | gawk '{sub(/^src/,"$(SITE)/src"); sub(/\.lua$$/,".html"); print}')
 #MD=$(shell   ls doc/*.md  | gawk '{sub(/^doc/,"$(SITE)/doc"); sub(/\.md$$/, ".html"); print}')

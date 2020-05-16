@@ -1,7 +1,7 @@
 local pass,fail,seed,tiny = 0,0,1,0.00001
 
 local function rogues()
-  local no = {the=true,
+  local no = {the=true, TESTING=true,
               jit=true, utf8=true, math=true, package=true,
               table=true, coroutine=true, bit=true, os=true,
               io=true, bit32=true, string=true, arg=true,
@@ -15,8 +15,10 @@ end
 function nok(t) return true end
 
 function ok(t)
+  local pre=TESTING  or ""
+  pre= "-- test "..pre.." : " 
   for s,x in pairs(t) do  
-    io.write("-- test : ".. s .. " ") 
+    io.write(pre .. s .. " ") 
     pass = pass + 1
     local t1 = os.clock()
     math.randomseed(1)

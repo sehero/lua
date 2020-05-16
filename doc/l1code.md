@@ -23,13 +23,20 @@ src="https://travis-ci.org/sehero/lua.svg?branch=master"></a><br>
 - version control
 - unit tests
     - xok.lua
+    - easy disable ok=>nok
+    - power on (ignores erros and continues)`:w
+
+    - my tests always fail
+    - watch
 - continous integration
    - travis
 - tools
+   - vim , specilling, 
+   - dont use testools, but use some tools
 
 travis. these are fast unit test
 
-standalone html. .nojekyll
+suggestion standalone html. .nojekyll
 	geneated to a secrete sub-directoy, not commited
 	commit sometimes. best to let only one person dot ath.
 

@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
+
 cd ../src
 
 for i in  *ok.lua; do
-  echo $i
-  s="$s print('\n'..string.rep(\"-\",70)); print('-- $i','\n'); dofile('$i'); "
+  s="$s TESTING='$i'; dofile('$i'); "
 done 
-
-echo $s
 
 lua="../lua-5.3.5/src/lua" # true if we are running on travis
 
