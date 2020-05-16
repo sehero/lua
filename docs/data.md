@@ -30,8 +30,8 @@ columns of that rows.
 --------- --------- -------- ---------- ---------  ---------  
 ```
 ## Creation and Updates
-
 ```lua
+
 function Data:_init(head)
   self.p       = the.data.p 
   self.rows    = {}
@@ -45,14 +45,18 @@ function Data:show(x, t)
   return the.ooo(lib.map(self.some[x],
               function (z) return z:show() end))
 end
+
+
 function Data:header(t) 
   self.cols = Cols(t) 
 end
+
 function Data:add(t,   row)
   row = t.cells and t or Row(t) 
   self.cols:add(row.cells)
   self.rows[#self.rows+1] = row
 end
+
 function Data:read(f)
   for row in csv(f) do
     if   self.cols 
@@ -60,6 +64,7 @@ function Data:read(f)
     else self:header(row) end end
   return self
 end
+
 function Data:clone(rows,  clone)
   clone = Data( 
          lib.map(self.cols.all, 
@@ -67,9 +72,11 @@ function Data:clone(rows,  clone)
   if rows then
     for j,row in pairs(rows) do 
       clone:add(row) end 
+
   end
   return clone
 end
+
 --------- --------- -------- ---------- ---------  ---------  
 ```
 ## Querying
@@ -77,6 +84,7 @@ Get klass columm.
 ```lua
 function Data:klass() 
   return self.some.klass[1] end
+
 ```
 Get klass value from a row.
 ```lua
@@ -84,11 +92,12 @@ function Data:klassVal(row)
   local klass=self:klass()
   return row.cells[klass.pos]
 end
+
 --------- --------- -------- ---------- ---------  ---------  
 ```
 ## Domination
-
 ```lua
+
 function Data:doms(cols)
   for _,row in pairs(self.rows) do
     row.dom = 0
@@ -96,6 +105,7 @@ function Data:doms(cols)
       if row:dominates( lib.any(self.rows), cols) then
         row.dom = row.dom + 1/self.samples end end end
 end
+
 --------- --------- -------- ---------- ---------  ---------  
 ```
 ## Distances
@@ -112,11 +122,13 @@ function Data:dist(r1,r2,cols,p,   n,d,d0,x,y)
   end
   return  (d/n)^self.p
 end
+
 function Data:near(r,cols,rows,   f)
   f= (function (s) 
         return {dist=self:dist(r,s,cols), row=s} end)
   return lib.sort(lib.map(rows,f), "dist")
 end
+
 ```
 Find a row that is closest to me.
 ```lua
@@ -124,6 +136,7 @@ function Data:closest(row,cols,  t)
   t= self:near(row, cols, self.rows)
   return t[2].row
 end
+
 ```
 Find a row that is most far away from `row`.
 ```lua
@@ -131,6 +144,7 @@ function Data:furthest(row, cols,  t)
   t= self:near(row, cols, self.rows)
   return t[#t].row
 end
+
 ```
 Find a row that is, say, `f=90%` away from `row`. 
 ```lua
@@ -138,6 +152,7 @@ function Data:distant(row,cols,rows,f,   t)
   t= self:near(row, cols, self.rows)
   return t[ math.floor((#t)*f) ].row
 end
+
 function Data:strange(row,cols)
   cols = cols or self.some.x
   for _,col in pairs(cols) do
@@ -145,11 +160,14 @@ function Data:strange(row,cols)
   end
   return false
 end
+
 return Data
+```
 
-## MIT License
 
-Copyright (c) 2020, Tim Menzies
+## Copyright
+
+(c) 2020, Tim Menzies
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -168,3 +186,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+

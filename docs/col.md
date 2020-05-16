@@ -17,11 +17,13 @@ href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p>
 src="https://travis-ci.org/sehero/lua.svg?branch=master"></a><br>  
 </p>
 
-## col.lua
+# Col.lua
 
 ```lua
+
 local the = require "the"
 local Col = the.class()
+
 function Col:_init(txt,pos)
   self.txt = txt or ""
   self.pos = pos or 0
@@ -29,15 +31,19 @@ function Col:_init(txt,pos)
   self.odd = the.data.odd
   self.n   = 0
 end
+
 function Col:adds(l) 
   for k,v in pairs(l) do self:add(v) end 
   return self
 end
+
 return Col
+```
 
-## MIT License
 
-Copyright (c) 2020, Tim Menzies
+## Copyright
+
+(c) 2020, Tim Menzies
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -56,3 +62,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+

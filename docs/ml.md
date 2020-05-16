@@ -24,18 +24,21 @@ Microlight - a very compact Lua utilities module
 ```
 Steve Donovan, 2012; License MIT
 @module ml
-
 ```lua
+
 local ml = {}
 local select,pairs = select,pairs
 local function_arg
+
 table.unpack = table.unpack or unpack
+
 ---------------------------------------------------
 ```
 String utilties.
 @section string
 ```lua
 ---------------------------------------------------
+
 --- split a delimited string into an array of strings.
 ```
 @param s The input string
@@ -67,7 +70,9 @@ function ml.split(s,re,n)
         i1 = i3+1
     end
 end
+
 ml.lua51 = _VERSION:match '5%.1$'
+
 --- escape any 'magic' pattern characters in a string.
 ```
 Useful for functions like `string.gsub` and `string.match` which
@@ -83,6 +88,7 @@ function ml.escape(s)
     end
     return res
 end
+
 --- expand a string containing any `${var}` or `$var`.
 ```
 Substitution values should be only numbers or strings.
@@ -96,6 +102,7 @@ function ml.expand (s,subst)
     if k > 0 then return res end
     return (res:gsub('%$([%w_]+)',subst))
 end
+
 --- return the contents of a file as a string
 ```
 @param filename The file path
@@ -111,6 +118,7 @@ function ml.readfile(filename,is_bin)
     if not res then return nil,err end
     return res
 end
+
 --- write a string to a file,
 ```
 @param filename The file path
@@ -125,12 +133,14 @@ function ml.writefile(filename,str,is_bin)
     f:close()
     return true
 end
+
 ---------------------------------------------------
 ```
 File and Path functions
 @section file
 ```lua
 ---------------------------------------------------
+
 --- Does a file exist?
 ```
 @param filename a file path
@@ -146,7 +156,9 @@ function ml.exists (filename)
         return filename
     end
 end
+
 local sep, other_sep = package.config:sub(1,1),'/'
+
 --- split a path into directory and file part.
 ```
 if there's no directory part, the first value will be the empty string.
@@ -168,6 +180,7 @@ function ml.splitpath(P)
         return P:sub(1,i-1), P:sub(i+1)
     end
 end
+
 --- split a path into root and extension part.
 ```
 if there's no extension part, the second value will be empty
@@ -191,6 +204,7 @@ function ml.splitext(P)
         return P:sub(1,i-1),P:sub(i)
     end
 end
+
 ---------------------------------------------------
 ```
 Extended table functions.
@@ -200,7 +214,9 @@ particularly efficient for this purpose.
 @section table
 ```lua
 ---------------------------------------------------
+
 local tostring = tostring -- so we can globally override tostring!
+
 local function quote (v)
     if type(v) == 'string' then
         return ('%q'):format(v)
@@ -208,6 +224,7 @@ local function quote (v)
         return tostring(v)
     end
 end
+
 local lua_keyword = {
     ["and"] = true, ["break"] = true,  ["do"] = true,
     ["else"] = true, ["elseif"] = true, ["end"] = true,
@@ -217,9 +234,12 @@ local lua_keyword = {
     ["return"] = true, ["then"] = true, ["true"] = true,
     ["until"] = true,  ["while"] = true, ["goto"] = true,
 }
+
 local function is_iden (key)
     return key:match '^[%a_][%w_]*$' and not lua_keyword[key]
 end
+
+
 local tbuff
 function tbuff (t,buff,k,start_indent,indent)
     local start_indent2, indent2
@@ -290,6 +310,7 @@ function tbuff (t,buff,k,start_indent,indent)
     append "}"
     return k
 end
+
 --- return a string representation of a Lua value.
 ```
 Cycles are detected, and the result can be optionally indented nicely.
@@ -309,7 +330,9 @@ function ml.tstring (t,how)
         return quote(t)
     end
 end
+
 local append = table.insert
+
 --- collect a series of values from an interator.
 ```
 @param ... iterator
@@ -321,6 +344,7 @@ function ml.collect (...)
     for k in ... do append(res,k) end
     return res
 end
+
 --- collect from an interator up to a condition.
 ```
 If the function returns true, then collection stops.
@@ -337,6 +361,7 @@ function ml.collectuntil (f,...)
     end
     return res
 end
+
 --- collect `n` values from an interator.
 ```
 @param n number of values to collect
@@ -346,6 +371,7 @@ end
 function ml.collectn (n,...)
     return collectuntil(function(k,i) return i > n end,...)
 end
+
 --- collect the second value from a iterator.
 ```
 If the second value is `nil`, it won't be collected!
@@ -358,6 +384,7 @@ function ml.collect2nd (...)
     for _,v in ... do append(res,v) end
     return res
 end
+
 --- extend a table by mapping a function over another table.
 ```
 @param dest destination table
@@ -380,7 +407,9 @@ function ml.mapextend (dest,j,nilv,f,t,...)
     end
     return dest
 end
+
 local mapextend = ml.mapextend
+
 --- map a function over an array.
 ```
 The output must always be the same length as the input, so
@@ -393,6 +422,7 @@ any `nil` values are mapped to `false`.
 function ml.imap(f,t,...)
     return mapextend({},1,false,f,t,...)
 end
+
 --- apply a function to each element of an array.
 ```
 @param f a function of one or more arguments
@@ -403,6 +433,7 @@ end
 function ml.transform (f,t,...)
     return mapextend(t,1,false,f,t,...)
 end
+
 --- map a function over values from two arrays.
 ```
 Length of output is the size of the smallest array.
@@ -421,6 +452,7 @@ function ml.imap2(f,t1,t2,...)
     end
     return res
 end
+
 --- map a function over an array only keeping non-`nil` values.
 ```
 @param f a function of one or more arguments
@@ -431,6 +463,7 @@ end
 function ml.imapfilter (f,t,...)
     return mapextend({},1,nil,f,t,...)
 end
+
 --- filter an array using a predicate.
 ```
 @param t a table
@@ -450,6 +483,7 @@ function ml.ifilter(t,pred,...)
     end
     return res
 end
+
 --- find an item in an array using a predicate.
 ```
 @param t the array
@@ -466,6 +500,7 @@ function ml.ifind(t,pred,...)
         end
     end
 end
+
 --- return the index of an item in an array.
 ```
 @param t the array
@@ -482,6 +517,7 @@ function ml.indexof (t,value,cmp)
         end
     end
 end
+
 local function upper (t,i2)
     if not i2 or i2 > #t then
         return #t
@@ -491,6 +527,7 @@ local function upper (t,i2)
         return i2
     end
 end
+
 local function copy_range (dest,index,src,i1,i2)
     local k = index
     for i = i1,i2 do
@@ -499,6 +536,7 @@ local function copy_range (dest,index,src,i1,i2)
     end
     return dest
 end
+
 --- return a slice of an array.
 ```
 Like `string.sub`, the end index may be negative.
@@ -511,6 +549,7 @@ function ml.sub(t,i1,i2)
     i1, i2 = i1 or 1, upper(t,i2)
     return copy_range({},1,t,i1,i2)
 end
+
 --- delete a range of values from an array.
 ```
 @param tbl the array
@@ -523,6 +562,7 @@ function ml.removerange(tbl,start,finish)
     for k=start+count,#tbl do tbl[k-count]=tbl[k] end
     for k=#tbl,#tbl-count+1,-1 do tbl[k]=nil end
 end
+
 --- copy values from `src` into `dest` starting at `index`.
 ```
 By default, it moves up elements of `dest` to make room.
@@ -538,6 +578,7 @@ function ml.insertvalues(dest,index,src,overwrite)
     end
     copy_range(dest,index,src,1,sz)
 end
+
 --- extend an array using values from other tables.
 ```
 @{readme.md.Extracting_and_Mapping}
@@ -551,6 +592,7 @@ function ml.extend(t,...)
     end
     return t
 end
+
 --- make an array of indexed values.
 ```
 Generalized table indexing. Result will only contain
@@ -570,6 +612,7 @@ function ml.indexby(t,keys)
     end
     return res
 end
+
 --- create an array of numbers from start to end.
 ```
 With one argument it goes `1..x1`. `d` may be a
@@ -594,6 +637,7 @@ function ml.range (x1,x2,d)
     end
     return res
 end
+
 ```
 Bring modules or tables into 't`.
 If `lib` is a string, then it becomes the result of `require`
@@ -629,6 +673,7 @@ function ml.import(t,...)
     end
     return ml.update(t,table.unpack(libs))
 end
+
 --- add the key/value pairs of arrays to the first array.
 ```
 For sets, this is their union. For the same keys,
@@ -645,6 +690,7 @@ function ml.update (t,...)
     end
     return t
 end
+
 --- make a table from an array of keys and an array of values.
 ```
 @param t an array of keys
@@ -659,6 +705,7 @@ function ml.makemap(t,tv)
     end
     return res
 end
+
 --- make a set from an array.
 ```
 The values are the original array indices.
@@ -668,6 +715,7 @@ The values are the original array indices.
 @function ml.invert
 ```lua
 ml.invert = ml.makemap
+
 --- extract the keys of a table as an array.
 ```
 @param t a table
@@ -676,6 +724,7 @@ ml.invert = ml.makemap
 function ml.keys(t)
     return ml.collect(pairs(t))
 end
+
 --- are all the values of `other` in `t`?
 ```
 @param t a set
@@ -688,6 +737,7 @@ function ml.issubset(t,other)
     end
     return true
 end
+
 --- are all the keys of `other` in `t`?
 ```
 @param t a table
@@ -695,6 +745,7 @@ end
 @treturn bool
 ```lua
 ml.containskeys = ml.issubset
+
 --- return the number of keys in this table, or members in this set.
 ```
 @param t a table
@@ -705,6 +756,7 @@ function ml.count (t)
     for k in pairs(t) do count = count + 1 end
     return count
 end
+
 --- do these tables have the same keys?
 ```
 THis is set equality.
@@ -715,12 +767,14 @@ THis is set equality.
 function ml.equalkeys(t,other)
     return ml.issubset(t,other) and ml.issubset(other,t)
 end
+
 ---------------------------------------------------
 ```
 Functional helpers.
 @section function
 ```lua
 ---------------------------------------------------
+
 --- create a function which will throw an error on failure.
 ```
 @param f a function that returns nil,err if it fails
@@ -734,6 +788,7 @@ function ml.throw(f)
         return r1,r2,r3
     end
 end
+
 --- bind the value `v` to the first argument of function `f`.
 ```
 @param f a function of at least one argument
@@ -747,6 +802,7 @@ function ml.bind1(f,v)
         return f(v,...)
     end
 end
+
 --- bind the value `v` to the second argument of function `f`.
 ```
 @param f a function of at least one argument
@@ -760,6 +816,7 @@ function ml.bind2(f,v)
         return f(x,v,...)
     end
 end
+
 --- compose two functions.
 ```
 For instance, `printf` can be defined as `compose(io.write,string.format)`
@@ -774,6 +831,7 @@ function ml.compose(f1,f2)
         return f1(f2(...))
     end
 end
+
 --- a function returning the second value of `f`
 ```
 @param f a function returning at least two values
@@ -787,6 +845,7 @@ function ml.take2 (f)
         return b
     end
 end
+
 --- is the object either a function or a callable object?.
 ```
 @param obj Object to check.
@@ -795,6 +854,7 @@ end
 function ml.callable (obj)
     return type(obj) == 'function' or getmetatable(obj) and getmetatable(obj).__call
 end
+
 --- create a callable from an indexable object.
 ```
 @param t a table or other indexable object.
@@ -804,6 +864,7 @@ function ml.map2fun (t)
         __call = function(obj,key) return t[key] end
     })
 end
+
 --- create an indexable object from a callable.
 ```
 @param f a callable of one argument.
@@ -814,12 +875,15 @@ function ml.fun2map (f)
         __newindex = function() error("not writeable!",2) end
     })
 end
+
 local function _string_lambda (f)
     local code = 'return function(X,Y,Z) return '..f..' end'
     local chunk = assert(loadstring(code,'tmp'))
     return chunk()
 end
+
 local string_lambda
+
 --- defines how we convert something to a callable.
 --
 ```
@@ -847,7 +911,9 @@ function ml.function_arg(f)
     end
     return f
 end
+
 function_arg = ml.function_arg
+
 --- 'memoize' a function (cache returned value for next call).
 ```
 This is useful if you have a function which is relatively expensive,
@@ -866,12 +932,14 @@ function ml.memoize(func)
         __call = function(self, k) return self[k] end
     })
 end
+
 ---------------------------------------------------
 ```
 Classes.
 @section class
 ```lua
 ---------------------------------------------------
+
 --- create a class with an optional base class.
 --
 ```
@@ -924,6 +992,7 @@ function ml.class(base)
     })
     return klass
 end
+
 ------------------------
 ```
 a simple Array class.
@@ -951,21 +1020,28 @@ Concatenation, equality and custom tostring is defined.
 This implementation has covariant methods; so that methods like `map` and `sub`
 will return an object of the derived type, not `Array`
 @table Array
-
 ```lua
+
 local Array
+
 if not rawget(_G,'NO_MICROLIGHT_ARRAY') then
+
     Array = ml.class()
+
     local extend, setmetatable, C = ml.extend, setmetatable, ml.compose
+
     local function set_class (self,res)
         return setmetatable(res,self._class)
     end
+
     local function awrap (fun)
         return function(self,...) return set_class(self,fun(self,...))  end
     end
+
     local function awraps (fun)
         return function(self,f,...) return set_class(self,fun(f,self,...))  end
     end
+
     -- a class is just a table of functions, so we can do wholesale updates!
     ml.import(Array,{
         -- straight from the table library
@@ -976,6 +1052,7 @@ if not rawget(_G,'NO_MICROLIGHT_ARRAY') then
         range=C(Array,ml.range),split=C(Array,ml.split),collect=C(Array,ml.collect),
         indexof=ml.indexof, find=ml.ifind, extend=ml.extend
     })
+
     -- A constructor can return a _specific_ object
     function Array:_init(t)
         if not t then return nil end  -- no table, make a new one
@@ -984,18 +1061,22 @@ if not rawget(_G,'NO_MICROLIGHT_ARRAY') then
         end
         return t
     end
+
     function Array:sort(f)
         if type(f) ~= "nil" then f = function_arg(f) end
         table.sort(self,f)
         return self
     end
+
     function Array:sorted(f)
         return self:sub(1):sort(f)
     end
+
     function Array:foreach(f,...)
         f = function_arg(f)
         for i = 1,#self do f(self[i],...) end
     end
+
     function Array.mappers (klass,t)
         local method = Array.mapfilter
         if t.__use then
@@ -1006,9 +1087,11 @@ if not rawget(_G,'NO_MICROLIGHT_ARRAY') then
             klass[k] = ml.bind2(method,function_arg(f))
         end
     end
+
     function Array:__tostring()
         return '{' .. self:map(ml.tstring):concat ',' .. '}'
     end
+
     function Array.__eq(l1,l2)
         if #l1 ~= #l2 then return false end
         for i = 1,#l1 do
@@ -1016,16 +1099,22 @@ if not rawget(_G,'NO_MICROLIGHT_ARRAY') then
         end
         return true
     end
+
     function Array.__concat (l1,l2)
         return set_class(l1,extend({},l1,l2))
     end
+
 end
+
 ml.Array = Array
+
 return ml
+```
 
-## MIT License
 
-Copyright (c) 2020, Tim Menzies
+## Copyright
+
+(c) 2020, Tim Menzies
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -1044,3 +1133,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+

@@ -44,9 +44,9 @@ Note that:
   line at a time) without loading the file into RAM. 
 - This iterator reads from `file` or, if that is absent,
   from standard input. 
-
-
 ```lua
+
+
 function csv(file,     want,stream,tmp,row)
   stream = file and io.input(file) or io.input()
   tmp    = io.read()
@@ -62,9 +62,13 @@ function csv(file,     want,stream,tmp,row)
     else
       io.close(stream) end end   
 end
+
+
 ```
 ## Support 
+```lua
 
+```
 Determine what we want. 
 ```lua
 function csvWant(row,    out,put)
@@ -76,6 +80,7 @@ function csvWant(row,    out,put)
   end end
   return out
 end
+
 ```
 Take what we `want`
 (and while we are here, coerce any 
@@ -89,6 +94,7 @@ function csvTake(want,row,     out,cell)
     out[put] = cell end
   return out
 end
+
 ```
 Low-level function: Split the string `s` on some seperatpr `sep` 
 (which defaults to ",") into a return list.
@@ -99,18 +105,20 @@ function split(s,     sep,out)
     out[#out+1] = y end
   return out
 end
+
 -------------
 ```
 ## Export control 
 ```lua
 return csv
+
 ```
 ## Author 
 Tim Menzies, April 2020.
 
-## MIT License
+## Copyright
 
-Copyright (c) 2020, Tim Menzies
+(c) 2020, Tim Menzies
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -129,3 +137,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+

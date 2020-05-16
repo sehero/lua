@@ -1,8 +1,4 @@
 function line() {
-  if (/^[ \t]*$/) { # skip blank lines inside code 
-    if (!code) print 
-    return
-  } 
   if (sub(/^--\]\]/,"")) { # multi-line comments end
     b4  = code = 1
     top = loop = 0 
@@ -33,4 +29,5 @@ BEGIN {
   loop = 0 # are we looping thru multi-line comments?
   top  = 1 # is this the first thing in the file?
   while (getline) line()
+  if(code) print "```\n"
 }
