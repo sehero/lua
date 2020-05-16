@@ -18,9 +18,12 @@ src="https://travis-ci.org/sehero/lua.svg?branch=master"></a><br>
 </p>
 ```
 ## Index
-
+```lua
+--
+```
 Fun fun fun for the whole family
-
+```lua
+--
 ```
 - [col.lua](col.html)
 - [cols.lua](cols.html)
