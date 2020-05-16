@@ -17,3 +17,45 @@ href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p>
 src="https://travis-ci.org/sehero/lua.svg?branch=master"></a><br>  
 </p>
 
+
+```
+.
+├── CITATION.md
+├── CODE_OF_CONDUCT.md
+├── CONTACT.md
+├── INSTALL.md
+├── LICENSE
+├── Makefile
+├── README.md
+├── data
+│   ├── README.md
+│   ├── cooked
+│   └── raw
+│       ├── auto93.csv
+...     ...
+├── doc
+│   ├── default.html5
+│   ├── etc
+│   │   ├── img
+│   │   │   ├── mamrit.jpg
+... ... ... ...
+│   │   └── style.css
+│   └── index.md
+├── docs
+├── etc
+│   ├── 2md.awk
+│   ├── brew.sh
+│   ├── headers.sh
+│   ├── help.sh
+│   ├── ish
+│   └── missing.sh
+├── requirements.txt
+├── src
+│   ├── col.lua
+│   ├── colok.lua
+... ...  
+└── test
+    ├── all.sh
+    └── oks.sh
+```
+
