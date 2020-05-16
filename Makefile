@@ -37,13 +37,13 @@ push: ## upload changes to Git
 	@git push
 	@git status
 
-MDS=$(shell ls src/*.lua | grep -v '.ok.lua' | gawk '{sub(/lua/,"md"); sub(/src/,"md"); print}')
+MDS=$(shell ls src/*.lua | grep -v '.ok.lua' | gawk '{sub(/lua/,"md"); sub(/src/,"docs"); print}')
 doco: $(MDS) ## make doco
 
 docs/%.md : src/%.lua  
-	@bash etc/banner.sh > $@  
-	@bash etc/2md.awk $< >> $@
-	@cat LICENESE >> $@
+	@echo "# $< ..."
+	@(etc/banner.sh; gawk -f etc/2md.awk $<; cat LICENSE)  > $@
+	@git add docs/*.md
 
 #CODE=$(shell ls src/*.lua | gawk '{sub(/^src/,"$(SITE)/src"); sub(/\.lua$$/,".html"); print}')
 #MD=$(shell   ls doc/*.md  | gawk '{sub(/^doc/,"$(SITE)/doc"); sub(/\.md$$/, ".html"); print}')
