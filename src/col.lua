@@ -35,9 +35,7 @@ function Col:_init(txt,pos)
   self.odd = the.data.odd -- defaults to 1%
   self.w = string.find(self.txt,the.ch.less) and -1 or 1
 end
-
 -- Method for bulk addition of many items.
-
 function Col:adds(l) 
   for k,v in pairs(l) do self:add(v) end 
   return self

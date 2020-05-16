@@ -23,7 +23,7 @@ Column contents are summarized in `Cols`.
 - a count `n` of the number of things seen to date
 - (optional) a `pos`ition (some integer).
 - (optional) a name (stored in `txt`)
-    - if that name starts with `<` then this column is a goal to be minimized. 
+    - if that name starts with "`<`" then this column is a goal to be minimized. 
     - If so, this column has a weight `w` of -1.
     - Otherwise it has a weight of 1
 -  Also, `Col` can check for anomalies; i.e. if some number has less that an `odd`
@@ -45,14 +45,12 @@ function Col:_init(txt,pos)
   self.n   = 0  
   self.txt = txt or "" 
   self.pos = pos or 0  
-  self.w   = string.find(self.txt, the.ch.less) and -1 or 1
   self.odd = the.data.odd -- defaults to 1%
+  self.w = string.find(self.txt,the.ch.less) and -1 or 1
 end
-
 ```
 Method for bulk addition of many items.
 ```lua
-
 function Col:adds(l) 
   for k,v in pairs(l) do self:add(v) end 
   return self
