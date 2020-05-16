@@ -1,31 +1,36 @@
-function run(top,  # is this top of file?
-             b4,   # was the last line a comment?
-             loop, # are we looping over multi-line comments?
-             code) # are we running thru a code block?
-{
-  if (getline <= 0) exit  # end of file
-  if (/^[ \t]*$/) { 
-    if (!code) # skip blank lines inside code blocks
-      print 
-    return run(top,b4,loop,code) 
-  }
-  if (sub(/^--\]\]/,""))  # end looping over multi-line comments
-    return run(0,1,0,1) 
-  if (sub(/^--\[\[/,"")) {# loop over multi-line comments
-    if (!top)             # if top, then nothing before to be close
-      print "```" 
-    return run(0,b4,1,0) 
-  }
+function line() {
+  if (/^[ \t]*$/) { # skip blank lines inside code 
+    if (!code) print 
+    return
+  } 
+  if (sub(/^--\]\]/,"")) { # multi-line comments end
+    b4  = code = 1
+    top = loop = 0 
+    return
+  } 
+  if (sub(/^--\[\[/,"")) { # multi-line comments start
+    if (!top) print "```"  # if top, then nothing to close
+    b4  = loop = 1 
+    top = code = 0
+    return
+  } 
   if (loop) { # loop over multi line commnts
     print
-    return run(0,b4,loop,0) 
-  }
-  # handle the transistion between comments and non-comments
+    return
+  } 
+  # toggle between comments and non-comments
   now = sub(/^-- /,"")
-  if ( b4 && !now) { code=1; print "```lua" }
-  if (!b4 &&  now) { code=0; print "```"    }
+  if (  b4 && !now ) { code=1; print "```lua" }
+  if ( !b4 &&  now ) { code=0; print "```"    }
   print 
-  run(0,now,0,code)
+  b4  = now
+  top = loop = 0 
 }
 
-BEGIN { run(1,0,0,0) }
+BEGIN { 
+  code = 0 # are we processing code?
+  b4   = 0 # was the line before a comment?
+  loop = 0 # are we looping thru multi-line comments?
+  top  = 1 # is this the first thing in the file?
+  while (getline) line()
+}
