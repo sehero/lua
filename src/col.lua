@@ -32,7 +32,7 @@ function Col:_init(txt,pos)
   self.n   = 0  
   self.txt = txt or "" 
   self.pos = pos or 0  
-  self.w   = string.find(self.txt, the.ch.less) and -1 or 1
+  self.w   = string.find(self.txt,the.ch.less) and -1 or 1
   self.odd = the.data.odd -- defaults to 1%
 end
 
