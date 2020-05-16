@@ -88,11 +88,3 @@ ok { bchop=function(   u)
   end
 end}
 
-ok { pnorm = function()
-     near(0      , lib.normcdf(-10, 0, 1))
-     near(0.1635 , lib.normcdf( -1, 0, 1))
-     near(0.5    , lib.normcdf(  0, 0, 1))
-     near(0.846  , lib.normcdf(  1, 0, 1))
-     near(0.9772 , lib.normcdf(  2, 0, 1))
-     near(1      , lib.normcdf( 10, 0, 1))
-end }

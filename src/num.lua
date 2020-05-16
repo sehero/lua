@@ -79,14 +79,25 @@ function Num:strange(x,  z)
   return z< self.odd or z >= 1-self.odd
 end
 
+-- ---------------------------
+-- ## Z-curve
+-- The `z-curve` is a normal curve with mean of 0 and  standard 
+-- deviation of 1. To convery any normal curve into a `z-curve`
+-- then subtract `mu` and divide by `sd`.
+
+-- For the same of effeciency, Pre-compute and cache the area under
+--  the normal curve from -4\*`sd` to +4\*`sd` (why this
+-- range? Well, outside of that range, the y-value of
+-- the normal curve is effectively zero).
+
 do
-  local z  = {0}  -- zcurve[1] = 0
   local zn = 512  -- cache "zn" number of entries
   local dx = 8/zn -- generated from -4 to 4
   for i  = 2,zn do -- accumulate the area
     z[i] = z[i-1] + dx*lib.norm( -4+i*dx, 0,1)  end
 
   function Num.z(x,mu,sd,     i)
+    -- convect to a z-curve, find `x`'s place in that curve
     i = (((x - mu)/sd  - -4) / 8 * zn) // 1
     if     i > zn then return 1 
     elseif i < 1  then return 0 

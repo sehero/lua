@@ -17,6 +17,15 @@ href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p>
 src="https://travis-ci.org/sehero/lua.svg?branch=master"></a><br>  
 </p>
 
+- these tools are one way, not the way
+
+- encapuslation (modules)
+- version control
+- unit tests
+    - xok.lua
+- continous integration
+   - travis
+- tools
 
 travis. these are fast unit test
 
@@ -56,3 +65,8 @@ docs
 etc
 	make headers.sh
 	missing and ish can go
+
+
+# a few of my favorite things
+
+- vim,tmux
