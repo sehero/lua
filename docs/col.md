@@ -17,7 +17,16 @@ href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p>
 src="https://travis-ci.org/sehero/lua.svg?branch=master"></a><br>  
 </p>
 
-# Col.lua
+
+# [Col.lua](../src/col.lua)
+
+Data comes in rows and columns. 
+Column contents are summarized in `Cols`.
+Subtypes of `Col` include
+`[Num](num.md]` 
+and
+`[Sym](sym.md)` for numeric and symbolic
+columns, respectively.
 
 ```lua
 
