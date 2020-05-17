@@ -22,6 +22,8 @@ src="https://travis-ci.org/sehero/lua.svg?branch=master"></a><br>
 - encapuslation (modules)
 - version control
 - unit tests
+    - much of development is testing
+    - 50%
     - xok.lua
     - easy disable ok=>nok
     - power on (ignores erros and continues)`:w

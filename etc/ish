@@ -54,40 +54,40 @@ tmuxrc() { cat<<-'EOF'
 	set-option -g bell-action none
 	#  modes
 	setw -g clock-mode-colour colour5
-	setw -g mode-attr bold
-	setw -g mode-fg colour1
-	setw -g mode-bg colour18
+	###setw -g mode-attr bold
+	###setw -g mode-fg colour1
+	###setw -g mode-bg colour18
 	# panes
-	set -g pane-border-bg colour0
-	set -g pane-border-fg colour19
-	set -g pane-active-border-bg colour0
-	set -g pane-active-border-fg colour9
+	###set -g pane-border-bg colour0
+	###set -g pane-border-fg colour19
+	###set -g pane-active-border-bg colour0
+	###set -g pane-active-border-fg colour9
 	# statusbar
 	set -g status-position top
 	set -g status-justify left
 	set -g status-bg colour232
 	set -g status-fg colour137
-	set -g status-attr dim
+	###set -g status-attr dim
 	set -g status-left ''
 	set -g status-right '#{?window_zoomed_flag,🔍,} #[fg=colour255,bold]#H #[fg=colour255,bg=colour19,bold] %b %d #[fg=colour255,bg=colour8,bold] %H:%M '
 	set -g status-right '#{?window_zoomed_flag,🔍,} #[fg=colour255,bold]#H '
 	set -g status-right-length 50
 	set -g status-left-length 20
-	setw -g window-status-current-fg colour1
-	setw -g window-status-current-bg colour232
-	setw -g window-status-current-attr bold
+	###setw -g window-status-current-fg colour1
+	###setw -g window-status-current-bg colour232
+	###setw -g window-status-current-attr bold
 	setw -g window-status-current-format ' #I#[fg=colour249]:#[fg=colour255]#W#[fg=colour249]#F '
-	setw -g window-status-fg colour9
-	setw -g window-status-bg colour18
-	setw -g window-status-attr none
+	###setw -g window-status-fg colour9
+	###setw -g window-status-bg colour18
+	###setw -g window-status-attr none
 	setw -g window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F '
-	setw -g window-status-bell-attr bold
-	setw -g window-status-bell-fg colour255
-	setw -g window-status-bell-bg colour1
+	###setw -g window-status-bell-attr bold
+	###setw -g window-status-bell-fg colour255
+	###setw -g window-status-bell-bg colour1
 	# messages
-	set -g message-attr bold
-	set -g message-fg colour232
-	set -g message-bg colour16
+	###set -g message-attr bold
+	###set -g message-fg colour232
+	###set -g message-bg colour16
 	# layouts
 	bind S source-file $Tnix/.config/tmux-session1
 	setw -g monitor-activity on
@@ -309,7 +309,7 @@ if [ "$AFTER" == "1" ]; then
   cat<<-"EOF"
 
 	   (\____/)         
-	     (_oo_)         dinamech/duo
+	     (_oo_)         sehero/lua
 	       (O)          By your command ...
 	     __||__    \)  
 	  []/______\[] /    
