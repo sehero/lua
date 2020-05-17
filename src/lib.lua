@@ -1,5 +1,12 @@
 local lib={}
 
+local id=0
+
+function lib.id (x)
+  if not x._id then id= id + 1; x._id= id end
+  return x._id
+end
+
 function lib.same(x) return x end
 
 function lib.any(l) return l[math.random(1,#l)] end

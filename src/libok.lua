@@ -2,6 +2,18 @@ require "ok"
 
 local lib = require "lib"
 
+ok{ id=function(   a,b,c,d,t,u)
+  t= {}
+  u= {}
+  a= lib.id(t)
+  b= lib.id(t)
+  c= lib.id(u)
+  d= lib.id(u)
+  assert( a == b )
+  assert( c == d )
+  assert( a ~= c )
+end }
+
 ok{ any=function(   a,x)
   a={1,2,3,4,5,6,7,8,9,10}
   for i=1,1000 do

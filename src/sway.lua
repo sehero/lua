@@ -5,8 +5,7 @@ local Sway = the.class()
 function Sway:_init(data)
   self.n     = the.fmap.n
   self.far   = the.fmap.far
-  self.min   = math.floor((#data.rows)^the.fmap.min)
-
+  self.min   = ((#data.rows)^the.fmap.min) // 1
   self.data  = data 
   self.cols  = data.some.y
   self.debug = false
@@ -18,14 +17,14 @@ function Sway:select(rows, lvl)
   if self.debug then 
     print( #rows, self.min, string.rep("|.. ",lvl))  
   end
-  if   #rows < 2*self.min 
+  if #rows < 2*self.min 
   then return rows
   else
     local mu,up,f,tmp
     mu,up = self:project(rows)
-    f     = function(r) return (up     and r.x >= mu) or 
-                                (not up and r.x <  mu) end
-    tmp   = lib.select(rows,f)
+    f   = function(r) return (up     and r.x >= mu) or 
+                             (not up and r.x <  mu) end
+    tmp = lib.select(rows,f)
     if #tmp < #rows then 
       return self:select(tmp, lvl+1) end end 
 end
