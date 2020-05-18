@@ -1,10 +1,12 @@
 local the = require "the"
+local id  = require("lib").id
 local Row = the.class()
 
 function Row:_init(cells) 
   self.dom = 0
   self.best = false
   self.cells = cells 
+  id(self)
 end
   
 function Row:dist(other,cols,p,    n,d,x,y,d0) 

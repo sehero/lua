@@ -14,6 +14,7 @@ function Data:_init(head)
   self.p       = the.data.p 
   self.rows    = {}
   self.cols    = nil
+  self.has     = {}
   self.samples = the.data.samples
   self.some    = lib.cache(function (k)
                      return  self.cols:some(k) end)
@@ -33,6 +34,7 @@ function Data:add(t,   row)
   row = t.cells and t or Row(t) 
   self.cols:add(row.cells)
   self.rows[#self.rows+1] = row
+  self.has[ lib.id(row) ]     = true
 end
 
 function Data:read(f)

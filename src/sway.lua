@@ -18,7 +18,8 @@ function Sway:select(rows, lvl)
     print( #rows, self.min, string.rep("|.. ",lvl))  
   end
   if #rows < 2*self.min 
-  then return rows
+  then 
+    return rows
   else
     local mu,up,f,tmp
     mu,up = self:project(rows)
