@@ -20,7 +20,7 @@ src="https://travis-ci.org/sehero/lua.svg?branch=master"></a><br>
 
 We explore AI tools (data miners and optimizers) and
 how these can be applied to software engineering. Specifically,
-we discuss AI support for requirements enigneering, test, effort
+we discuss AI support for requirements engineering , test, effort
 estimation, defect prediction, etc.
 
 Like Batman and Iron Man, we seek tools that turn ordinary (but
@@ -29,10 +29,13 @@ problems with a single bound.
 Our super heroes face many foes, so  they know that no single
 AI tool will defeat every problem.
 
+Super heroes have super powers. They build their own AI tools, then constantly
+tinker and refine them. 
 Super heroes have X-ray vision that can see things buried deep inside other things.
 So they need treat AI tools as black boxes. Rather, using their super powers
 of refactoring, they 
 incremental refine, improve, and simplify their AI tools.
+
 
 
 Our tools are not CPU nor memory intensive and so scale
@@ -48,10 +51,11 @@ favorite language. These challenges can be used for personnel study,
 or as the weekly homeworkds of a graduate class in AI for SE
 
 - Lesson 1: care and feeding of tools. Building code to 
-- Lesson 2: A little lua (broosk's Law)
-- Lesson 2: Just enough maths
+- Lesson 2: A little lua (broosk's Law
 - Lesson 3: columns
+- Lesson 4: a little more lia: product lines
 - Lesson 4: rows
+- Lesson 5: i\*
 - Lesson 5: cluster (joe's stuff KNN)
 - Lesson 5: privacy (fayola's stuff)
 - Lesson 6: classify
