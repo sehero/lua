@@ -38,5 +38,6 @@ function Cols:num(x)   return c(x,"num") or self:goal(x) end
 function Cols:y(x)     return self:klass(x) or self:goal(x) end
 function Cols:x(x)     return not self:y(x)   end
 function Cols:sym(x)   return not self:num(x) end
+function Cols:xsym(z)  return self:x(z) and self:sym(z) end
 
 return Cols

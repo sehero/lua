@@ -37,8 +37,18 @@ function Col:_init(txt,pos)
 end
 -- Method for bulk addition of many items.
 function Col:adds(l) 
-  for k,v in pairs(l) do self:add(v) end 
+  for k,v in pairs(l or {}) do self:add(v) end 
   return self
+end
+
+function Col:clone(xs)
+  local what= getmetatable(self)
+  return what(self.txt, self.pos):adds(xs)
+end
+
+function Col:xpect(other)
+  local n = self.n + other.n
+  return (self:var()*self.n + other:var()*other.n) /n
 end
 
 return Col

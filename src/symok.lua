@@ -24,3 +24,14 @@ ok { step = function (   s,n,t,v)
     n:sub( t[i] )
   end
 end}
+
+ok { clone = function(      s,a,b,c)
+  s={"a","a","b","c","c","c","d","d","d","e","e",
+     "e","e","f","f","f","f","g","g","g","g","g"}
+  a = Sym("tim",23):adds(s)
+  b = a:clone()
+  c = b:clone(s)
+  assert(a.mode == c.mode)
+  assert(a:ent() == c:ent())
+  assert(b.pos == a.pos)
+  end}

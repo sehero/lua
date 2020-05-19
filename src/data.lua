@@ -20,11 +20,11 @@ function Data:_init(head)
                      return  self.cols:some(k) end)
   if head then self:header(head) end
 end
+
 function Data:show(x, t)
   return the.ooo(lib.map(self.some[x],
               function (z) return z:show() end))
 end
-
 
 function Data:header(t) 
   self.cols = Cols(t) 

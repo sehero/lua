@@ -59,9 +59,9 @@ end
 
 function lib.sort(t,f)
   if type(f) == "string" then
-    return lib.sort(t, function(x,y) return x[f]<y[f] end) 
+     return lib.sort(t, function(x,y) return x[f] < y[f] end) 
   elseif not f then
-    return lib.sort(t, function(x,y) return x< y end) 
+     return lib.sort(t, function(x,y) return x < y end) 
   end
   table.sort(t,f)
   return t

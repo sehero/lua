@@ -64,3 +64,16 @@ end
 
 ok { strange1 = function() strange() end }
 ok { strange2 = function() strange("diabetes.csv") end }
+
+local function ent1(f,   tmp,row1,d,close,far,d1,d2)
+  d = Data():read(the.csv .. (f or 'weather4.csv'))
+  for _,col in pairs(d.cols:some("xsym")) do
+    tmp = col:split(d.rows,
+             function(row) 
+               return d:klassVal(row) end)
+    print(tmp.txt, tmp.ent)
+  end
+end
+
+ok {ent1=ent1}
+

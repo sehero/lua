@@ -35,3 +35,14 @@ ok { z = function(e )
     near(0.9772 , Num.z(  2, 0, 1),e)
     near(1      , Num.z( 10, 0, 1),e)
 end }
+
+ok { clone = function(      t,a,b,c)
+  t = {9,2,5, 4,12,7, 8,11,9,
+       3,7,4,12, 5,4,10,9,6,9,4}
+  a = Num("tim",23):adds(t)
+  b = a:clone()
+  c = b:clone(t)
+  assert(a.m2 == c.m2)
+  assert(a.sd == c.sd)
+  assert(b.pos == a.pos)
+  end}

@@ -27,7 +27,7 @@ return {
           },
   data =  { p      = 2,
              sample = 128,
-             odd    = .05,
+             odd    = .01,
              data   = .5,
              far    = .9},
   rand=   { seed = 1}, 
@@ -50,8 +50,11 @@ return {
             cliffs = .147
             -- cliff's small,medium,large = .147,.33,.474
             },
+  tree=   { min = 4},
   nb =    { k=1,m=2},
   chop=   { m = .5,
+            epsilon= .05,
+            bigger = 1.05,
             cohen = .2},
   num=    { conf  = 95,
             small = .38, -- small,medium = 0.38,1

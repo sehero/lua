@@ -1,4 +1,5 @@
 local the = require "the"
+local lib = require "lib"
 local Sym = the.class(require "col")
 
 function Sym:_init(txt,pos)
@@ -66,6 +67,28 @@ function Sym:dist(x,y)
     return 1
   else
     return x==y and 0 or 1 end
+end
+
+function Sym:splitter(rows,y,    x,t,lt,syms,z)
+  lt = function (x,y) return x:var() < y:var() end
+  t, syms = {}, {}
+  for _,row in pairs(rows) do
+    x = row.cells[self.pos]
+    if x ~= the.ch.skip then 
+      if not syms[x] then
+        syms[x]    = Sym(x)
+        t[ #t+1 ] = syms[x]
+      end
+      syms[x]:add( y(row) ) end 
+  end
+  z= lib.sort(t,lt)[1]
+  return {
+     key= self.txt,
+     col= self.pos,
+     txt= self.txt .. "=" .. z.txt,
+     val= z.txt,
+     ent= z:ent(),
+     use= (function(r) return z.txt==r.cells[self.pos] end)}
 end
 
 return Sym
