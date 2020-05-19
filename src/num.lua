@@ -148,8 +148,8 @@ end
 function NumDiv:div(lst,lo,hi,x,y,out)
   local cut,xr,yr,xl,yl = self:cut(lst,lo,hi,x,y)
   if cut then
-    self:div(lst,lo, cut,xr,yr)
-    self:div(lst,lo+1,hi,xl,yl)
+    self:div(lst,lo, cut,xl,yl)
+    self:div(lst,lo+1,hi,xr,yr)
   else
     -- coffee script bounds
     out[#out+1] = lst[hi][1]
@@ -173,7 +173,7 @@ function NumDiv:cut(lst,lo,hi,xr,yr)
     then
       best,cut = tmp, i
       xr1,yr1  = lib.copy(xr), lib.copy(yr)          
-      xl1,yl1  = lib.copy(xl), lib.copy(yl)  end 
+      xl1,yl1  = lib.copy(xl), lib.copy(yl) end 
   end 
   return cut, xr1, yr1, xl1, yl1
 end
