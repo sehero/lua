@@ -36,8 +36,9 @@ function Col:_init(txt,pos)
   self.w = string.find(self.txt,the.ch.less) and -1 or 1
 end
 -- Method for bulk addition of many items.
-function Col:adds(l) 
-  for k,v in pairs(l or {}) do self:add(v) end 
+function Col:adds(l,f) 
+  f = f or function (z) return z end
+  for k,v in pairs(l or {}) do self:add(f(v)) end 
   return self
 end
 

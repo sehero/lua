@@ -67,6 +67,13 @@ function lib.sort(t,f)
   return t
 end
 
+function lib.b4(x,lst,y)
+  y = y or lst[1]
+  for _,z in pairs(lst) do 
+    if z>x then break else y=z end end
+  return y
+end
+
 function lib.rpad(s,n)
   s = tostring(s)
   return  s .. string.rep(" ",n - #s) 

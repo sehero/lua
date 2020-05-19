@@ -5,13 +5,13 @@ function Super:_init(lst,pause)
   self.eps  = the.chop.epsilon
   self.big  = the.chop.bigger
   self.min  = the.chop.min
-  self.xall = Num()
-  self.yall = Sym()
+  self.xs = Num()
+  self.ys = Sym()
   for _,xy in pairs(lst) do 
-    self.xall:add(xy[1]) 
-    self.yall:add(xy[2]) 
+    self.xs:add(xy[1]) 
+    self.ys:add(xy[2]) 
   end
-  self.tiny = self.yall.sd*cohen
+  self.tiny = self.ys.sd*cohen
   self.min  = (#xy)^self.min 
   self.lst  = lib.sort(lst, function (x,y) return x[1] < y[1] end)
 end
@@ -19,34 +19,35 @@ end
 function Super:div(lst,lo,hi,x,y,out)
   local cut,xr,yr,xl,yl = self:cut(lst,lo,hi,x,y)
   if cut then
-    self:div(lst,lo, cut,xl,yl)
-    self:div(lst,lo+1,hi,xr,yr)
+    self:div(lst, lo,   cut, xl, yl)
+    self:div(lst, cut+1, hi, xr, yr)
   else
-    -- coffee script bounds
-    out[#out+1] = lst[hi][1]
-  end
+    if hi < #lst then
+      out[#out+1] = lst[hi][1] end end
 end
 
+local function copy2(x,y) return lib.copy(x), lib.copy(y) end
+
 function Super:cut(lst,lo,hi,xr,yr)
+  local xr1,yr1,xl1,yl1,cut,best,xl,yl,x,y
   if hi-lo < 2*self.min then return nil end
-  local xl,yl = Num(), Sym() 
-  local xr1,yr1,xl1,yl1,cut,best
-  local best  = yr:var()
-  for i = lo,hi do
-    local x = lst[i][1]
-    local y = lst[i][2]
-    xl:add(x) ; xr:sub(x)
-    yl:add(y) ; yr:sub(y)
-    if xl.n >= self.min and yl.n >= self.min  and
-       x ~= lst[i+1][1]                       and
-       xr.mu - xl.mu > self.tiny              and
-       yl:xpect(yr)*bigger < best 
+  xl,yl = Num(), Sym() 
+  best  = yr:var()
+  for i,xy in pairs(lst) do
+    -- steal from the right, give to the left
+    x = xr:sub( xl:add( xy[1] ))
+    y = yr:sub( yl:add( xy[2] ))
+    if xl.n >= self.min and -- avoid splits of small size
+       xr.n >= self.min and -- avoid splits of small size
+       x ~= lst[i+1][1] and -- cant split on same value
+       xr.mu - xl.mu > self.tiny and -- ignore tiny deltas
+       yl:xpect(yr)*bigger < best    -- found a better best?
     then
-      best,cut = tmp, i
-      xr1,yr1  = lib.copy(xr), lib.copy(yr)          
-      xl1,yl1  = lib.copy(xl), lib.copy(yl) end 
+       best,cut = yl:xpect(yr), i
+       xr1,yr1  = copy2(xr, yr)          
+       xl1,yl1  = copy2(xl, yl) end 
   end 
   return cut, xr1, yr1, xl1, yl1
 end
 
-
+return Super
