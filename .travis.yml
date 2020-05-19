@@ -13,3 +13,7 @@ script:
   - cd ../test
   - pwd
   - bash all.sh
+
+
+after_success:
+  - coveralls
