@@ -1,36 +1,37 @@
 Super = the.class()
 
-function Super:_init(lst,pause)
-  cohen     = the.chop.cohen
-  self.eps  = the.chop.epsilon
-  self.big  = the.chop.bigger
-  self.min  = the.chop.min
-  self.xs = Num()
-  self.ys = Sym()
-  for _,xy in pairs(lst) do 
-    self.xs:add(xy[1]) 
-    self.ys:add(xy[2]) 
-  end
-  self.tiny = self.ys.sd*cohen
-  self.min  = (#xy)^self.min 
-  self.lst  = lib.sort(lst, function (x,y) return x[1] < y[1] end)
+function Super:_init(a,pause)
+  cohen    = the.chop.cohen
+  self.min = the.chop.min
+  self.max = the.chop.max
+  self.big = the.chop.bigger
+  self.eps = the.chop.epsilon
+  self.xs  = Num():adds(a, function(z) return z[1] end)
+  self.ys  = Sym():adds(a, function(z) return z[2] end)
+  self.tiny= self.ys.sd*cohen
+  self.min = (#xy)^self.min 
+  self.lst = lib.sort(a, function(x,y) return x[1]<y[1] end)
 end
 
-function Super:div(lst,lo,hi,x,y,out)
-  local cut,xr,yr,xl,yl = self:cut(lst,lo,hi,x,y)
+function Super:div(lst,lo,hi,x,y,out,lvl)
+  local cut,xr,yr,xl,yl
+  if   lvl <= self.max and 
+       hi-lo > 2*self.min 
+  then cut,xr,yr,xl,yl = self:cut(lst,lo,hi,x,y)
+  end
   if cut then
-    self:div(lst, lo,   cut, xl, yl)
-    self:div(lst, cut+1, hi, xr, yr)
+    self:div(lst, lo,   cut, xl, yl, lvl+1)
+    self:div(lst, cut+1, hi, xr, yr, lvl+1) 
   else
     if hi < #lst then
       out[#out+1] = lst[hi][1] end end
 end
 
-local function copy2(x,y) return lib.copy(x), lib.copy(y) end
+local function copy2(x,y) 
+  return lib.copy(x), lib.copy(y) end
 
 function Super:cut(lst,lo,hi,xr,yr)
   local xr1,yr1,xl1,yl1,cut,best,xl,yl,x,y
-  if hi-lo < 2*self.min then return nil end
   xl,yl = Num(), Sym() 
   best  = yr:var()
   for i,xy in pairs(lst) do
