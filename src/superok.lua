@@ -14,23 +14,22 @@ ok{ id=function(   s,lst)
   s = Super(lst,true)
   s = s:div(lst) 
   the.o(s)
-  for _,xy in pairs(lst) do
-    print(xy[1], xy[2]) end
+  --for _,xy in pairs(lst) do print(xy[1], xy[2]) end
 end }
 
 function super1(   r,s,lst)
   lst = {}
-  for i=1,200 do
+  for i=1,1000 do
     r= math.random()
     lst[#lst+1]={r,r}
   end
+  print("")
   s = Super(lst,true)
   s = s:div(lst) 
   the.o(s)
   --for _,xy in pairs(lst) do
     --print(lib.f4(xy[1]), lib.f4(xy[2])) end
 end 
-
 
 --profiler.start()
 ok{ super=super1}
