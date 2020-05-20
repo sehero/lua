@@ -10,11 +10,11 @@ function Super:_init(lst, debug)
   self.maxDepth = the.chop.maxDepth
   self.bigger   = the.chop.bigger
   self.tooFew   = the.chop.tooFew
-  self.xs  = Num():adds(lst, function(z) return z[1] end)
-  self.ys  = Sym():adds(lst, function(z) return z[2] end)
-  self.smallEffect= self.xs:var()*cohen
-  self.tooFew   = (#lst)^the.chop.tooFew 
-  self.debug = debug
+  self.xs     = Num():adds(lst, function(z) return z[1] end)
+  self.ys     = Sym():adds(lst, function(z) return z[2] end)
+  self.smallEffect = self.xs:var()*cohen
+  self.tooFew      = (#lst)^the.chop.tooFew 
+  self.debug       = debug
   if debug then print("\n"..10) end
 end
 
