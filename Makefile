@@ -41,15 +41,12 @@ push: ## upload changes to Git
 	@git push
 	@git status
 
-MDS=$(shell ls src/*.lua | grep -v '.ok.lua' | gawk '{sub(/lua/,"md"); sub(/src/,"docs"); print}')
+LUAS=$(shell ls src/*.lua | grep -v '.ok.lua' | gawk '{sub(/lua/,"md"); sub(/src/,"docs"); print}')
 
-docs: docsDirs doco
+MDS=$(shell ls etc/doc/*.md | gawk '{sub(/etc.doc/,"docs"); print}')
 
-docsDirs:
-	mkdir -p docs
-	cp -r etc/doc/docs/* docs	
-
-doco: $(MDS) ## make doco
+docs: docsDirs $(LUAS)
+	@cp etc/doc/*.md docs
 	@rm -f docs/ml.md
 	@git add docs
 	@git add docs/*
@@ -59,6 +56,15 @@ doco: $(MDS) ## make doco
 	@git commit -am "pushing"
 	@git push
 	@git status
+
+docsDirs:
+	mkdir -p docs
+	cp -r etc/doc/docs/* docs	
+
+
+docs/%.md : etc/doc/%.md  LICENSE etc/banner.sh etc/headers.sh
+	@echo "# $< ..."
+	@(etc/banner.sh;  cat $<; cat LICENSE) | tail -n +3) > $@
 
 docs/%.md : src/%.lua  LICENSE etc/banner.sh etc/headers.sh
 	@echo "# $< ..."
