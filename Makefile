@@ -46,6 +46,7 @@ LUAS=$(shell ls src/*.lua | grep -v '.ok.lua' | gawk '{sub(/lua/,"md"); sub(/src
 MDS=$(shell ls etc/doc/*.md | gawk '{sub(/etc.doc/,"docs"); print}')
 
 docs: docsDirs $(LUAS)
+	echo $(MDS)
 	@cp etc/doc/*.md docs
 	@rm -f docs/ml.md
 	@git add docs
