@@ -75,5 +75,5 @@ local function ent1(f,   tmp,row1,d,close,far,d1,d2)
   end
 end
 
-ok {ent1=ent1}
+nok {ent1=ent1}
 
