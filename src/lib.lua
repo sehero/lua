@@ -57,6 +57,14 @@ function lib.select(t,f, out)
   return out
 end
 
+function lib.time(f,   x,t1,t2)
+   local t1 = os.clock()
+   x=f()
+   local t2= os.clock()
+   print(string.format ("TIME : %8.6f secs", t2-t1))
+   return x
+end
+
 function lib.mopy(t,   m)  
   m = getmetatable(t)
   t = lib.copy(t)

@@ -54,7 +54,7 @@ return {
   nb =    { k=1,m=2},
   chop=   { bigger   = 1.05,
             tooFew   = 0.5,
-            maxDepth = 0,
+            maxDepth = 1,
             cohen = .3},
   num=    { conf  = 95,
             small = .38, -- small,medium = 0.38,1

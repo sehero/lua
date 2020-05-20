@@ -21,7 +21,7 @@ end
 function Super:div(lst)
   local out = {}
   lst = lib.sort(lst, function(x,y) return x[1]<y[1] end)
-  self:div1(lst, 1, #lst, self.xs, self.ys, out, 0)
+  self:div1(lst, 1, #lst, self.xs, self.ys, out, 1)
   return out
 end
 
@@ -44,8 +44,9 @@ function Super:trace(lst, lo, hi, lvl)
   if self.debug then
     local f = function(z) return lib.f2( lst[z][2] ) end
     s = lo.. ":" ..hi .. " = " .. f(lo) .. ":" .. f(hi)
-    print(string.rep("|.. ",lvl) ..  s) end
+    print(string.rep("|.. ",lvl-1) ..  s) end
 end
+
 local copy = lib.mopy
 
 function Super:cut(lst,lo,hi,xr,yr)
@@ -63,8 +64,10 @@ function Super:cut(lst,lo,hi,xr,yr)
        yl:xpect(yr)*self.bigger < best -- got a better best?
     then
        best,cut = yl:xpect(yr), i
-       xr1,yr1  = copy(xr), copy(yr)          
-       xl1,yl1  = copy(xl), copy(yl) end 
+       xr1      = copy(xr)
+       xl1      = copy(xl)
+       yr1      = copy(yr)
+       yl1      = copy(yl) end
   end 
   return cut, xr1, yr1, xl1, yl1
 end
