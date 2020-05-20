@@ -64,7 +64,7 @@ docsDirs:
 
 docs/%.md : etc/doc/%.md  LICENSE etc/banner.sh etc/headers.sh
 	@echo "# md $< ..."
-	@(etc/banner.sh;  cat $<; cat LICENSE) | tail -n +4 > $@
+	@(etc/banner.sh;  cat $<; cat LICENSE) | tail -n +2 > $@
 
 docs/%.md : src/%.lua  LICENSE etc/banner.sh etc/headers.sh
 	@echo "# $< ..."
