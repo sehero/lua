@@ -8,12 +8,12 @@ help: ## help
 	@bash etc/help.sh $(MAKEFILE_LIST)
 
 install: in inbase intools inwebsite intex interm #infun ## install
-	@mdkir docs
+	@mkdir -p docs
 
 in:;        brew update
 inbase:;    @sh etc/brew.sh gawk lua  
 intools:;   @sh etc/brew.sh git vim tmux htop mc tree ncdu entr
-infun:;     @sh etc/brew.sh cmatrix bsdames-osx 
+infun:;     @sh etc/brew.sh cmatrix bsdgames-osx 
 inwebsite:; @sh etc/brew.sh pandoc pandoc-citeproc 
 intex: 
 	@brew cask install basictex  # for text generation
