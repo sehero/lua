@@ -7,6 +7,10 @@ function lib.id (x)
   return x._id
 end
 
+function lib.f0(n) return string.format("%.0f",n) end
+function lib.f2(n) return string.format("%.2f",n) end
+function lib.f4(n) return string.format("%.4f",n) end
+
 function lib.same(x) return x end
 
 function lib.any(l) return l[math.random(1,#l)] end
@@ -51,6 +55,13 @@ function lib.select(t,f, out)
   for _,v in pairs(t) do 
     if f(v) then out[#out+1] = v  end end
   return out
+end
+
+function lib.mopy(t,   m)  
+  m = getmetatable(t)
+  t = lib.copy(t)
+  setmetatable(t,m)
+  return t
 end
 
 function lib.copy(t)  

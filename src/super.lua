@@ -5,15 +5,15 @@ local Sym   = require "sym"
 local Super = the.class()
 
 function Super:_init(lst, debug)
+  print("lst",#lst)
   local cohen   = the.chop.cohen
   self.maxDepth = the.chop.maxDepth
   self.bigger   = the.chop.bigger
-  self.biggger  = the.chop.bigger
-  self.epsilon  = the.chop.epsilon
+  self.tooFew   = the.chop.tooFew
   self.xs  = Num():adds(lst, function(z) return z[1] end)
   self.ys  = Sym():adds(lst, function(z) return z[2] end)
-  self.smallEffect= self.ys:var()*cohen
-  self.min   = (#lst)^the.chop.min 
+  self.smallEffect= self.xs:var()*cohen
+  self.tooFew   = (#lst)^the.chop.tooFew 
   self.debug = debug
   if debug then print("\n"..10) end
 end
@@ -27,14 +27,10 @@ end
 
 function Super:div1(lst,lo,hi,x,y,out,lvl)
   local cut,xr,yr,xl,yl
-  if self.debug then
-    print("|",string.rep("|.. ",lvl),lo,hi)
-  end
-  if lvl <= self.maxDepth and (hi-lo) > 2*self.min then
-    print(3)
+  self:trace(lst, lo, hi, lvl)
+  if lvl <= self.maxDepth and (hi-lo) > 2*self.tooFew then
     cut,xr,yr,xl,yl = self:cut(lst,lo,hi,x,y)
   end
-  print("cut",cut)
   if cut then
     self:div1(lst,    lo, cut, xl, yl, out, lvl+1)
     self:div1(lst, cut+1,  hi, xr, yr, out, lvl+1) 
@@ -43,28 +39,32 @@ function Super:div1(lst,lo,hi,x,y,out,lvl)
       out[#out+1] = lst[hi][1] end end
 end
 
-local function copy2(x,y) 
-  return lib.copy(x), lib.copy(y) end
+function Super:trace(lst, lo, hi, lvl)
+  local f,s
+  if self.debug then
+    local f = function(z) return lib.f2( lst[z][2] ) end
+    s = lo.. ":" ..hi .. " = " .. f(lo) .. ":" .. f(hi)
+    print(string.rep("|.. ",lvl) ..  s) end
+end
+local copy = lib.mopy
 
 function Super:cut(lst,lo,hi,xr,yr)
   local xr1,yr1,xl1,yl1,cut,best,xl,yl,x,y
   xl,yl = Num(), Sym() 
   best  = yr:var()
-  print(">>", lo, hi, best)
   for i = lo,hi do
     -- steal from the right, give to the left
     x = xr:sub( xl:add( lst[i][1] ))
     y = yr:sub( yl:add( lst[i][2] ))
-    print("??",x,y)
-    if xl.n >= self.min and -- avoid splits of small size
-       xr.n >= self.min and -- avoid splits of small size
+    if xl.n >= self.tooFew and -- avoid splits of small size
+       xr.n >= self.tooFew and -- avoid splits of small size
        x ~= lst[i+1][1] and -- cant split on same value
-       xr.mu - xl.mu > self.epsilon and -- ignore tiny deltas
+       xr.mu - xl.mu > self.smallEffect and -- ignore tiny deltas
        yl:xpect(yr)*self.bigger < best -- got a better best?
     then
        best,cut = yl:xpect(yr), i
-       xr1,yr1  = copy2(xr, yr)          
-       xl1,yl1  = copy2(xl, yl) end 
+       xr1,yr1  = copy(xr), copy(yr)          
+       xl1,yl1  = copy(xl), copy(yl) end 
   end 
   return cut, xr1, yr1, xl1, yl1
 end
