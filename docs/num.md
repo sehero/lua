@@ -11,7 +11,9 @@ href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p>
 <img src="https://img.shields.io/badge/platform-mac,*nux-informational">
 <a href="https://travis-ci.org/github/sehero/lua"><img 
 src="https://travis-ci.org/sehero/lua.svg?branch=master"></a>
-<a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a></p>
+<a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a>
+<a href='https://coveralls.io/github/sehero/lua?branch=master'><img src='https://coveralls.io/repos/github/sehero/lua/badge.svg?branch=master' alt='Coverage Status' /></a></p>
+
 local the = require "the"
 local lib = require "lib"
 local Num = the.class(require "col")
@@ -25,10 +27,11 @@ function Num:_init(txt,pos)
   self.lo  = math.maxinteger
 end
 
+
 function Num:mid()  return self.mu end
 function Num:var()  return self.sd end
 function Num:show() 
-  return (self.w<0 and"<"or">")..tostring(self:mid()) end
+  return (self.w<0 and"<"or">")..self:mid() end
 
 function Num:__tostring()
   return string.format("Num(%s,%s)", self.mu, self.sd)
@@ -126,6 +129,24 @@ end
 function Num:like(x,   z,denom,num)
   return lib.norm(x, self.mu, self.sd)
 end
+
+```
+function Num:splitter(rows,y)
+  t, xy = {}, {}
+  yall = Sym(self.txt)
+  for _,row in pairs(rows) do
+     x = row.cells[self.pos]
+    if x ~= the.ch.skip then 
+      xy[ #xy+1 ] = {x, y(row) }
+      yall:add( y(row) ) end
+  end
+  min = yall.n^min
+  xy  = lib.sort(xy,lt) 
+  out = {}
+  split(out, 1,#xy,yall,{
+end
+
+```lua
 
 return Num
 ```

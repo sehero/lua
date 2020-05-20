@@ -11,7 +11,9 @@ href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p>
 <img src="https://img.shields.io/badge/platform-mac,*nux-informational">
 <a href="https://travis-ci.org/github/sehero/lua"><img 
 src="https://travis-ci.org/sehero/lua.svg?branch=master"></a>
-<a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a></p>
+<a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a>
+<a href='https://coveralls.io/github/sehero/lua?branch=master'><img src='https://coveralls.io/repos/github/sehero/lua/badge.svg?branch=master' alt='Coverage Status' /></a></p>
+
 
 # [Col.lua](../src/col.lua)
 
@@ -51,9 +53,20 @@ end
 ```
 Method for bulk addition of many items.
 ```lua
-function Col:adds(l) 
-  for k,v in pairs(l) do self:add(v) end 
+function Col:adds(l,f) 
+  f = f or function (z) return z end
+  for k,v in pairs(l or {}) do self:add(f(v)) end 
   return self
+end
+
+function Col:clone(xs)
+  local what= getmetatable(self)
+  return what(self.txt, self.pos):adds(xs)
+end
+
+function Col:xpect(other)
+  local n = self.n + other.n
+  return (self:var()*self.n + other:var()*other.n) /n
 end
 
 return Col

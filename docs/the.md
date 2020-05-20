@@ -11,7 +11,9 @@ href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p>
 <img src="https://img.shields.io/badge/platform-mac,*nux-informational">
 <a href="https://travis-ci.org/github/sehero/lua"><img 
 src="https://travis-ci.org/sehero/lua.svg?branch=master"></a>
-<a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a></p>
+<a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a>
+<a href='https://coveralls.io/github/sehero/lua?branch=master'><img src='https://coveralls.io/repos/github/sehero/lua/badge.svg?branch=master' alt='Coverage Status' /></a></p>
+
 local function o(t,pre,    indent,fmt)
   pre=pre or ""
   indent = indent or 0
@@ -31,7 +33,7 @@ return {
   oo   =  (function (t) print(table.concat(t,", ")) end),
   ooo  =  (function (t) return table.concat(t,", ") end),
   class=  require("ml").class,
-  csv  =  "../data/raw/",
+  csv  =  "../test/data/raw/",
   ignore= "?",
   sep=    ",",
   tiny=   1/math.maxinteger,
@@ -64,9 +66,12 @@ return {
             cliffs = .147
             -- cliff's small,medium,large = .147,.33,.474
             },
+  tree=   { min = 4},
   nb =    { k=1,m=2},
-  chop=   { m = .5,
-            cohen = .2},
+  chop=   { bigger   = 1.05,
+            tooFew   = 0.5,
+            maxDepth = 1,
+            cohen = .3},
   num=    { conf  = 95,
             small = .38, -- small,medium = 0.38,1
             first = 3, 

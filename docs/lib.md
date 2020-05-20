@@ -11,8 +11,21 @@ href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p>
 <img src="https://img.shields.io/badge/platform-mac,*nux-informational">
 <a href="https://travis-ci.org/github/sehero/lua"><img 
 src="https://travis-ci.org/sehero/lua.svg?branch=master"></a>
-<a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a></p>
+<a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a>
+<a href='https://coveralls.io/github/sehero/lua?branch=master'><img src='https://coveralls.io/repos/github/sehero/lua/badge.svg?branch=master' alt='Coverage Status' /></a></p>
+
 local lib={}
+
+local id=0
+
+function lib.id (x)
+  if not x._id then id= id + 1; x._id= id end
+  return x._id
+end
+
+function lib.f0(n) return string.format("%.0f",n) end
+function lib.f2(n) return string.format("%.2f",n) end
+function lib.f4(n) return string.format("%.4f",n) end
 
 function lib.same(x) return x end
 
@@ -60,18 +73,40 @@ function lib.select(t,f, out)
   return out
 end
 
+function lib.time(f,   x,t1,t2)
+   local t1 = os.clock()
+   x=f()
+   local t2= os.clock()
+   print(string.format ("TIME : %8.6f secs", t2-t1))
+   return x
+end
+
+function lib.mopy(t,   m)  
+  m = getmetatable(t)
+  t = lib.copy(t)
+  setmetatable(t,m)
+  return t
+end
+
 function lib.copy(t)  
   return type(t) ~= 'table' and t or lib.map(t,lib.copy)
 end
 
 function lib.sort(t,f)
   if type(f) == "string" then
-    return lib.sort(t, function(x,y) return x[f]<y[f] end) 
+     return lib.sort(t, function(x,y) return x[f] < y[f] end) 
   elseif not f then
-    return lib.sort(t, function(x,y) return x< y end) 
+     return lib.sort(t, function(x,y) return x < y end) 
   end
   table.sort(t,f)
   return t
+end
+
+function lib.b4(x,lst,y)
+  y = y or lst[1]
+  for _,z in pairs(lst) do 
+    if z>x then break else y=z end end
+  return y
 end
 
 function lib.rpad(s,n)

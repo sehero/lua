@@ -1,4 +1,4 @@
-.PHONY: help install check test headers pull push site create over
+.PHONY: help install check test headers pull push docs
 
 SHELL=bash
 WANT=gawk git tmux vim lua pandoc ncdu
@@ -42,6 +42,13 @@ push: ## upload changes to Git
 	@git status
 
 MDS=$(shell ls src/*.lua | grep -v '.ok.lua' | gawk '{sub(/lua/,"md"); sub(/src/,"docs"); print}')
+
+docs: docsDirs doco
+
+docsDirs:
+	mkdir -p docs
+	cp -r etc/doc/docs/* docs	
+
 doco: $(MDS) ## make doco
 	@rm -f docs/ml.md
 	@git add docs/*.md

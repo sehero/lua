@@ -14,53 +14,25 @@ src="https://travis-ci.org/sehero/lua.svg?branch=master"></a>
 <a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a>
 <a href='https://coveralls.io/github/sehero/lua?branch=master'><img src='https://coveralls.io/repos/github/sehero/lua/badge.svg?branch=master' alt='Coverage Status' /></a></p>
 
-local the  = require "the"
-local lib  = require("lib")
-local Num  = require("num")
-local Sym  = require("sym")
-local Cols = the.class()
+local the=  require "the"
+local Data= require "data"
 
-```
-`Cols` is a place to store summaries 
-of `Num`s or `Sym` columns.
-```lua
-function Cols:_init(t,   col) 
-  self.all = {}
-  for k,v in pairs(t) do
-    col = self:num(v) and Num or Sym
-    self.all[k] = col(v,k) end
-end
+local Tree     = the.class()
 
-function Cols:show(x, t)
-  the.o(self.all[x])
-  return the.ooo(lib.map(self.all[x],
-              function (z) return z:show() end))
-end
+function Tree:_init(data,cols)
+  self.all  = data
+  self.cols = cols or data.cols
+  self.min = the.tree.min
+  self.maxDepth = the.tree.maxDepth
+  self.debug=false
+   
+function Tree:split(rows,up, best)
+  if #rows <= self.min*2 then return self end
 
-function Cols:add(t) 
-  for k,v in pairs(t) do 
-     self.all[k]:add(v) end 
-end
 
-function Cols:some(f,   g,h) 
-  g = getmetatable(self)[f]
-  h = (function (col) return g(self, col.txt) end)
-  return lib.select(self.all, h)
-end
 
-local function c(s,k) return string.sub(s,1,1)==the.ch[k] end
 
-function Cols:klass(x) return c(x,"klass") end 
-function Cols:goal(x)  return c(x,"less") or c(x,"more") end
-function Cols:num(x)   return c(x,"num") or self:goal(x) end
-function Cols:y(x)     return self:klass(x) or self:goal(x) end
-function Cols:x(x)     return not self:y(x)   end
-function Cols:sym(x)   return not self:num(x) end
-function Cols:xsym(z)  return self:x(z) and self:sym(z) end
-
-return Cols
-```
-
+return Tree
 
 ## Copyright
 

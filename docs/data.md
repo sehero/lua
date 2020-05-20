@@ -11,7 +11,9 @@ href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p>
 <img src="https://img.shields.io/badge/platform-mac,*nux-informational">
 <a href="https://travis-ci.org/github/sehero/lua"><img 
 src="https://travis-ci.org/sehero/lua.svg?branch=master"></a>
-<a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a></p>
+<a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a>
+<a href='https://coveralls.io/github/sehero/lua?branch=master'><img src='https://coveralls.io/repos/github/sehero/lua/badge.svg?branch=master' alt='Coverage Status' /></a></p>
+
 local the = require "the"
 local lib  = require "lib"
 local csv  = require "csv"
@@ -32,16 +34,17 @@ function Data:_init(head)
   self.p       = the.data.p 
   self.rows    = {}
   self.cols    = nil
+  self.has     = {}
   self.samples = the.data.samples
   self.some    = lib.cache(function (k)
                      return  self.cols:some(k) end)
   if head then self:header(head) end
 end
+
 function Data:show(x, t)
   return the.ooo(lib.map(self.some[x],
               function (z) return z:show() end))
 end
-
 
 function Data:header(t) 
   self.cols = Cols(t) 
@@ -51,6 +54,7 @@ function Data:add(t,   row)
   row = t.cells and t or Row(t) 
   self.cols:add(row.cells)
   self.rows[#self.rows+1] = row
+  self.has[ lib.id(row) ]     = true
 end
 
 function Data:read(f)

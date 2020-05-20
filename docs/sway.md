@@ -11,7 +11,9 @@ href="https://github.com/sehero/lua/blob/master/CONTACT.md#top">contact</a> </p>
 <img src="https://img.shields.io/badge/platform-mac,*nux-informational">
 <a href="https://travis-ci.org/github/sehero/lua"><img 
 src="https://travis-ci.org/sehero/lua.svg?branch=master"></a>
-<a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a></p>
+<a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a>
+<a href='https://coveralls.io/github/sehero/lua?branch=master'><img src='https://coveralls.io/repos/github/sehero/lua/badge.svg?branch=master' alt='Coverage Status' /></a></p>
+
 local the  = require "the"
 local lib  = require "lib"
 local Sway = the.class()
@@ -19,8 +21,7 @@ local Sway = the.class()
 function Sway:_init(data)
   self.n     = the.fmap.n
   self.far   = the.fmap.far
-  self.min   = math.floor((#data.rows)^the.fmap.min)
-
+  self.min   = ((#data.rows)^the.fmap.min) // 1
   self.data  = data 
   self.cols  = data.some.y
   self.debug = false
@@ -32,14 +33,15 @@ function Sway:select(rows, lvl)
   if self.debug then 
     print( #rows, self.min, string.rep("|.. ",lvl))  
   end
-  if   #rows < 2*self.min 
-  then return rows
+  if #rows < 2*self.min 
+  then 
+    return rows
   else
     local mu,up,f,tmp
     mu,up = self:project(rows)
-    f     = function(r) return (up     and r.x >= mu) or 
-                                (not up and r.x <  mu) end
-    tmp   = lib.select(rows,f)
+    f   = function(r) return (up     and r.x >= mu) or 
+                             (not up and r.x <  mu) end
+    tmp = lib.select(rows,f)
     if #tmp < #rows then 
       return self:select(tmp, lvl+1) end end 
 end
