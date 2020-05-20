@@ -51,7 +51,11 @@ docsDirs:
 
 doco: $(MDS) ## make doco
 	@rm -f docs/ml.md
-	@git add docs/*.md
+	@git add docs
+	@git add docs/*
+	@git add docs/*/*
+	@git add docs/*/*/*
+	@git add docs/*/*/*/*
 	@git commit -am "pushing"
 	@git push
 	@git status
