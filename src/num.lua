@@ -110,22 +110,20 @@ function Num:like(x,   z,denom,num)
   return lib.norm(x, self.mu, self.sd)
 end
 
-local function splitter(out,lo,hi,yall,trivial, eps,bigger)
-function Num:splitter(rows,y,cohen,epsilon,bigger,tiny,
-                      x,t,lt,all,out)
-  t, xy = {}, {}
-  yall = Sym(self.txt)
-  for _,row in pairs(rows) do
-     x = row.cells[self.pos]
-    if x ~= the.ch.skip then 
-      xy[ #xy+1 ] = {x, y(row) }
-      yall:add( y(row) ) end
-  end
-  min = yall.n^min
-  xy  = lib.sort(xy,lt) 
-  out = {}
-  split(out, 1,#xy,yall,{
-end
-
+-- function Num:splitter(rows,y)
+--   t, xy = {}, {}
+--   yall = Sym(self.txt)
+--   for _,row in pairs(rows) do
+--      x = row.cells[self.pos]
+--     if x ~= the.ch.skip then 
+--       xy[ #xy+1 ] = {x, y(row) }
+--       yall:add( y(row) ) end
+--   end
+--   min = yall.n^min
+--   xy  = lib.sort(xy,lt) 
+--   out = {}
+--   split(out, 1,#xy,yall,{
+-- end
+-- 
 
 return Num

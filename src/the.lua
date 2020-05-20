@@ -55,8 +55,9 @@ return {
   chop=   { m = .5,
             epsilon  =  .05,
             bigger   = 1.05,
-            min      = 4,
-            maxDepth = 2,
+            tooFew   = 10,
+            min      = .5,
+            maxDepth = 10,
             cohen = .2},
   num=    { conf  = 95,
             small = .38, -- small,medium = 0.38,1
