@@ -23,7 +23,7 @@ href="$r/CITATION.md#top">cite</a> :: <a
 href="$r/CONTACT.md#top">contact</a> </p><p> 
 <img src="$b/license-mit-red">   
 <img src="$b/language-lua-orange">    
-<img src="$b/purpose-ai,se-blueviolet"><br>
+<img src="$b/purpose-ai,se-blueviolet">
 <img src="$b/platform-mac,*nux-informational">
 <a href="https://travis-ci.org/github/sehero/lua"><img 
 src="https://travis-ci.org/sehero/lua.svg?branch=master"></a>

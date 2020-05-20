@@ -59,7 +59,6 @@ doco: $(MDS) ## make doco
 	@git commit -am "pushing"
 	@git push
 	@git status
-  
 
 docs/%.md : src/%.lua  LICENSE etc/banner.sh etc/headers.sh
 	@echo "# $< ..."
