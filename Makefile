@@ -29,8 +29,8 @@ watch: ## re-run tests whenever source code changes
 
 headers: ## reset .md headers, except in doc/etc/doc
 	@find . -name '*.md'   \
-	| grep -v ./etc.doc.docs \
-	| grep -v ./docs \
+	| grep -v .etc.doc \
+	| grep -v .docs \
 	| bash etc/headers.sh
 
 pull: ## download from Git
