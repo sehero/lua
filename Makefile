@@ -29,7 +29,7 @@ watch: ## re-run tests whenever source code changes
 
 headers: ## reset .md headers, except in doc/etc/doc
 	@find . -name '*.md'   \
-	| grep -v ./doc.etc.doc \
+	| grep -v ./etc.doc.docs \
 	| grep -v ./docs \
 	| bash etc/headers.sh
 
@@ -53,36 +53,3 @@ doco: $(MDS) ## make doco
 docs/%.md : src/%.lua  LICENSE etc/banner.sh etc/headers.sh
 	@echo "# $< ..."
 	@(etc/banner.sh;  cat $< | gawk -f etc/2md.awk; cat LICENSE) | tail -n +3 > $@
-
-#CODE=$(shell ls src/*.lua | gawk '{sub(/^src/,"$(SITE)/src"); sub(/\.lua$$/,".html"); print}')
-#MD=$(shell   ls doc/*.md  | gawk '{sub(/^doc/,"$(SITE)/doc"); sub(/\.md$$/, ".html"); print}')
-#
-#site:  create  #$(CODE) $(MD) over ## build site
-#
-#create: $(SITE)
-#	@mkdir -p $(SITE)/src
-#	@mkdir -p $(SITE)/doc
-#	@cp -R doc/etc/ $(SITE)
-#	@touch $(SITE)/.nojekyll
-#
-#over: $(SITE)/index.html
-#	@- cd $(SITE); make 
-#
-#PAN=                     \
-#  -s                      \
-#  --mathjax                \
-#  --from=markdown           \
-#  --table-of-contents        \
-#  -V numberLines=true         \
-#  --template=doc/default.html5 \
-#  --indented-code-classes=lua,numberLines  
-#
-#$(SITE)/index.html:  etc/index.md
-#	@pandoc $< -V path="" --metadata title="$(notdir $<)" $(PAN) -o $@
-#
-#$(SITE)/src/%.html:  src/*.lua
-#	@gawk -f etc/2md.awk $< \
-#	| pandoc -V path="../" --metadata title="$(notdir $<)" $(PAN) -o $@
-#
-#$(SITE)/doc/%.html:  doc/*.md
-#	@pandoc $< -V path="../" --metadata title="$(notdir $<)" $(PAN) -o $@
