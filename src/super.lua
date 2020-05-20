@@ -25,8 +25,11 @@ function Super:div(lst)
   return out
 end
 
+local copy = lib.mopy
+
 function Super:div1(lst,lo,hi,x,y,out,lvl)
   local cut,xr,yr,xl,yl
+  local 
   self:trace(lst, lo, hi, lvl)
   if lvl <= self.maxDepth and 
      (hi-lo) > 2*self.tooFew 
@@ -43,7 +46,6 @@ end
 
 function Super:cut(lst,lo,hi,xr,yr)
   local xr1,yr1,xl1,yl1,cut,best,xl,yl,x,y
-  local c = lib.mopy
   xl,yl = Num(), Sym() 
   best  = yr:var()
   for i = lo,hi do
@@ -57,7 +59,9 @@ function Super:cut(lst,lo,hi,xr,yr)
        yl:xpect(yr)*self.bigger < best --got a better best?
     then
        best,cut = yl:xpect(yr), i
-       xr1,xl1,yr1,yl1 = c(xr),c(xl),c(yr),c(yl) end 
+       xr1, xl1 = copy(xr), copy(xl)
+       yr1, yl1 = copy(yr), copy(yl) 
+    end 
   end 
   return cut, xr1, yr1, xl1, yl1
 end
