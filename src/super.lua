@@ -53,7 +53,7 @@ function Super:cut(lst,lo,hi,xr,yr)
     if xl.n >= self.tooFew and -- avoid small splits
        xr.n >= self.tooFew and -- avoid small splits 
        x ~= lst[i+1][1]    and -- cant split on same value
-       (xr.mu - xl.mu) > self.smallEffect and -- too similar?
+       xr.mu - xl.mu > self.smallEffect and -- too similar?
        yl:xpect(yr)*self.bigger < best --got a better best?
     then
        best,cut = yl:xpect(yr), i
