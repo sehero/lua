@@ -14,100 +14,21 @@ src="https://travis-ci.org/sehero/lua.svg?branch=master"></a>
 <a href="https://zenodo.org/badge/latestdoi/263210595"><img src="https://zenodo.org/badge/263210595.svg" alt="DOI"></a>
 <a href='https://coveralls.io/github/sehero/lua?branch=master'><img src='https://coveralls.io/repos/github/sehero/lua/badge.svg?branch=master' alt='Coverage Status' /></a></p>
 
-local the = require "the"
-local lib = require "lib"
-local Sym = the.class(require "col")
+local copy = require("lib").mcopy
+local Range = require("the").class()
 
-function Sym:_init(txt,pos)
-  self:super(txt,pos)
-  self.counts = {}
-  self.most   = 0
-  self.mode   = nil
-  self._ent   = nil 
-  self.nk     = 0
+function Range:init(about,ystats,lo,hi)
+  self.about = about
+  self.x = {lo=lo, hi=hi or lo}
+  self.y = {ratio=0, var=0, stats=copy(ystats)}
 end
 
-function Sym:__tostring()
-  return string.format("Sym(%s,%s,%s)", 
-                       self.txt,self.mode, self.most) end
-
-function Sym:mid()  return self.mode end
-function Sym:var()  return self:ent() end
-function Sym:show() return self:mid() end
-
-function Sym:add (x,     seen)
-  if x ~= the.ch.skip then 
-    self._ent = nil 
-    self.n    = self.n + 1
-    if not self.counts[x] then
-      self.counts[x] = 0 
-      self.nk = self.nk + 1
-    end
-    seen = self.counts[x] + 1
-    self.counts[x] = seen 
-    if seen > self.most then
-      self.most, self.mode = seen, x end 
-  end
-  return x
+function Range:relevant(row)
+  local v = row.cells[ self.about.pos ]
+  return v >= self.x.lo and v <= self.x.hi
 end
 
-function Sym:sub (x,     seen,n)
-  if x ~= the.ch.skip then 
-    n = self.counts[x]
-    if n and n > 0 then
-      self.n    = self.n - 1
-      self._ent = nil 
-      self.counts[x] = self.counts[x] - 1 end 
-  end
-  return x
-end
-
-function Sym:strange(x)
-  return (self.counts[x] or 0) / self.n < self.odd
-end
-
-function Sym:ent(    e,p)
-  if self._ent == nil then 
-    e = 0
-    for _,f in pairs(self.counts) do
-      if f > 0 then
-        p = f/self.n
-        e = e - p* math.log(p,2) end end
-    self._ent = e 
-  end
-  return self._ent 
-end
-
-function Sym:dist(x,y)
-  if x == the.ch.skip and y == the.ch.skip then
-    return 1
-  else
-    return x==y and 0 or 1 end
-end
-
-function Sym:div(rows,y,    t,syms,x,yval,lt,z)
-  t, syms = {}, {}
-  for _,row in pairs(rows) do
-    x    = row.cells[ self.pos ]
-    yval = y(row)
-    if x ~= the.ch.skip then 
-      if not syms[x] then
-        syms[x]= {about= self,
-                  x    = {lo=x, hi=x},
-                  y    = {ratio=0, var=0, stats=Sym()}}
-        t[ #t+1 ] = syms[x]
-      end
-      syms[x].y.stats:add( yval ) end 
-  end
-  for _,here in pairs(t) do
-    local stats  = here.y.stats
-    here.y.var   = stats:var()
-    here.y.ratio = stats.n/#rows
-  end
-  return t
-end
-
-return Sym
+return Range
 
 ## Copyright
 

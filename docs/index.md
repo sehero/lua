@@ -16,6 +16,26 @@ src="https://travis-ci.org/sehero/lua.svg?branch=master"></a>
 <a href='https://coveralls.io/github/sehero/lua?branch=master'><img src='https://coveralls.io/repos/github/sehero/lua/badge.svg?branch=master' alt='Coverage Status' /></a></p>
 
 
+The software engineers who maintain AI tools know that. like any software, software cost
+money to buld and maintain. Hecem they seek short cuts commn features across mutipleAI tools
+that simplifies the overal cost of using these tols.
+
+Sometimes
+we get lazy and don't look inside.
+Sometimes we view each AI algorithm as a seperate thing, discnct from all other tools.
+
+Super heroes are not lazy. The are the ones that "open up the box" 
+and look inside to find common parts of difference tools.
+This is needed since
+AI software is still software, i.e. stuff that needs to be tested, maintained, packaged, interfaced
+to to others systems, updated and refactored and improved. 
+ALos, like any other software, AI tools often need usability extensions to amek the easeier to apply 
+
+For example, consider optimziation and data mining. THese seem like diffrent tools. Certainly
+it is very rare to find combined data mining/optimization work in industy or in the research community
+(XXX the harman survey). hus 
+
+
 
 We explore AI tools (data miners and optimizers) and
 how these can be applied to software engineering. Specifically,
