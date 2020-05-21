@@ -65,15 +65,15 @@ end
 ok { strange1 = function() strange() end }
 ok { strange2 = function() strange("diabetes.csv") end }
 
-local function ent1(f,   tmp,row1,d,close,far,d1,d2)
+local function super1(f,   tmp,row1,d,close,far,d1,d2)
   d = Data():read(the.csv .. (f or 'weather4.csv'))
-  for _,col in pairs(d.cols:some("xsym")) do
-    tmp = col:split(d.rows,
-             function(row) 
-               return d:klassVal(row) end)
-    print(tmp.txt, tmp.ent)
+  for _,col in pairs(d.cols:some("x")) do
+    print("\n---------------\n--",col.txt, "\n")
+    local klass = function(z) return d:klassVal(z) end
+    tmp = col:div(d.rows, klass)
+    the.o(tmp)
   end
 end
 
-nok {ent1=ent1}
-
+--k { super1 = super1 }
+ok { super2 = function() super1("diabetes.csv") end }

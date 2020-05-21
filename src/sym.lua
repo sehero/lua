@@ -69,26 +69,26 @@ function Sym:dist(x,y)
     return x==y and 0 or 1 end
 end
 
-function Sym:splitter(rows,y,    x,t,lt,syms,z)
-  lt = function (x,y) return x:var() < y:var() end
+function Sym:div(rows,y,    t,syms,x,yval,lt,z)
   t, syms = {}, {}
   for _,row in pairs(rows) do
-    x = row.cells[self.pos]
+    x    = row.cells[ self.pos ]
+    yval = y(row)
     if x ~= the.ch.skip then 
       if not syms[x] then
-        syms[x]    = Sym(x)
+        syms[x]= {about= self,
+                  x    = {lo=x, hi=x},
+                  y    = {ratio=0, var=0, stats=Sym()}}
         t[ #t+1 ] = syms[x]
       end
-      syms[x]:add( y(row) ) end 
+      syms[x].y.stats:add( yval ) end 
   end
-  z= lib.sort(t,lt)[1]
-  return {
-     key= self.txt,
-     col= self.pos,
-     txt= self.txt .. "=" .. z.txt,
-     val= z.txt,
-     ent= z:ent(),
-     use= (function(r) return z.txt==r.cells[self.pos] end)}
+  for _,here in pairs(t) do
+    local stats  = here.y.stats
+    here.y.var   = stats:var()
+    here.y.ratio = stats.n/#rows
+  end
+  return t
 end
 
 return Sym

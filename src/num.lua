@@ -1,6 +1,9 @@
-local the = require "the"
-local lib = require "lib"
-local Num = the.class(require "col")
+local the   = require "the"
+local lib   = require "lib"
+local Sym   = require "sym"
+local Super = require "super"
+
+local Num   = the.class(require "col")
 
 function Num:_init(txt,pos)
   self:super(txt,pos)
@@ -11,9 +14,8 @@ function Num:_init(txt,pos)
   self.lo  = math.maxinteger
 end
 
-
-function Num:mid()  return self.mu end
-function Num:var()  return self.sd end
+function Num:mid() return self.mu end
+function Num:var() return self.sd end
 function Num:show() 
   return (self.w<0 and"<"or">")..self:mid() end
 
@@ -110,20 +112,15 @@ function Num:like(x,   z,denom,num)
   return lib.norm(x, self.mu, self.sd)
 end
 
--- function Num:splitter(rows,y)
---   t, xy = {}, {}
---   yall = Sym(self.txt)
---   for _,row in pairs(rows) do
---      x = row.cells[self.pos]
---     if x ~= the.ch.skip then 
---       xy[ #xy+1 ] = {x, y(row) }
---       yall:add( y(row) ) end
---   end
---   min = yall.n^min
---   xy  = lib.sort(xy,lt) 
---   out = {}
---   split(out, 1,#xy,yall,{
--- end
--- 
+function Num:div(rows,y,   lst,x,yval)
+  lst = {}
+  for _,row in pairs(rows) do
+     x    = row.cells[ self.pos ]
+     yval = y(row)
+    if x ~= the.ch.skip then lst[#lst+1] = {x, yval} end
+  end
+  return Super(lst,Num,Sym,self):div(lst)
+end
+
 
 return Num
