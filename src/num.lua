@@ -112,12 +112,12 @@ function Num:like(x,   z,denom,num)
   return lib.norm(x, self.mu, self.sd)
 end
 
-function Num:div(rows,y,   lst,x,yval)
+function Num:div(rows,y,   lst)
   lst = {}
   for _,row in pairs(rows) do
-     x    = row.cells[ self.pos ]
-     yval = y(row)
-    if x ~= the.ch.skip then lst[#lst+1] = {x, yval} end
+     local xval = row.cells[ self.pos ]
+     local yval = y(row)
+    if xval ~= the.ch.skip then lst[#lst+1] = {xval, yval} end
   end
   return Super(lst,Num,Sym,self):div(lst)
 end

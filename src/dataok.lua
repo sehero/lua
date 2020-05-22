@@ -1,7 +1,10 @@
-local the = require "the"
-local lib = require "lib"
-local Sym = require "sym"
-local oo  = the.oo
+local the  = require "the"
+local lib  = require "lib"
+local Sym  = require "sym"
+local Num  = require "num"
+local Ranges  = require "ranges"
+local Sway = require "sway"
+local oo   = the.oo
 require "ok"
 
 Data=require "data"
@@ -70,10 +73,29 @@ local function super1(f,   tmp,row1,d,close,far,d1,d2)
   for _,col in pairs(d.cols:some("x")) do
     print("\n---------------\n--",col.txt, "\n")
     local klass = function(z) return d:klassVal(z) end
-    tmp = col:div(d.rows, klass)
-    the.o(tmp)
+    for i,range in pairs( col:div(d.rows, klass) ) do
+      print(i, range)
+    end
   end
 end
 
---k { super1 = super1 }
 ok { super2 = function() super1("diabetes.csv") end }
+
+local function opt(f,   tmp,row1,d,close,far,d1,d2)
+  print("\n\n====================\n====================")
+  d = Data():read(the.csv .. (f or 'auto93.csv'))
+  for _,row in pairs( Sway(d):select() ) do 
+     row.best = true 
+  end
+  local ranges =Ranges()
+  for _,col in pairs(d.cols:some("x")) do
+    local klass = function(z) return z.best end
+    ranges:adds( col:div(d.rows, klass) ) 
+  end
+  for _,range in pairs( ranges:all()) do
+     print(range)
+  end
+end
+
+ok { opt = opt }
+--k { super1 = super1 }

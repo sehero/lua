@@ -1,5 +1,6 @@
 local the = require "the"
 local lib = require "lib"
+local Range = require "range"
 local Sym = the.class(require "col")
 
 function Sym:_init(txt,pos)
@@ -69,19 +70,18 @@ function Sym:dist(x,y)
     return x==y and 0 or 1 end
 end
 
-function Sym:div(rows,y,    t,syms,x,yval,lt,z)
+function Sym:div(rows,y,    t,syms)
   t, syms = {}, {}
   for _,row in pairs(rows) do
-    x    = row.cells[ self.pos ]
-    yval = y(row)
-    if x ~= the.ch.skip then 
-      if not syms[x] then
-        syms[x]= {about= self,
-                  x    = {lo=x, hi=x},
-                  y    = {ratio=0, var=0, stats=Sym()}}
-        t[ #t+1 ] = syms[x]
+    local xval = row.cells[ self.pos ]
+    local yval = y(row)
+    if xval ~= the.ch.skip then 
+      if not syms[xval] then
+        syms[xval]= Range(self.txt, self.pos,xval)
+        syms[xval].y.stats = Sym()
+        t[ #t+1 ] = syms[xval]
       end
-      syms[x].y.stats:add( yval ) end 
+      syms[xval].y.stats:add( yval ) end 
   end
   for _,here in pairs(t) do
     local stats  = here.y.stats

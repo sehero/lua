@@ -1,5 +1,6 @@
 local the   = require "the"
 local lib   = require "lib"
+local Range = require "range"
 local Super = the.class()
 
 function Super:_init(lst, num,sym,about, debug)
@@ -29,11 +30,12 @@ local copy = lib.mopy
 
 function Super:div1(lst,lo,hi,x,y,out,lvl)
   local cut,xr,yr,xl,yl
-  local here = {about= self.about,
-                x    = {lo   = lst[lo][1], 
-                        hi   = lst[hi][1]},
-                y    = {ratio= (hi-lo+1)/#lst,
-                        var  = y:var()}} 
+  local range = Range(self.about.txt, 
+                      self.about.pos, 
+                      lst[lo][1], -- low x
+                      lst[hi][1], -- low y
+                      (hi - lo +1)/#lst, -- ratio
+                      y:var())    -- var in this range
   self:trace(lst, lo, hi, lvl)
   if lvl <= self.maxDepth and 
      (hi-lo) > 2*self.tooFew 
@@ -44,7 +46,8 @@ function Super:div1(lst,lo,hi,x,y,out,lvl)
      self:div1(lst,    lo, cut, xl, yl, out, lvl+1)
      self:div1(lst, cut+1,  hi, xr, yr, out, lvl+1) 
   else
-     out[#out+1] = here end
+     out[#out+1] = range 
+  end
 end
 
 local function guard(row,g)
