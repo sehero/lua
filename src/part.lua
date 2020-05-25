@@ -8,13 +8,7 @@ function Part:_init(name,init,lo,hi)
   self.val  = init or lo
 end
 
-function Part:restrain() 
-  self.val= math.max(self.lo, 
-                     math.min(self.hi, self.val)) end
+function Part:ok(v) 
+  return math.max(self.lo, math.min(self.hi, v)) end
 
-function Part:__tostring()
-  return string.format("%s(%s) in $s..%s = %s",
-         self:name(), self.name, self.lo, self.hi, self.val)
-end
-
-local Part
+return  Part
