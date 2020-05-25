@@ -11,7 +11,7 @@ function Compart:_init(t)
     self.state[v.name] = v 
     self.order[#self.order + 1] = v
   end
-  self.order = self:sort(self.order)
+  self.order = lib.sort(self.order. self:sprter())
   self:run()
 end
 
@@ -24,15 +24,15 @@ function Compart:spec(x,v)
       break end end
 end
 
-function Compart:sort(t) 
-  return lib.sort(self.order, function (x,y)
-    return x.rank==y.rank and x.name<y.name or x.rank<y.rank
-  end)
+function Compart:sortr(t) 
+  return function (x,y)
+    return x.rank==y.rank and x.name<y.name or x.rank<y.rank 
+  end
 end
 
 function Compart:report(first,u,v)
-  say= function(z,w) 
-         print(table.concat(lib.map(z,w)," | ")) end
+  say= function(lst, w) 
+         print(table.concat(lib.map(lst, w)," | ")) end
   delta = function(x,y,   z) 
              z= {}
              for k,v1 in pairs(x) do
@@ -48,16 +48,16 @@ end
 function Compart:run(max,dt)
    max  = max or 30
    dt   = dt  or 1
-   t,b4 = 0, self.state 
+   t,b4 = 0, lib.copy(self.state) 
    first = true
    while(t<max) do
-    now = lib.copy(b4)
-    self:report(first, b4,now)
-    self:step(dt,t, b4, now)
-    for _,v in pairs(self.state) do v:restrain() end
-    first = false
-    b4    = now
-    t     = t + dt
+     now = lib.copy(b4)
+     self:report(first, b4, now)
+     self:step(dt,t, b4, now)
+     for _,v in pairs(self.state) do v:restrain() end
+     first = false
+     b4    = now
+     t     = t + dt
    end
 end
 

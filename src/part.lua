@@ -5,7 +5,7 @@ function Part:_init(name,init,lo,hi)
   self.lo   = lo or 0
   self.hi   = hi or 100
   self.name = name
-  self:set(init or lo)
+  self.val  = init or lo
 end
 
 function Part:restrain() 
