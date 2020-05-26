@@ -42,3 +42,64 @@ class BrooksLaw(Model):
         j.d += i.sdR * dt
         j.r -= i.sdR * dt
         return j
+
+
+class MonteCarlo:
+    def __init__(self):
+        self.attr = {
+            "pomposity": {
+                "min": 0,
+                "max": 100
+            },
+            "learning_curve": {
+                "min": 1,
+                "max": 100
+            },
+            "optimism": {
+                "min": 0.1,
+                "max": 100
+            },
+            "atleast": {
+                "min": 0,
+                "max": 10
+            },
+            "done_percent": {
+                "min": 0,
+                "max": 10
+            },
+            "productivity_new": {
+                "min": 0,
+                "max": 1
+            },
+            "productivity_exp": {
+                "min": 1,
+                "max": 10
+            },
+            "d": {
+                "min": 0,
+                "max": 1
+            },
+            "ep": {
+                "min": 1,
+                "max": 10
+            },
+            "nprod": {
+                "min": 0.1,
+                "max": 10
+            },
+            "np": {
+                "min": 1,
+                "max": 30
+            },
+            "ts": {
+                "min": 1,
+                "max": 100
+            },
+            "to": {
+                "min": 1,
+                "max": 100
+            },
+            "r": {
+                "min": 1,
+                "max": 1000
+            }
