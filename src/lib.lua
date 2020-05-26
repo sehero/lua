@@ -93,14 +93,16 @@ function lib.b4(x,lst,y)
   return y
 end
 
-function lib.rpad(s,n)
+function lib.rpad(s,n,c)
+  c = c or " "
   s = tostring(s)
-  return  s .. string.rep(" ",n - #s) 
+  return  s .. string.rep(c,n - #s) 
 end
 
-function lib.lpad(s,n)
+function lib.lpad(s,n,c)
+  c = c or " "
   s = tostring(s)
-  return  string.rep(" ",n - #s) .. s
+  return  string.rep(c,n - #s) .. s
 end
 
 function lib.split(s, sep,    t,notsep)

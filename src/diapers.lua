@@ -1,6 +1,5 @@
-local the  = require "the"
+local the     = require "the"
 local Compart = require "compart"
-
 local Diapers = the.class(Compart)
 
 --[[
@@ -17,9 +16,10 @@ local Diapers = the.class(Compart)
     r = flow of clean diapers to dirty diapers
     s = out-flow of dirty diapers
 --]]
+
 function Diapers:_init()
   self:super({stock = {c=100, d=0}
-              ,flow  = {q=0,  r=8,s=0}})
+              ,flow = {q=0,   r=8, s=0}})
 end
 
 function Diapers:step(dt,t,u,v)
@@ -32,4 +32,4 @@ function Diapers:step(dt,t,u,v)
       v.s = 0 end
 end
  
- return Diapers
+return Diapers

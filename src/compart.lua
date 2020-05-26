@@ -4,7 +4,8 @@ local Part = require "part"
 
 local Compart = the.class()
 
-function Compart:_init(t, rank,part)
+function Compart:_init(t, verbose, w,rank,part)
+  self.w = 5
   self.state = {}
   self.meta = {}
   self.order = {}
@@ -22,47 +23,46 @@ function Compart:_init(t, rank,part)
   end 
   self.order = lib.sort(self.order, (function (x,y) return
     x.rank==y.rank and x.name<y.name or x.rank<y.rank end))
-  print(table.concat(lib.map(self.order,"name")," | "))
+  for _,x in pairs(self.order) do self:say(x.name) end; 
+  print("")
+  for _,x in pairs(self.order) do self:say("","-") end
+  print("")
   self:run()
 end
 
-function Compart:report(first,u,v)
-  say= function(lst) 
-         print(
-           table.concat(
-             lib.map(self.order, 
-               function(part)
-                 return lst[part.name] end),
-             " | ")) end
-  delta = function(x,y,   z) 
-             z= {}
-             for k,v1 in pairs(x) do
-               v2 = y[k]
-               z[#z+1] = v1~=v2 and v1 or "" 
-             end
-             return z end 
-  if   first
-  then say(u)
-  else the.o(delta(u,v)) --say(delta(u,v)) --delta(u,v)) 
+function Compart:say(x,c)
+  io.write(lib.lpad(x,self.w,c) .. " | ")
+end
+
+function Compart:report(first, b4,now)
+  for  _,part in pairs(self.order) do
+    local v1 = b4[ part.name]
+    local v2 = now[part.name]
+    if   first
+    then self:say(v1)
+    else self:say((v1==v2) and " ." or v2)
+    end
   end
 end
 
-function Compart:run(max,dt)
+function Compart:run(max,dt,    t,b4,now,first)
    max  = max or 30
    dt   = dt  or 1
    t,b4 = 0, lib.copy(self.state) 
    first = true
    while(t<max) do
      now = lib.copy(b4)
-     self:report(first, b4, now)
      self:step(dt,t, b4, now)
      for _,x in pairs(self.order) do 
        now[x.name] = x:ok( now[x.name] ) 
      end
+     self:report(first,b4,now)
+     print("")
      first = false
      b4    = now
      t     = t + dt
    end
+   return now
 end
 
 return Compart
