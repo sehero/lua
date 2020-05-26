@@ -45,24 +45,24 @@ function Compart:report(first, b4,now)
   end
 end
 
-function Compart:run(max,dt,    t,b4,now,first)
-   max  = max or 30
-   dt   = dt  or 1
-   t,b4 = 0, lib.copy(self.state) 
+function Compart:run(max,dt,    t,u,v,first)
+   max = max or 30
+   dt  = dt  or 1
+   t,u = 0, lib.copy(self.state) 
    first = true
    while(t<max) do
-     now = lib.copy(b4)
-     self:step(dt,t, b4, now)
+     v = lib.copy(u)
+     self:step(dt,t, u, v)
      for _,x in pairs(self.order) do 
-       now[x.name] = x:ok( now[x.name] ) 
+        v[x.name]=x:ok(v[x.name]) 
      end
-     self:report(first,b4,now)
+     self:report(first,u,v)
      print("")
      first = false
-     b4    = now
+     u     = v
      t     = t + dt
    end
-   return now
+   return v
 end
 
 return Compart
